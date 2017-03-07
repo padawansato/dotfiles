@@ -161,6 +161,14 @@ alias ｃｄ="cd"
 alias pu="pushd"
 alias dirs="dirs -v"
 
+alias emac="emacs"
+alias e="emacs"
+alias えまｃｓ="emacs"
+alias Emacs="/usr/local/Cellar/emacs/25.1/Emacs.app/Emacs.app -nw"
+alias emacs='/usr/local/Cellar/emacs/25.1/Emacs.app/Contents/MacOS/Emacs -nw'
+
+
+alias yo="youtube-dl"
 #
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
@@ -253,3 +261,38 @@ fi
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+alias sl='ls'
+alias -g zshrc="/Users/e155755/.dotfiles/dotfiles/.zshrc"
+
+#zshprofile if you want to know time
+#if (which zprof > /dev/null) ;then
+#  zprof | less
+#fi
+
+#export PATH="/Users/e155755/.cask/bin:$PATH"
+
+#cdr
+# cdr, add-zsh-hook を有効にする
+autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+add-zsh-hook chpwd chpwd_recent_dirs
+# cdr の設定
+# http://wada811.blogspot.com/2014/09/zsh-cdr.html
+# cdr -l
+# cdr [number]
+zstyle ':completion:*' recent-dirs-insert both
+zstyle ':chpwd:*' recent-dirs-max 500
+zstyle ':chpwd:*' recent-dirs-default true
+zstyle ':chpwd:*' recent-dirs-file "$HOME/.cache/shell/chpwd-recent-dirs"
+zstyle ':chpwd:*' recent-dirs-pushd true
+
+# akahori 
+# autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+# add-zsh-hook chpwd chpwd_recent_dirs
+ 
+# echo -n "move past directory? (y/N/num) "
+# read
+# if [[ "$REPLY" =~ ^[Yy]$ ]] || [[ "$REPLY" == '' ]]; then
+ cdr
+# else
+# ;
+# fi
