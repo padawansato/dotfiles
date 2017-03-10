@@ -152,7 +152,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (ace-jump-mode sequential-command flycheck-pos-tip undo-tree helm auto-complete yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff))))
+    (init-open-recentf ace-jump-mode sequential-command flycheck-pos-tip undo-tree helm auto-complete yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -247,6 +247,8 @@
 (setq recentf-auto-save-timer (run-with-idle-timer 30 t 'recentf-save-list))
 
 (recentf-mode 1)
-(bind-key "M-h" 'helm-recentf)
+(bind-key "C-t" 'helm-recentf)
 
-
+;; ido/anything/helmのうちどれかを指定する
+(setq init-open-recentf-interface 'helm)
+(init-open-recentf)
