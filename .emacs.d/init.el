@@ -152,7 +152,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (flycheck-pos-tip undo-tree helm auto-complete yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff))))
+    (ace-jump-mode sequential-command flycheck-pos-tip undo-tree helm auto-complete yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -174,8 +174,6 @@
 ;;; ツールバーを消す
 (tool-bar-mode -1)
 
-;; C-a C-a
-
 ;; helm
 (require 'helm-config)
 (helm-mode 1)
@@ -189,3 +187,66 @@
   (define-key helm-find-files-map (kbd "C-h") 'delete-backward-char)
   (define-key helm-find-files-map (kbd "TAB") 'helm-execute-persistent-action)
   (define-key helm-read-file-map (kbd "TAB") 'helm-execute-persistent-action)
+
+;; projectile
+(projectile-global-mode)
+(setq projectile-completion-system 'helm)
+(helm-projectile-on)
+
+;; sequtntial-command
+;; (define-sequential-command seq-home
+;;   beginning-of-line beginning-of-buffer seq-return)
+(require 'sequential-command-config)
+(global-set-key "\C-a" 'seq-home)
+(global-set-key "\C-e" 'seq-end)
+(when (require 'org nil t)
+  (define-key org-mode-map "\C-a" 'org-seq-home)
+  (define-key org-mode-map "\C-e" 'org-seq-end))
+
+;; auto-complete
+    (require 'auto-complete)
+    (require 'auto-complete-config)    ; 必須ではないですが一応
+    (global-auto-complete-mode t)
+    (define-key ac-completing-map (kbd "M-n") 'ac-next)      ; M-nで次候補選択
+    (define-key ac-completing-map (kbd "M-p") 'ac-previous)  ; M-pで前候補選択
+    (setq ac-dwim t)  ; 空気読んでほしい
+
+;; ace-jump-mode
+(require 'ace-jump-mode)
+(global-set-key (kbd "C-c SPC") 'ace-jump-mode)
+;; (defun add-keys-to-ace-jump-mode (prefix c &optional mode)
+;;   (define-key global-map
+;;     (read-kbd-macro (concat prefix (string c)))
+;;     `(lambda ()
+;;        (interactive)
+;;        (funcall (if (eq ',mode 'word)
+;;                     #'ace-jump-word-mode
+;;                   #'ace-jump-char-mode) ,c))))
+
+;; (loop for c from ?0 to ?9 do (add-keys-to-ace-jump-mode "H-" c))
+;; (loop for c from ?a to ?z do (add-keys-to-ace-jump-mode "H-" c))
+;; (loop for c from ?0 to ?9 do (add-keys-to-ace-jump-mode "H-M-" c 'word))
+;; (loop for c from ?a to ?z do (add-keys-to-ace-jump-mode "H-M-" c 'word))
+
+;; visual-mark
+;;; C-u C-SPC C-SPC ...で過去のマークを遡れるようにする
+(setq set-mark-command-repeat-pop t)
+;;; 過去10個のマークを可視化する
+(setq visible-mark-max 10)
+;;; transient-mark-modeでC-SPC C-SPC、あるいはC-SPC C-gすると消えるバグ修正
+(defun visible-mark-move-overlays--avoid-disappear (&rest them)
+  (let ((mark-active t)) (apply them)))
+(advice-add 'visible-mark-move-overlays :around 'visible-mark-move-overlays--avoid-disappear)
+
+(global-visible-mark-mode 1)
+
+;; recentf
+(setq recentf-max-saved-items 2000) ;; 2000ファイルまで履歴保存する
+(setq recentf-auto-cleanup 'never)  ;; 存在しないファイルは消さない
+(setq recentf-exclude '("/recentf" "COMMIT_EDITMSG" "/.?TAGS" "^/sudo:" "/\\.emacs\\.d/games/*-scores" "/\\.emacs\\.d/\\.cask/"))
+(setq recentf-auto-save-timer (run-with-idle-timer 30 t 'recentf-save-list))
+
+(recentf-mode 1)
+(bind-key "M-h" 'helm-recentf)
+
+
