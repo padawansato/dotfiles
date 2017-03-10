@@ -26,6 +26,14 @@
 (setq-default flyspell-mode t)
 (setq ispell-dictionary "american")
 
+;; flycheck
+(add-hook 'after-init-hook #'global-flycheck-mode)
+;; flycheck-pos-tip
+;; (eval-after-load 'flycheck
+;;   '(custom-set-variables
+;;    '(flycheck-display-errors-function #'flycheck-pos-tip-error-messages)))
+
+
 ;;
 ;; Terminal から起動する場合は MenuBar 非表示
 ;;
@@ -144,7 +152,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (helm auto-complete yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff))))
+    (flycheck-pos-tip undo-tree helm auto-complete yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
