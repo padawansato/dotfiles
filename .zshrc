@@ -155,7 +155,11 @@ alias su="su -l"
 
 alias cd..="cd .."
 alias ....="cd ../.."
+alias cd....="cd ../.."
+alias cd ....="cd ../.."
 alias ......="cd ../../.."
+alias cd......="cd ../../.."
+alias cd ......="cd ../../.."
 alias ｃｄ="cd"
 
 alias pu="pushd"
@@ -164,7 +168,9 @@ alias dirs="dirs -v"
 alias emac="emacs"
 alias e="emacs"
 alias えまｃｓ="emacs"
-alias Emacs="/usr/local/Cellar/emacs/25.1/Emacs.app/Emacs.app -nw"
+alias え="emacs"
+alias Emacs="/usr/local/Cellar/emacs/25.1/Emacs.app/ ; open Emacs.app"
+alias E="/usr/local/Cellar/emacs/25.1/Emacs.app/ ; open Emacs.app"
 alias emacs='/usr/local/Cellar/emacs/25.1/Emacs.app/Contents/MacOS/Emacs -nw'
 
 
