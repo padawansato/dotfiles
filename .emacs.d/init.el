@@ -152,7 +152,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (key-chord init-loader esup migemo init-open-recentf ace-jump-mode sequential-command flycheck-pos-tip undo-tree helm auto-complete yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff))))
+    (crux key-chord init-loader esup migemo init-open-recentf ace-jump-mode sequential-command flycheck-pos-tip undo-tree helm auto-complete yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -207,8 +207,8 @@
     (require 'auto-complete)
     (require 'auto-complete-config)    ; 必須ではないですが一応
     (global-auto-complete-mode t)
-    (define-key ac-completing-map (kbd "M-n") 'ac-next)      ; M-nで次候補選択
-    (define-key ac-completing-map (kbd "M-p") 'ac-previous)  ; M-pで前候補選択
+    (define-key ac-completing-map (kbd "C-n") 'ac-next)      ; M-nで次候補選択
+    (define-key ac-completing-map (kbd "C-p") 'ac-previous)  ; M-pで前候補選択
     (setq ac-dwim t)  ; 空気読んでほしい
 
 ;; ace-jump-mode
@@ -291,6 +291,9 @@
 ;; (key-chord-define-global "kl" 'view-mode)
 ;; (key-chord-define emacs-lisp-mode-map "df" 'describe-function)
 ;; (key-chord-define-global "vv" 'find-file)
+(key-chord-define-global "op" 'crux-open-with)
+
+
 
 ;; repeat
 ;;直前のコマンドの繰り返し
@@ -299,3 +302,8 @@
 ;;または
 ;; (require 'bind-key)
 ;; (bind-key* "C-," 'repeat)
+
+;; pdfを開きたい．
+;; dired にて crux-open-with 
+(require 'crux)
+
