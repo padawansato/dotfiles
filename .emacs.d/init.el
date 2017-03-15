@@ -152,7 +152,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (migemo init-open-recentf ace-jump-mode sequential-command flycheck-pos-tip undo-tree helm auto-complete yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff))))
+    (key-chord init-loader esup migemo init-open-recentf ace-jump-mode sequential-command flycheck-pos-tip undo-tree helm auto-complete yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -212,8 +212,8 @@
     (setq ac-dwim t)  ; 空気読んでほしい
 
 ;; ace-jump-mode
-(require 'ace-jump-mode)
-(global-set-key (kbd "C-c SPC") 'ace-jump-mode)
+;; (require 'ace-jump-mode)
+;; (global-set-key (kbd "C-:") 'ace-jump-mode)
 ;; (defun add-keys-to-ace-jump-mode (prefix c &optional mode)
 ;;   (define-key global-map
 ;;     (read-kbd-macro (concat prefix (string c)))
@@ -228,7 +228,8 @@
 ;; (loop for c from ?0 to ?9 do (add-keys-to-ace-jump-mode "H-M-" c 'word))
 ;; (loop for c from ?a to ?z do (add-keys-to-ace-jump-mode "H-M-" c 'word))
 
-;; visual-mark
+
+;; Visual-mark
 ;;; C-u C-SPC C-SPC ...で過去のマークを遡れるようにする
 (setq set-mark-command-repeat-pop t)
 ;;; 過去10個のマークを可視化する
@@ -252,3 +253,49 @@
 ;; ido/anything/helmのうちどれかを指定する
 (setq init-open-recentf-interface 'helm)
 (init-open-recentf)
+
+;;; diredを便利にする
+(require 'dired-x)
+;;; diredから"r"でファイル名をインライン編集する
+(require 'wdired)
+(define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)
+
+;; info
+;; (add-to-list 'Info-directory-list "~/.emacs.d/info")
+;; (defun Info-find-node--info-ja (orig-fn filename &rest args)
+;;   (apply orig-fn
+;;          (pcase filename
+;;            ("emacs" "emacs-ja")
+;;            (t filename))
+;;          args))
+;; (advice-add 'Info-find-node :around 'Info-find-node--info-ja)
+
+;;migemo
+(when (locate-library "migemo")
+  (setq migemo-command "/usr/local/bin/cmigemo") ; HERE cmigemoバイナリ
+  (setq migemo-options '("-q" "--emacs"))
+  (setq migemo-dictionary "/usr/local/share/migemo/utf-8/migemo-dict") ; HERE Migemo辞書
+  (setq migemo-user-dictionary nil)
+  (setq migemo-regex-dictionary nil)
+  (setq migemo-coding-system 'utf-8-unix)
+  (load-library "migemo")
+  (migemo-init))
+
+;; hey-chord
+(require 'key-chord)
+;;; タイムラグを設定
+(setq key-chord-two-keys-delay 0.04)
+(setq key-chord-one-key-delay 0.15)
+(key-chord-mode 1)
+;;; 設定例
+;; (key-chord-define-global "kl" 'view-mode)
+;; (key-chord-define emacs-lisp-mode-map "df" 'describe-function)
+;; (key-chord-define-global "vv" 'find-file)
+
+;; repeat
+;;直前のコマンドの繰り返し
+;;M-x repeatをC-,に割り当てる設定はこうなります。
+(global-set-key (kbd "C-,") 'repeat)
+;;または
+;; (require 'bind-key)
+;; (bind-key* "C-," 'repeat)
