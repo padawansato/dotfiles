@@ -152,7 +152,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (crux key-chord init-loader esup migemo init-open-recentf ace-jump-mode sequential-command flycheck-pos-tip undo-tree helm auto-complete yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff))))
+    (redo+ undohist crux key-chord init-loader esup migemo init-open-recentf ace-jump-mode sequential-command flycheck-pos-tip undo-tree helm auto-complete yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -182,7 +182,8 @@
   (define-key global-map (kbd "C-x C-r") 'helm-recentf)
   (define-key global-map (kbd "M-y")     'helm-show-kill-ring)
   (define-key global-map (kbd "C-c i")   'helm-imenu)
-  (define-key global-map (kbd "C-x b")   'helm-buffers-list)
+  (define-key global-map (kbd "C-x C-b") 'helm-buffers-list)
+  (define-key global-map (kbd "C-x b") 'helm-mini);;
   (define-key helm-map (kbd "C-h") 'delete-backward-char)
   (define-key helm-find-files-map (kbd "C-h") 'delete-backward-char)
   (define-key helm-find-files-map (kbd "TAB") 'helm-execute-persistent-action)
@@ -211,9 +212,11 @@
     (define-key ac-completing-map (kbd "C-p") 'ac-previous)  ; M-pで前候補選択
     (setq ac-dwim t)  ; 空気読んでほしい
 
+;; fnをHyperに
+(setq ns-function-modifier 'hyper)  ; make Fn key do Hyper
 ;; ace-jump-mode
-;; (require 'ace-jump-mode)
 ;; (global-set-key (kbd "C-:") 'ace-jump-mode)
+;; (ace-jump-mode t)
 ;; (defun add-keys-to-ace-jump-mode (prefix c &optional mode)
 ;;   (define-key global-map
 ;;     (read-kbd-macro (concat prefix (string c)))
@@ -306,4 +309,19 @@
 ;; pdfを開きたい．
 ;; dired にて crux-open-with 
 (require 'crux)
+
+;; undo tree
+;; (require 'undo-tree)
+(setq undo-tree-mode-lighter "")
+(global-undo-tree-mode 1)
+;; undo hist
+(require 'undohist)
+(undohist-initialize)
+;;; 永続化を無視するファイル名の正規表現
+;; (setq undohist-ignored-files
+;;       '("/tmp/" "COMMIT_EDITMSG"))
+
+;; redo+
+(require 'redo+)
+;;(global-set-key (kbd "C-M-/") 'redo)
 

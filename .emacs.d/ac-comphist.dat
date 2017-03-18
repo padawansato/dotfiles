@@ -1,9 +1,13 @@
-((("key-chord-define" .
+((("global-map" .
+   [0 0 0 0 0 0 0 0 1 0])
+  ("define-key" .
+   [0 0 0 0 0 0 1 0 0 0])
+  ("key-chord-define" .
    [0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0])
   ("crux" .
    [1 0 0 0])
   ("ace-jump-mode" .
-   [0 0 0 0 0 0 1 0 0 0 0 0 0])
+   [0 0 0 1 0 0 1 0 0 0 0 0 0])
   ("cin" .
    [1 0 0])
   ("while" .
