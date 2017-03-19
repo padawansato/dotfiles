@@ -291,12 +291,14 @@
 (setq key-chord-one-key-delay 0.15)
 (key-chord-mode 1)
 ;;; 設定例
-(key-chord-define-global "kl" 'view-mode)
 ;; (key-chord-define emacs-lisp-mode-map "df" 'describe-function)
 ;; (key-chord-define-global "vv" 'find-file)
-(key-chord-define-global "vm" 'view-mode)
+(key-chord-define-global "kl" 'view-mode)
+(key-chord-define-global "vm" 'view-mode);;C-{をvimlikeにviewmode切り替えにしたほうがいいかも，押し間違えによる文字挿入がないし
+;; pdfをdiredで開く
 (key-chord-define-global "op" 'crux-open-with)
-(key-chord-define helm-map "op" 'crux-open-with);;試し
+(key-chord-define helm-map "op" 'crux-open-with);;試し,helmでpdfを開きたい
+
 ;;Vimでは-dがカットするオペレーションを、yがコピーするオペレーションを、vがマークするオペレーションを表わしています。
 (key-chord-define-global "dw" 'kill-word*)    ;; | dw         | kill-word*   | カーソルが指している単語をカット               |
 (key-chord-define-global "yw" 'copy-word)     ;; | yw         | copy-word    | カーソルが指している単語をコピー               |
@@ -376,7 +378,7 @@
 
 ;;
 ;; whitespace
-;;
+;; http://keisanbutsuriya.hateblo.jp/entry/2015/02/03/153149
 (require 'whitespace)
 (setq whitespace-style '(face           ; faceで可視化
                          trailing       ; 行末
@@ -385,9 +387,128 @@
                          space-mark     ; 表示のマッピング
                          tab-mark
                          ))
-
 (setq whitespace-display-mappings
       '((tab-mark ?\t [?\u00BB ?\t] [?\\ ?\t])))
-
 (global-whitespace-mode 1)
+
+;; view-modeの設定
+;; http://d.hatena.ne.jp/rubikitch/20081104/1225745862
+;; http://ochiailab.blogspot.jp/2015/04/emacsview-mode.html
+(setq view-read-only t)
+(defvar pager-keybind
+      `( ;; vi-like
+        ("h" . backward-word)
+        ("l" . forward-word)
+        ("j" . next-window-line)
+        ("k" . previous-window-line)
+        (";" . gene-word)
+        ("b" . scroll-down)
+        (" " . scroll-up)
+        ;; ;; w3m-like
+        ;; ("m" . gene-word)
+        ;; ("i" . win-delete-current-window-and-squeeze)
+        ;; ("w" . forward-word)
+        ;; ("e" . backward-word)
+        ;; ("(" . point-undo)
+        ;; (")" . point-redo)
+        ;; ("J" . ,(lambda () (interactive) (scroll-up 1)))
+        ;; ("K" . ,(lambda () (interactive) (scroll-down 1)))
+        ;; ;; bm-easy
+        ;; ("." . bm-toggle)
+        ;; ("[" . bm-previous)
+        ;; ("]" . bm-next)
+        ;; ;; langhelp-like
+        ;; ("c" . scroll-other-window-down)
+        ;; ("v" . scroll-other-window)
+        ;; ))
+        ;; ("h" . backward-char)
+        ;; ("l" . forward-char)
+        ;; ("j" . next-line)
+        ;; ("k" . previous-line)
+        ("S-SPC" . scroll-down)
+        (" " . scroll-up)
+        ("@" . set-mark-command)
+        ("a" . beginning-of-buffer)
+        ("e" . end-of-buffer)
+        ("f" . forward-word)
+        ("b" . backward-word)
+        ("]" . forward-word)
+        ("[" . backward-word)
+        ("}" . forward-paragraph)
+        ("{" . backward-paragraph)
+        ("n" . ,(lambda () (interactive) (scroll-up 1)))
+        ("p" . ,(lambda () (interactive) (scroll-down 1)))
+        ("N" . ,(lambda () (interactive) (scroll-up 10)))
+        ("P" . ,(lambda () (interactive) (scroll-down 10)))
+        ("c" . scroll-other-window-down)
+        ("v" . scroll-other-window)
+        ("(" . point-undo)
+        (")" . point-redo)
+        ("J" . jaunte)
+        ))
+        ("h" . backward-char)
+        ("l" . forward-char)
+        ("j" . next-line)
+        ("k" . previous-line)
+        ("S-SPC" . scroll-down)
+        (" " . scroll-up)
+        ("@" . set-mark-command)
+        ("a" . beginning-of-buffer)
+        ("e" . end-of-buffer)
+        ("f" . forward-word)
+        ("b" . backward-word)
+        ("]" . forward-word)
+        ("[" . backward-word)
+        ("}" . forward-paragraph)
+        ("{" . backward-paragraph)
+        ("n" . ,(lambda () (interactive) (scroll-up 1)))
+        ("p" . ,(lambda () (interactive) (scroll-down 1)))
+        ("N" . ,(lambda () (interactive) (scroll-up 10)))
+        ("P" . ,(lambda () (interactive) (scroll-down 10)))
+        ("c" . scroll-other-window-down)
+        ("v" . scroll-other-window)
+        ("(" . point-undo)
+        (")" . point-redo)
+        ("J" . jaunte)
+        ))
+;; ;; less like
+;; (define-key view-mode-map (kbd "N") 'View-search-last-regexp-backward)
+;; (define-key view-mode-map (kbd "?") 'View-search-regexp-backward )
+;; (define-key view-mode-map (kbd "G") 'View-goto-line-last)
+;; (define-key view-mode-map (kbd "b") 'View-scroll-page-backward)
+;; (define-key view-mode-map (kbd "f") 'View-scroll-page-forward)
+(defun define-many-keys (keymap key-table &optional includes)
+  (let (key cmd)
+    (dolist (key-cmd key-table)
+      (setq key (car key-cmd)
+            cmd (cdr key-cmd))
+      (if (or (not includes) (member key includes))
+        (define-key keymap key cmd))))
+  keymap)
+
+(defun view-mode-hook0 ()
+  (define-many-keys view-mode-map pager-keybind)
+  (hl-line-mode 1)
+  (define-key view-mode-map " " 'scroll-up))
+(add-hook 'view-mode-hook 'view-mode-hook0)
+
+;; 書き込み不能なファイルはview-modeで開くように
+(defadvice find-file
+  (around find-file-switch-to-view-file (file &optional wild) activate)
+  (if (and (not (file-writable-p file))
+           (not (file-directory-p file)))
+      (view-file file)
+    ad-do-it))
+;; 書き込み不能な場合はview-modeを抜けないように
+(defvar view-mode-force-exit nil)
+(defmacro do-not-exit-view-mode-unless-writable-advice (f)
+  `(defadvice ,f (around do-not-exit-view-mode-unless-writable activate)
+     (if (and (buffer-file-name)
+              (not view-mode-force-exit)
+              (not (file-writable-p (buffer-file-name))))
+         (message "File is unwritable, so stay in view-mode.")
+       ad-do-it)))
+
+(do-not-exit-view-mode-unless-writable-advice view-mode-exit)
+(do-not-exit-view-mode-unless-writable-advice view-mode-disable)
 
