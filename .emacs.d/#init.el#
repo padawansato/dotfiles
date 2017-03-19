@@ -291,7 +291,7 @@
 (setq key-chord-one-key-delay 0.15)
 (key-chord-mode 1)
 ;;; 設定例
-(key-chord-define-global "kl" 'view-mode)
+;; (key-chord-define-global "kl" 'view-mode)
 ;; (key-chord-define emacs-lisp-mode-map "df" 'describe-function)
 ;; (key-chord-define-global "vv" 'find-file)
 (key-chord-define-global "vm" 'view-mode)
@@ -321,7 +321,7 @@
 ;; (bind-key* "C-," 'repeat)
 
 ;; pdfを開きたい．
-;; dired にて crux-open-with
+;; dired にて crux-open-with 
 (require 'crux)
 
 ;; undo tree
@@ -358,7 +358,7 @@
 (setq neo-smart-open t)
 
 ;; speedbar
-(setq sr-speedbar-right-side nil)
+(setq sr-speedbar-right-side nil) 
 (global-set-key [f9] 'sr-speedbar-toggle)
 
 ;; カーソル高速点滅
@@ -390,4 +390,3 @@
       '((tab-mark ?\t [?\u00BB ?\t] [?\\ ?\t])))
 
 (global-whitespace-mode 1)
-
