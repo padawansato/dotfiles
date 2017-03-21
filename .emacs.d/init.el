@@ -152,7 +152,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (sr-speedbar redo+ undohist crux key-chord init-loader esup migemo init-open-recentf ace-jump-mode sequential-command flycheck-pos-tip undo-tree helm auto-complete yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff))))
+    (helm-migemo ace-isearch helm-swoop sr-speedbar redo+ undohist crux key-chord init-loader esup migemo init-open-recentf ace-jump-mode sequential-command flycheck-pos-tip undo-tree helm auto-complete yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -189,6 +189,9 @@
   (define-key helm-find-files-map (kbd "TAB") 'helm-execute-persistent-action)
   (define-key helm-read-file-map (kbd "TAB") 'helm-execute-persistent-action)
 
+;;(setq search-default-regexp-mode nil);;http://qiita.com/duloxetine/items/a8cfcd9a55cb5791c2f4
+;;(helm-migemo-mode 1);;http://qiita.com/ballforest/items/4db3d66df16d84a027d0;;error
+
 ;; projectile
 (projectile-global-mode)
 (setq projectile-completion-system 'helm)
@@ -214,10 +217,12 @@
 
 ;; fnをHyperに
 (setq ns-function-modifier 'hyper)  ; make Fn key do Hyper
-;; ace-jump-mode
-;; (global-set-key (kbd "C-:") 'ace-jump-mode)
+
+;; ace-jump-modehttp://d.hatena.ne.jp/rkworks/20120520/1337528737
+(require 'ace-jump-mode)
+;;(global-set-key (kbd "C-:") 'ace-jump-mode)
 ;; (ace-jump-mode t)
-;; (defun add-keys-to-ace-jump-mode (prefix c &optional mode)
+;; (defun add-keys-to-ace-jump-mode (prefix c &optional mode) 
 ;;   (define-key global-map
 ;;     (read-kbd-macro (concat prefix (string c)))
 ;;     `(lambda ()
@@ -230,6 +235,40 @@
 ;; (loop for c from ?a to ?z do (add-keys-to-ace-jump-mode "H-" c))
 ;; (loop for c from ?0 to ?9 do (add-keys-to-ace-jump-mode "H-M-" c 'word))
 ;; (loop for c from ?a to ?z do (add-keys-to-ace-jump-mode "H-M-" c 'word))
+;; (loop for c from ?0 to ?9 do (add-keys-to-ace-jump-mode "H-" c 'word))
+;; (loop for c from ?a to ?z do (add-keys-to-ace-jump-mode "H-" c 'word))
+
+;; helm-swoop
+;; http://fukuyama.co/helm-swoop
+;; 選択範囲を検索ワードに使うこともできます。変数や関数がどこで使われているのかなど、tag系の検索ツールでは手の届かない所までカバーできるかと思います。
+;; isearch実行中に[M-i]を押すとhelm-swoopに移行。またhelm-swoop実行中に[M-i]を押すと開いている全バッファを対象にしたhelm-multi-swoop-allに移行します。
+;; 編集機能: helm-swoopまたはhelm-multi-swoop(-all)を実行中に[C-c C-e]と押すことでリストを編集して、バッファに反映[C-x C-s]させることができます。[C-SPC]で編集したい行をいくつかマークしておくと、[C-c C-e]で編集モードに移行した際にその行だけが編集対象となります。
+;; Multiline機能: M-5 M-x helm-swoop や C-u 3 M-x helm-swoop とすることで複数の行単位で使用できます。
+(require 'helm-swoop)
+(global-set-key (kbd "C-r") 'helm-swoop)
+;;; isearchからの連携を考えるとC-r/C-sにも割り当て推奨
+(define-key helm-swoop-map (kbd "C-r") 'helm-previous-line)
+(define-key helm-swoop-map (kbd "C-s") 'helm-next-line)
+;; キーバインドはお好みで
+(global-set-key (kbd "M-i") 'helm-swoop)
+(global-set-key (kbd "M-I") 'helm-swoop-back-to-last-point)
+(global-set-key (kbd "C-c M-i") 'helm-multi-swoop)
+(global-set-key (kbd "C-x M-i") 'helm-multi-swoop-all)
+;; isearch実行中にhelm-swoopに移行
+(define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-isearch)
+;; helm-swoop実行中にhelm-multi-swoop-allに移行
+(define-key helm-swoop-map (kbd "M-i") 'helm-multi-swoop-all-from-helm-swoop)
+;; Save buffer when helm-multi-swoop-edit complete
+(setq helm-multi-swoop-edit-save t)
+;; 値がtの場合はウィンドウ内に分割、nilなら別のウィンドウを使用
+(setq helm-swoop-split-with-multiple-windows nil)
+;; ウィンドウ分割方向 'split-window-vertically or 'split-window-horizontally
+(setq helm-swoop-split-direction 'split-window-vertically)
+;; nilなら一覧のテキストカラーを失う代わりに、起動スピードをほんの少し上げる
+(setq helm-swoop-speed-or-color t)
+
+;; ace-isearch
+;; http://emacs.rubikitch.com/helm-swoop/
 
 
 ;; Visual-mark
@@ -294,7 +333,9 @@
 ;; (key-chord-define emacs-lisp-mode-map "df" 'describe-function)
 ;; (key-chord-define-global "vv" 'find-file)
 (key-chord-define-global "kl" 'view-mode)
+(key-chord-define-global "KL" 'view-mode)
 (key-chord-define-global "vm" 'view-mode);;C-{をvimlikeにviewmode切り替えにしたほうがいいかも，押し間違えによる文字挿入がないし
+(define-key global-map (kbd "C-{") 'view-mode);;
 ;; pdfをdiredで開く
 (key-chord-define-global "op" 'crux-open-with)
 (key-chord-define helm-map "op" 'crux-open-with);;試し,helmでpdfを開きたい
@@ -365,8 +406,8 @@
 
 ;; カーソル高速点滅
 ;; http://blog.sushi.money/entry/20110621/1308625467
-(setq blink-cursor-interval 0.05)
-(setq blink-cursor-delay 0.05)
+(setq blink-cursor-interval 0.5)
+(setq blink-cursor-delay 0.5)
 (blink-cursor-mode 1)
 
 ;; thing-opt
@@ -399,8 +440,8 @@
       `( ;; vi-like
         ("h" . backward-word)
         ("l" . forward-word)
-        ("j" . next-window-line)
-        ("k" . previous-window-line)
+        ;; ("j" . next-window-line)
+        ;; ("k" . previous-window-line)
         (";" . gene-word)
         ("b" . scroll-down)
         (" " . scroll-up)
@@ -428,8 +469,8 @@
         ;; ("S-SPC" . scroll-down)
         ;; (" " . scroll-up)
         ("@" . set-mark-command)
-        ("a" . beginning-of-buffer)
-        ("e" . end-of-buffer)
+        ;; ("a" . beginning-of-buffer)
+        ;; ("e" . end-of-buffer)
         ;; ("f" . forward-word)
         ;; ("b" . backward-word)
         ;; ("]" . forward-word)
@@ -440,18 +481,18 @@
         ;; ("{" . backward-paragraph)
         ("n" . ,(lambda () (interactive) (scroll-up 1)))
         ("p" . ,(lambda () (interactive) (scroll-down 1)))
-        ;; ("N" . ,(lambda () (interactive) (scroll-up 10)))
-        ;; ("P" . ,(lambda () (interactive) (scroll-down 10)))
+        ("N" . ,(lambda () (interactive) (scroll-up 10)))
+        ("P" . ,(lambda () (interactive) (scroll-down 10)))
         ("c" . scroll-other-window-down)
         ("v" . scroll-other-window)
         ("(" . point-undo)
         (")" . point-redo)
         ("J" . jaunte)
-        ))
+;;        ))
         ;; ("h" . backward-char)
         ;; ("l" . forward-char)
-        ;; ("j" . next-line)
-        ;; ("k" . previous-line)
+        ("j" . next-line)
+        ("k" . previous-line)
         ;; ("S-SPC" . scroll-down)
         ;; (" " . scroll-up)
         ;; ("@" . set-mark-command)
@@ -472,7 +513,7 @@
         ;; ("(" . point-undo)
         ;; (")" . point-redo)
         ;; ("J" . jaunte)
-        ;; ))
+        ))
 ;; ;; less like
 ;; (define-key view-mode-map (kbd "N") 'View-search-last-regexp-backward)
 ;; (define-key view-mode-map (kbd "?") 'View-search-regexp-backward )
@@ -513,4 +554,20 @@
 
 (do-not-exit-view-mode-unless-writable-advice view-mode-exit)
 (do-not-exit-view-mode-unless-writable-advice view-mode-disable)
+;;view-modeの色
+;;https://github.com/fujimisakari/.emacs.d/blob/master/inits/17-viewer.el
+;; (require 'viewer)
+;; ;; C-x C-r は view-modeでファイルを開く
+;; (setq view-read-only t)
+;; 特定のファイルを view-mode で開くようにする
+(setq view-mode-by-default-regexp "\\.log$")
+;;; view-mode のときに mode-line に色をつける
+;; 書き込み不可ファイルを開く場合は濃い赤色
+(setq viewer-modeline-color-unwritable "red")
+;; 書き込み可能ファイルを開く場合はオレンジ色
+(setq viewer-modeline-color-view "orange")
+;; view-modeの切り替え時のデフォルト色
+(setq viewer-modeline-color-default "SlateBlue3")
+
+
 
