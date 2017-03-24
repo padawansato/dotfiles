@@ -1,1 +1,1 @@
-("~/.dotfiles/dotfiles/")
+("~/.dotfiles/dotfiles/" "~/Documents/Competitive_programming/ProconCharange/")

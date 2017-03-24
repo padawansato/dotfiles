@@ -169,9 +169,15 @@ alias emac="emacs"
 alias e="emacs"
 alias えまｃｓ="emacs"
 alias え="emacs"
-alias Emacs="/usr/local/Cellar/emacs/25.1/Emacs.app/ ; open Emacs.app"
+
 alias E="/usr/local/Cellar/emacs/25.1/Emacs.app/ ; open Emacs.app"
+alias Emacs="/usr/local/Cellar/emacs/25.1/Emacs.app/ ; open Emacs.app"
 alias emacs='/usr/local/Cellar/emacs/25.1/Emacs.app/Contents/MacOS/Emacs -nw'
+alias ea="open -a emacs"
+
+#$emacs hogeで普通に開ける
+#2017/03/23時点
+#しかし，上記aliasがなくてもターミナルで開かれる，これはなぜか分からない
 
 
 alias yo="youtube-dl"

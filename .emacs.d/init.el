@@ -145,6 +145,7 @@
 ;; テーマを設定する
 (load-theme 'manoj-dark t)
 
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -188,6 +189,7 @@
   (define-key helm-find-files-map (kbd "C-h") 'delete-backward-char)
   (define-key helm-find-files-map (kbd "TAB") 'helm-execute-persistent-action)
   (define-key helm-read-file-map (kbd "TAB") 'helm-execute-persistent-action)
+  (define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
 
 ;;(setq search-default-regexp-mode nil);;http://qiita.com/duloxetine/items/a8cfcd9a55cb5791c2f4
 ;;(helm-migemo-mode 1);;http://qiita.com/ballforest/items/4db3d66df16d84a027d0;;error
@@ -442,6 +444,13 @@
         ("l" . forward-word)
         ;; ("j" . next-window-line)
         ;; ("k" . previous-window-line)
+;; ("k" . enlarge-vertically);;これでは動かなかった．なぜ？2017/03/24
+;; ("h" . shrink-horizontally)
+;; ("j" . shrink-vertically)
+;; ("l" . enlarge-horizontally)
+;; (win-switch-set-keys '("J") 'shrink-vertically)
+;; (win-switch-set-keys '("H") 'shrink-horizontally)
+;; (win-switch-set-keys '("L") 'enlarge-horizontally)
         (";" . gene-word)
         ("b" . scroll-down)
         (" " . scroll-up)
@@ -515,6 +524,7 @@
         ;; ("J" . jaunte)
         ))
 ;; ;; less like
+;; (define-key view-mode-map (kbd "C-h") 'backward-char)
 ;; (define-key view-mode-map (kbd "N") 'View-search-last-regexp-backward)
 ;; (define-key view-mode-map (kbd "?") 'View-search-regexp-backward )
 ;; (define-key view-mode-map (kbd "G") 'View-goto-line-last)
@@ -569,5 +579,86 @@
 ;; view-modeの切り替え時のデフォルト色
 (setq viewer-modeline-color-default "SlateBlue3")
 
+;; ミニバッファ入力時に自動的に英語入力モードに
+;; カーソルの色を変える時に参考にしたサイトに設定があったのでそのままお借りする。
+(when (functionp 'mac-auto-ascii-mode)  ;; ミニバッファに入力時、自動的に英語モード
+  (mac-auto-ascii-mode 1))
 
+;; window間　移動
+;; (defun other-window-or-split (val)
+;;   (interactive)
+;;   (when (one-window-p)
+;; ;    (split-window-horizontally) ;split horizontally
+;;     (split-window-vertically) ;split vertically
+;;   )
+;;   (other-window val))
 
+;; (global-set-key (kbd "<C-tab>") (lambda () (interactive) (other-window-or-split 1)))
+;; (global-set-key (kbd "<C-S-tab>") (lambda () (interactive) (other-window-or-split -1)))
+
+;; window size
+;; http://d.hatena.ne.jp/khiker/20100119/window_resize
+;; http://d.hatena.ne.jp/mooz/20100119/p1
+(global-set-key "\C-c\C-r" 'my-window-resizer)
+(defun my-window-resizer ()
+  "Control window size and position."
+  (interactive)
+  (let ((window-obj (selected-window))
+        (current-width (window-width))
+        (current-height (window-height))
+        (dx (if (= (nth 0 (window-edges)) 0) 1
+              -1))
+        (dy (if (= (nth 1 (window-edges)) 0) 1
+              -1))
+        action c)
+    (catch 'end-flag
+      (while t
+        (setq action
+              (read-key-sequence-vector (format "size[%dx%d]"
+                                                (window-width)
+                                                (window-height))))
+        (setq c (aref action 0))
+        (cond ((= c ?l)
+               (enlarge-window-horizontally dx))
+              ((= c ?h)
+               (shrink-window-horizontally dx))
+              ((= c ?j)
+               (enlarge-window dy))
+              ((= c ?k)
+               (shrink-window dy))
+              ;; otherwise
+              (t
+               (let ((last-command-char (aref action 0))
+                     (command (key-binding action)))
+                 (when command
+                   (call-interactively command)))
+               (message "Quit")
+               (throw 'end-flag t)))))))
+
+;; win-switch
+(require 'win-switch)
+;;; 0.75秒間受け付けるタイマー
+(setq win-switch-idle-time 0.75)
+;;; 好きなキーを複数割り当てられる
+;; ウィンドウ切り替え
+(win-switch-set-keys '("k") 'up)
+(win-switch-set-keys '("j") 'down)
+(win-switch-set-keys '("h") 'left)
+(win-switch-set-keys '("l") 'right)
+(win-switch-set-keys '("o") 'next-window)
+(win-switch-set-keys '("p") 'previous-window)
+;; リサイズ
+(win-switch-set-keys '("K") 'enlarge-vertically)
+(win-switch-set-keys '("J") 'shrink-vertically)
+(win-switch-set-keys '("H") 'shrink-horizontally)
+(win-switch-set-keys '("L") 'enlarge-horizontally)
+;; 分割
+(win-switch-set-keys '("3") 'split-horizontally)
+(win-switch-set-keys '("2") 'split-vertically)
+(win-switch-set-keys '("0") 'delete-window)
+;; その他
+(win-switch-set-keys '(" ") 'other-frame)
+(win-switch-set-keys '("u" [return]) 'exit)
+(win-switch-set-keys '("\M-\C-g") 'emergency-exit)
+;; C-x oを置き換える
+(global-set-key (kbd "C-x o") 'win-switch-dispatch)
