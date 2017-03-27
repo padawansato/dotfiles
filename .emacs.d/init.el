@@ -337,6 +337,7 @@
 (key-chord-define-global "kl" 'view-mode)
 (key-chord-define-global "KL" 'view-mode)
 (key-chord-define-global "vm" 'view-mode);;C-{をvimlikeにviewmode切り替えにしたほうがいいかも，押し間違えによる文字挿入がないし
+(key-chord-define-global "ｋｌ" 'view-mode);;
 (define-key global-map (kbd "C-{") 'view-mode);;
 ;; pdfをdiredで開く
 (key-chord-define-global "op" 'crux-open-with)
@@ -433,6 +434,11 @@
 (setq whitespace-display-mappings
       '((tab-mark ?\t [?\u00BB ?\t] [?\\ ?\t])))
 (global-whitespace-mode 1)
+
+
+;; vim likeに　view-modeで常に開く
+;; http://nvnote.com/emacs-open-file-always-read-only/
+(add-hook 'find-file-hooks 'view-mode)
 
 ;; view-modeの設定
 ;; http://d.hatena.ne.jp/rubikitch/20081104/1225745862
@@ -662,3 +668,26 @@
 (win-switch-set-keys '("\M-\C-g") 'emergency-exit)
 ;; C-x oを置き換える
 (global-set-key (kbd "C-x o") 'win-switch-dispatch)
+
+
+;; 終了時にオートセーブファイルを消す
+;; http://emacs.clickyourstyle.com/articles/265
+(setq delete-auto-save-files t)
+;; http://ja.stackoverflow.com/questions/9875/emacsで編集したデータを1日毎にディレクトリを分けてバックアップしたい
+;; .emacs.d/backup　に入る．しかし，上記のオートセーブファイルを消す機能と競合してはいまいか．確かめれば良いこと．
+(defun my:make-backup-file-name (file)
+  (let ((dirname (file-name-as-directory
+                  (format-time-string
+                   (expand-file-name "backup/%Y-%m-%d/" user-emacs-directory)))))
+    (or (file-directory-p dirname)
+        (make-directory dirname t))
+    (expand-file-name (file-name-nondirectory file) dirname)))
+
+(setq make-backup-file-name-function #'my:make-backup-file-name)
+
+;; 垂直　インデント　揃える
+;; M-x align-regexp
+;; 揃える文字
+
+;; カッコ　対応　自動
+(electric-pair-mode 1)
