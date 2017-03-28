@@ -171,9 +171,15 @@ alias えまｃｓ="emacs"
 alias え="emacs"
 
 alias E="/usr/local/Cellar/emacs/25.1/Emacs.app/ ; open Emacs.app"
-alias Emacs="/usr/local/Cellar/emacs/25.1/Emacs.app/ ; open Emacs.app"
+#alias Emacs="/usr/local/Cellar/emacs/25.1/Emacs.app/ ; open -a Emacs.app"
 alias emacs='/usr/local/Cellar/emacs/25.1/Emacs.app/Contents/MacOS/Emacs -nw'
-alias ea="open -a emacs"
+alias ea="open -a emacs "#Emacs.app　windowが複数できる．
+#http://keisanbutsuriya.hateblo.jp/entry/2015/02/13/133858
+alias ekill="emacsclient -e '(kill-emacs)'"
+alias ee='emacsclient -n' #Emacs.appで素早く開くためM-x server start->ekill
+alias Emacs='/usr/local/Cellar/emacs/25.1/Emacs.app/ ; open Emacs.app;popd;emacsclient -n' #Emacs.appで素早く開くためM-x server start->ekill
+#alias ec='emacsclient -n ""'#error , eeなら
+
 
 #$emacs hogeで普通に開ける
 #2017/03/23時点

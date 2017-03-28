@@ -1,5 +1,6 @@
+;;; package --- Summary
 ;;; -*- Coding: utf-8 -*-
-;;
+;;; Commentary:
 
 ;;; 言語環境の指定
 
@@ -81,6 +82,12 @@
 (set-face-background 'fringe "dark red")   ;; 両脇のバーの背景色
 (set-face-foreground 'mode-line-inactive "white")  ;; アクティブでないバッファの文字色
 (set-face-background 'mode-line-inactive "MediumPurple4")  ;; アクティブでないバッファの背景色
+;; http://th.nao.ac.jp/MEMBER/zenitani/elisp-j.html#color
+(set-face-background 'mode-line "white");;これで白紫に
+(set-face-foreground 'mode-line "MediumPurple4");;
+;; モードごとに色を変える
+;; http://stackoverflow.com/questions/15906332/change-emacs-mode-line-color-based-on-major-mode
+;; しかし，実装は出来なかった．
 
 ;; 選択範囲に色を付ける
 (setq transient-mark-mode t)
@@ -343,7 +350,9 @@
 (key-chord-define-global "op" 'crux-open-with)
 (key-chord-define helm-map "op" 'crux-open-with);;試し,helmでpdfを開きたい
 
-;;Vimでは-dがカットするオペレーションを、yがコピーするオペレーションを、vがマークするオペレーションを表わしています。
+;;Vimではdがカットするオペレーションを、
+;;yがコピーするオペレーションを、
+;;vがマークするオペレーションを表わしています。
 (key-chord-define-global "dw" 'kill-word*)    ;; | dw         | kill-word*   | カーソルが指している単語をカット               |
 (key-chord-define-global "yw" 'copy-word)     ;; | yw         | copy-word    | カーソルが指している単語をコピー               |
 (key-chord-define-global "vw" 'mark-word*)    ;; | vw         | mark-word*   | カーソルが指している単語をリージョン選択       |
@@ -446,8 +455,8 @@
 (setq view-read-only t)
 (defvar pager-keybind
       `( ;; vi-like
-        ("h" . backward-word)
-        ("l" . forward-word)
+        ("b" . backward-word)
+        ("f" . forward-word)
         ;; ("j" . next-window-line)
         ;; ("k" . previous-window-line)
 ;; ("k" . enlarge-vertically);;これでは動かなかった．なぜ？2017/03/24
@@ -458,8 +467,8 @@
 ;; (win-switch-set-keys '("H") 'shrink-horizontally)
 ;; (win-switch-set-keys '("L") 'enlarge-horizontally)
         (";" . gene-word)
-        ("b" . scroll-down)
-        (" " . scroll-up)
+;;        ("b" . scroll-down)
+;;        (" " . scroll-up)
         ;; ;; w3m-like
         ;; ("m" . gene-word)
         ;; ("i" . win-delete-current-window-and-squeeze)
@@ -509,7 +518,7 @@
         ("j" . next-line)
         ("k" . previous-line)
         ;; ("S-SPC" . scroll-down)
-        ;; (" " . scroll-up)
+        (" " . ,(lambda () (interactive) (scroll-up 1)));;scroll-up)
         ;; ("@" . set-mark-command)
         ;; ("a" . beginning-of-buffer)
         ;; ("e" . end-of-buffer)
@@ -575,6 +584,13 @@
 ;; (require 'viewer)
 ;; ;; C-x C-r は view-modeでファイルを開く
 ;; (setq view-read-only t)
+
+;; view-modeであることが一目で分かるようにする．
+;; https://books.google.co.jp/books?id=TaNQMRcneSQC&pg=PA220&lpg=PA220&dq=emacs+view-mode+color&source=bl&ots=JpHeQwcU9w&sig=vPbf_1gp4R069oXV9cvjnqqthD8&hl=ja&sa=X&ved=0ahUKEwiOypv-yvnSAhWIxLwKHQqADZsQ6AEITzAH#v=onepage&q=emacs%20view-mode%20color&f=false
+;;(require 'viewer)
+;; 色名を指定する
+;;(viewer-change-modelinge-color-setup)
+
 ;; 特定のファイルを view-mode で開くようにする
 (setq view-mode-by-default-regexp "\\.log$")
 ;;; view-mode のときに mode-line に色をつける
@@ -691,3 +707,11 @@
 
 ;; カッコ　対応　自動
 (electric-pair-mode 1)
+
+;; 警告音の代わりに画面フラッシュ
+;; (setq visible-bell t)
+;; 警告音もフラッシュも全て無効(警告音が完全に鳴らなくなるので注意)
+(setq ring-bell-function 'ignore)
+
+;; サーバーとしてのEmacsの使用
+(server-start)
