@@ -160,7 +160,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (helm-migemo ace-isearch helm-swoop sr-speedbar redo+ undohist crux key-chord init-loader esup migemo init-open-recentf ace-jump-mode sequential-command flycheck-pos-tip undo-tree helm auto-complete yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff))))
+    (quickrun helm-migemo ace-isearch helm-swoop sr-speedbar redo+ undohist crux key-chord init-loader esup migemo init-open-recentf ace-jump-mode sequential-command flycheck-pos-tip undo-tree helm auto-complete yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -447,7 +447,8 @@
 
 ;; vim likeに　view-modeで常に開く
 ;; http://nvnote.com/emacs-open-file-always-read-only/
-(add-hook 'find-file-hooks 'view-mode)
+;;(add-hook 'find-file-hooks 'view-mode)
+;;問題点これのせいでpackege　が上手く入らない?<=正解？しかし，直前にEmacs.appから入れようとして失敗した影響かもしれない．
 
 ;; view-modeの設定
 ;; http://d.hatena.ne.jp/rubikitch/20081104/1225745862
@@ -715,3 +716,12 @@
 
 ;; サーバーとしてのEmacsの使用
 (server-start)
+
+;; 簡単な実行
+;; http://emacs.rubikitch.com/quickrun/
+;; M-x quickrun
+;;(require 'quickrun);;多分これで良い
+
+
+
+
