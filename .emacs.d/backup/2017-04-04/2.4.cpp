@@ -14,3 +14,4 @@ for (size_t i=0; i<A.size(); ++i)
   cout << A[i] << endl;
 for (vector<int>::const_iterator p=0; p!=A.end();++p)
   cout << *p << endl;
+fputc(

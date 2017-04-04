@@ -1,0 +1,3 @@
+
+((digest . "f2e83e8f8efbad12a1292953afa219bb") (undo-list (373 . 374) 209 nil (203 . 209) nil (198 . 203) nil (1 . 362) nil ("fputc(" . 1) nil ("
+" . 1) ((marker . 1) . -1) ((marker . 1) . -1) ((marker . 373) . -1) nil ("#include <stdio>" . 1) nil (" " . -24) ((marker . 209) . -1) 25 nil (24 . 25) nil (")" . 24) nil (23 . 25) ("(" . -23) (23 . 24) nil (19 . 23) nil ("l" . -19) ((marker . 209) . -1) ("u" . -20) ((marker . 209) . -1) 21 nil (20 . 21) nil (18 . 20) nil ("m" . -18) ((marker . 209) . -1) ("a" . -19) ((marker . 209) . -1) 20 nil (18 . 20) nil (17 . 18) nil (16 . 17) nil (10 . 11) nil (10 . 15) nil (2 . 10) nil (1 . 2) (t . -1)))

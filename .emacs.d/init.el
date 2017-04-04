@@ -160,7 +160,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (quickrun helm-migemo ace-isearch helm-swoop sr-speedbar redo+ undohist crux key-chord init-loader esup migemo init-open-recentf ace-jump-mode sequential-command flycheck-pos-tip undo-tree helm auto-complete yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff))))
+    (c-eldoc quickrun helm-migemo ace-isearch helm-swoop sr-speedbar redo+ undohist crux key-chord init-loader esup migemo init-open-recentf ace-jump-mode sequential-command flycheck-pos-tip undo-tree helm auto-complete yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -227,9 +227,15 @@
 ;; fnをHyperに
 (setq ns-function-modifier 'hyper)  ; make Fn key do Hyper
 
+;; ace-isearch
+;; http://emacs.rubikitch.com/ace-isearch/
+(global-ace-isearch-mode 1)
+(add-hook 'ace-jump-mode-before-jump-hook (lambda ()(message "I am jumping")))
+
 ;; ace-jump-modehttp://d.hatena.ne.jp/rkworks/20120520/1337528737
 (require 'ace-jump-mode)
-;;(global-set-key (kbd "C-:") 'ace-jump-mode)
+
+;; (global-set-key (kbd "C-:") 'ace-jump-mode)
 ;; (ace-jump-mode t)
 ;; (defun add-keys-to-ace-jump-mode (prefix c &optional mode) 
 ;;   (define-key global-map
@@ -252,7 +258,7 @@
 ;; 選択範囲を検索ワードに使うこともできます。変数や関数がどこで使われているのかなど、tag系の検索ツールでは手の届かない所までカバーできるかと思います。
 ;; isearch実行中に[M-i]を押すとhelm-swoopに移行。またhelm-swoop実行中に[M-i]を押すと開いている全バッファを対象にしたhelm-multi-swoop-allに移行します。
 ;; 編集機能: helm-swoopまたはhelm-multi-swoop(-all)を実行中に[C-c C-e]と押すことでリストを編集して、バッファに反映[C-x C-s]させることができます。[C-SPC]で編集したい行をいくつかマークしておくと、[C-c C-e]で編集モードに移行した際にその行だけが編集対象となります。
-;; Multiline機能: M-5 M-x helm-swoop や C-u 3 M-x helm-swoop とすることで複数の行単位で使用できます。
+;; Multiline機能: M-5 M-x helm-swoop や C-u 3 M-x helm-swoop とすることで複数のl行単位で使用できます。
 (require 'helm-swoop)
 (global-set-key (kbd "C-r") 'helm-swoop)
 ;;; isearchからの連携を考えるとC-r/C-sにも割り当て推奨
@@ -276,8 +282,6 @@
 ;; nilなら一覧のテキストカラーを失う代わりに、起動スピードをほんの少し上げる
 (setq helm-swoop-speed-or-color t)
 
-;; ace-isearch
-;; http://emacs.rubikitch.com/helm-swoop/
 
 
 ;; Visual-mark
@@ -428,6 +432,11 @@
 (setq load-path (cons "~/.emacs.d/elisp" load-path))
 (require 'thing-opt)
 (define-thing-commands)
+;; cc-defs.el
+;; http://d.hatena.ne.jp/mooz/20100421/p1
+;; (require 'cc-defs.el)
+
+
 
 ;;
 ;; whitespace
@@ -447,7 +456,7 @@
 
 ;; vim likeに　view-modeで常に開く
 ;; http://nvnote.com/emacs-open-file-always-read-only/
-;;(add-hook 'find-file-hooks 'view-mode)
+(add-hook 'find-file-hooks 'view-mode)
 ;;問題点これのせいでpackege　が上手く入らない?<=正解？しかし，直前にEmacs.appから入れようとして失敗した影響かもしれない．
 
 ;; view-modeの設定
@@ -720,8 +729,109 @@
 ;; 簡単な実行
 ;; http://emacs.rubikitch.com/quickrun/
 ;; M-x quickrun
-;;(require 'quickrun);;多分これで良い
+;; (require 'quickrun)
 
+;; ;;; 初めにファイルを開いたときに実行方法を決めさせる
+;; ;;; outputterとeshellを統合させる
+;; (defvar-local my-quickrun-execute-method nil)
+;; (defvar-local my-quickrun-command 'quickrun)
+;; (defvar my-quickrun-execute-method-alist
+;;   '((default . (lambda () (setq quickrun-option-outputter nil)))
+;;     (message . (lambda () (setq quickrun-option-outputter 'message)))
+;;     (null . (lambda () (setq quickrun-option-outputter 'null)))
+;;     ;; (eshell . (lambda () (setq my-quickrun-command 'quickrun-shell)))
+;;     (screen . (lambda () (setq my-quickrun-command 'quickrun-screen)))))
+
+;; (defun my-quickrun (arg)
+;;   "俺のquickrun。初めてファイルを開いたとき、入力ファイル、実行方法、引数を尋ねる。
+;; C-uをつけたらそれらをもう一度尋ねる。
+
+;; 入力ファイルを尋ねるのは*.qrinput*が2つ以上存在するときのみ。
+;; helmを使っているのでC-zで入力ファイルの内容を確認できる。"
+;;   (interactive "P")
+;;   (when arg
+;;     (setq my-quickrun-execute-method nil
+;;           my-quickrun-command 'quickrun
+;;           quickrun-option-args nil))
+;;   (my-quickrun/may-ask-stdin-file)
+;;   (my-quickrun/may-ask-execute-method)
+;;   (my-quickrun/may-ask-args)
+;;   (setq current-prefix-arg nil)
+;;   (funcall my-quickrun-command))
+
+;; (defun my-quickrun/may-ask-stdin-file ()
+;;   (let ((stdin-files (directory-files default-directory nil
+;;                                       (concat (quickrun/stdin-file-name) "*")))
+;;         new-stdin-file)
+;;     (when (and (null my-quickrun-execute-method) (<= 2 (length stdin-files)))
+;;       (setq new-stdin-file
+;;             (save-window-excursion
+;;               (helm :sources 'helm-source-files-in-current-dir
+;;                     :input (concat quickrun/executed-file
+;;                                    (default-value 'quickrun-input-file-extension)))))
+;;       (when new-stdin-file
+;;         (setq-local quickrun-input-file-extension
+;;                     (concat "." (file-name-extension (car new-stdin-file))))))))
+
+;; (defun my-quickrun/may-ask-execute-method ()
+;;   (setq my-quickrun-execute-method
+;;         (or my-quickrun-execute-method
+;;             (completing-read "Execute method: "
+;;                              (mapcar 'car my-quickrun-execute-method-alist)
+;;                              nil t)))
+;;   (funcall (assoc-default my-quickrun-execute-method my-quickrun-execute-method-alist)))
+
+;; (defun my-quickrun/may-ask-args ()
+;;   (setq quickrun-option-args
+;;         (or quickrun-option-args
+;;             (read-string "QuickRun Arg: "
+;;                          (car quickrun--with-arg--history)
+;;                          'quickrun--with-arg--history))))
+
+;; ;;; execute in screen
+;; (require 'mylisp-screen)
+
+;; (defun quickrun-screen ()
+;;   (interactive)
+;;   (let ((quickrun-timeout-seconds nil))
+;;     (advice-add 'quickrun/exec :override 'quickrun/exec--screen)
+;;     (unwind-protect
+;;         (quickrun)
+;;       (advice-remove 'quickrun/exec 'quickrun/exec--screen))))
+
+;; (defun quickrun/exec--screen (cmd-list &rest them)
+;;   (kill-buffer quickrun/buffer-name)
+;;   (screen (quickrun/concat-commands cmd-list) "->quickrun" t))
+
+
+;; (provide 'mylisp-quickrun)
+
+;; c-eldoc
+;; http://d.hatena.ne.jp/mooz/20100421/p1
+;; (load "c-eldoc")
+;; (add-hook 'c-mode-hook
+;;           (lambda ()
+;;             (set (make-local-variable 'eldoc-idle-delay) 0.20)
+;;             (c-turn-on-eldoc-mode)
+;;             ))
+;;http://futurismo.biz/archives/3071
+(require 'c-eldoc)
+(add-hook 'c-mode-hook 'c-turn-on-eldoc-mode)
+(add-hook 'c++-mode-hook 'c-turn-on-eldoc-mode)
+(setq c-eldoc-buffer-regenerate-time 60)
+
+;; multiple-cursor
+;; https://gist.github.com/ongaeshi/5891530
+;; http://tam5917.hatenablog.com/entry/20121208/1354931551
+;; http://ongaeshi.hatenablog.com/entry/20121205/1354672102
+;; http://qiita.com/ongaeshi/items/3521b814aa4bf162181d
+
+;; 週間emacs
+;; http://qiita.com/tadsan/items/82f47ce2dd73decb9c7a#_reference-b779235302958cf8c6c9
+
+;; outline
+;; http://emacs.rubikitch.com/origami/
+;; http://emacs.rubikitch.com/outline-magic/
 
 
 
