@@ -346,11 +346,9 @@
 ;; (key-chord-define emacs-lisp-mode-map "df" 'describe-function)
 ;; (key-chord-define-global "vv" 'find-file)
 (key-chord-define-global "kl" 'view-mode)
+(key-chord-define-global "KL" 'view-mode)
 (key-chord-define-global "vm" 'view-mode);;C-{をvimlikeにviewmode切り替えにしたほうがいいかも，押し間違えによる文字挿入がないし
 (key-chord-define-global "ｋｌ" 'view-mode);;
-(key-chord-define-global "jk" 'er/expand-region);;expand-region
-(key-chord-define-global "lj" 'er/contract-region);;expand-region　縮める
-
 (define-key global-map (kbd "C-{") 'view-mode);;
 ;; pdfをdiredで開く
 (key-chord-define-global "op" 'crux-open-with)
@@ -525,8 +523,8 @@
         (")" . point-redo)
         ("J" . jaunte)
 ;;        ))
-        ("h" . backward-char)
-        ("l" . forward-char)
+        ;; ("h" . backward-char)
+        ;; ("l" . forward-char)
         ("j" . next-line)
         ("k" . previous-line)
         ;; ("S-SPC" . scroll-down)
@@ -824,25 +822,9 @@
 
 ;; multiple-cursor
 ;; https://gist.github.com/ongaeshi/5891530
+;; http://tam5917.hatenablog.com/entry/20121208/1354931551
 ;; http://ongaeshi.hatenablog.com/entry/20121205/1354672102
 ;; http://qiita.com/ongaeshi/items/3521b814aa4bf162181d
-
-;;
-;; http://tam5917.hatenablog.com/entry/20121208/1354931551
-;; (require 'multiple-cursors)
-;; (require 'smartrep)
-;; (declare-function smartrep-define-key "smartrep")
-;; (global-set-key (kbd "C-M-c") 'mc/edit-lines)
-;; (global-set-key (kbd "C-*")   'mc/mark-all-like-this)
-;; (global-unset-key "\C-,")
-;; (smartrep-define-key global-map "C-,"
-;;   '(("C-p"      . 'mc/mark-previous-like-this)
-;;     ("C-n"      . 'mc/mark-next-like-this)
-;;     ("u" . mc/unmark-next-like-this)
-;;     ("U" . mc/unmark-previous-like-this)
-;;     ("s" . mc/skip-to-next-like-this)
-;;     ("S" . mc/skip-to-previous-like-this)
-;;     ("*"        . 'mc/mark-all-like-this)))
 
 ;; 週間emacs
 ;; http://qiita.com/tadsan/items/82f47ce2dd73decb9c7a#_reference-b779235302958cf8c6c9
@@ -851,9 +833,5 @@
 ;; http://emacs.rubikitch.com/origami/
 ;; http://emacs.rubikitch.com/outline-magic/
 
-;; expand-region
-(require 'expand-region)
-;;(global-set-key (kbd "C-.") 'er/expand-region)
-;;(global-set-key (kbd "C-,") 'er/contract-region) ;; リージョンを狭める
 
 
