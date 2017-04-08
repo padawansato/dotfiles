@@ -1,2 +1,2 @@
 
-((digest . "cafb6d87c92f87a01842eb158c73df7d") (undo-list nil ("l" . -18700) ((marker . 18700) . -1) ((marker) . -1) 18701 nil (18700 . 18701) nil (";; " . -18700) nil undo-tree-canary))
+((digest . "1858794bdbf158afecdb9df03deba116") (undo-list nil (";; " . -29842) (";; " . -29796) ((marker . 29797) . -1) 29902 (t 22760 35325 0 0) nil undo-tree-canary))

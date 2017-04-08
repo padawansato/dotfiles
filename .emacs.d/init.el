@@ -350,8 +350,8 @@
 (key-chord-define-global "ｋｌ" 'view-mode);;
 (key-chord-define-global "jk" 'er/expand-region);;expand-region
 (key-chord-define-global "lj" 'er/contract-region);;expand-region　縮める
+(key-chord-define-global "hj" 'er/contract-region);;expand-region　縮める
 
-(define-key global-map (kbd "C-{") 'view-mode);;
 ;; pdfをdiredで開く
 (key-chord-define-global "op" 'crux-open-with)
 (key-chord-define helm-map "op" 'crux-open-with);;試し,helmでpdfを開きたい
@@ -829,19 +829,19 @@
 
 ;;
 ;; http://tam5917.hatenablog.com/entry/20121208/1354931551
-;; (require 'multiple-cursors)
+(require 'multiple-cursors)
 ;; (require 'smartrep)
 ;; (declare-function smartrep-define-key "smartrep")
-;; (global-set-key (kbd "C-M-c") 'mc/edit-lines)
-;; (global-set-key (kbd "C-*")   'mc/mark-all-like-this)
+(global-set-key (kbd "C-M-c") 'mc/edit-lines)
+(global-set-key (kbd "C-*")   'mc/mark-all-like-this)
 ;; (global-unset-key "\C-,")
 ;; (smartrep-define-key global-map "C-,"
 ;;   '(("C-p"      . 'mc/mark-previous-like-this)
 ;;     ("C-n"      . 'mc/mark-next-like-this)
-;;     ("u" . mc/unmark-next-like-this)
-;;     ("U" . mc/unmark-previous-like-this)
-;;     ("s" . mc/skip-to-next-like-this)
-;;     ("S" . mc/skip-to-previous-like-this)
+;;     ("u"        . 'mc/unmark-next-like-this)
+;;     ("U"        . 'mc/unmark-previous-like-this)
+;;     ("s"        . 'mc/skip-to-next-like-this)
+;;     ("S"        . 'mc/skip-to-previous-like-this)
 ;;     ("*"        . 'mc/mark-all-like-this)))
 
 ;; 週間emacs
