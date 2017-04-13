@@ -826,16 +826,18 @@
 ;; https://gist.github.com/ongaeshi/5891530
 ;; http://ongaeshi.hatenablog.com/entry/20121205/1354672102
 ;; http://qiita.com/ongaeshi/items/3521b814aa4bf162181d
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
-;;
 ;; http://tam5917.hatenablog.com/entry/20121208/1354931551
 (require 'multiple-cursors)
 ;; (require 'smartrep)
 ;; (declare-function smartrep-define-key "smartrep")
 (global-set-key (kbd "C-M-c") 'mc/edit-lines)
-(global-set-key (kbd "C-*")   'mc/mark-all-like-this)
-;; (global-unset-key "\C-,")
-;; (smartrep-define-key global-map "C-,"
+(global-set-key (kbd "C-;")   'mc/mark-all-like-this)
+;;(global-unset-key "\C-i")
+;; (smartrep-define-key global-map "C-i"
 ;;   '(("C-p"      . 'mc/mark-previous-like-this)
 ;;     ("C-n"      . 'mc/mark-next-like-this)
 ;;     ("u"        . 'mc/unmark-next-like-this)
@@ -843,6 +845,7 @@
 ;;     ("s"        . 'mc/skip-to-next-like-this)
 ;;     ("S"        . 'mc/skip-to-previous-like-this)
 ;;     ("*"        . 'mc/mark-all-like-this)))
+
 
 ;; 週間emacs
 ;; http://qiita.com/tadsan/items/82f47ce2dd73decb9c7a#_reference-b779235302958cf8c6c9
@@ -857,3 +860,10 @@
 ;;(global-set-key (kbd "C-,") 'er/contract-region) ;; リージョンを狭める
 
 
+;;別のバッファをスクロール
+;;http://www.bookshelf.jp/soft/meadow_29.html#SEC395
+;; Meadow には別のバッファをスクロールさせる機能が標準で付属しています．
+;; C-M-v( M-x scroll-other-window ) と C-M-S-v (M-x scroll-other-window-down ) です．
+;; それぞれを実行すると，別のバッファで C-v，M-v したのと同じようにスクロー ルします
+(global-set-key (kbd "M-n") 'scroll-other-window)
+(global-set-key (kbd "M-p") 'scroll-other-window-down)
