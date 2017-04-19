@@ -160,7 +160,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (c-eldoc quickrun helm-migemo ace-isearch helm-swoop sr-speedbar redo+ undohist crux key-chord init-loader esup migemo init-open-recentf ace-jump-mode sequential-command flycheck-pos-tip undo-tree helm auto-complete yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff))))
+    (haskell-mode c-eldoc quickrun helm-migemo ace-isearch helm-swoop sr-speedbar redo+ undohist crux key-chord init-loader esup migemo init-open-recentf ace-jump-mode sequential-command flycheck-pos-tip undo-tree helm auto-complete yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -229,8 +229,8 @@
 
 ;; ace-isearch
 ;; http://emacs.rubikitch.com/ace-isearch/
-(global-ace-isearch-mode 1)
-(add-hook 'ace-jump-mode-before-jump-hook (lambda ()(message "I am jumping")))
+;; (global-ace-isearch-mode 1)
+;; (add-hook 'ace-jump-mode-before-jump-hook (lambda ()(message "I am jumping")))
 
 ;; ace-jump-modehttp://d.hatena.ne.jp/rkworks/20120520/1337528737
 (require 'ace-jump-mode)
@@ -348,9 +348,11 @@
 (key-chord-define-global "kl" 'view-mode)
 (key-chord-define-global "vm" 'view-mode);;C-{をvimlikeにviewmode切り替えにしたほうがいいかも，押し間違えによる文字挿入がないし
 (key-chord-define-global "ｋｌ" 'view-mode);;
-(key-chord-define-global "jk" 'er/expand-region);;expand-region
-(key-chord-define-global "lj" 'er/contract-region);;expand-region　縮める
-(key-chord-define-global "hj" 'er/contract-region);;expand-region　縮める
+(key-chord-define-global "lj" 'er/expand-region);;expand-region
+(key-chord-define-global "kj" 'er/contract-region);;expand-region　縮める
+;;(key-chord-define-global "hj" 'er/contract-region);;expand-region　縮める
+(key-chord-define-global ";j" 'mc/mark-all-like-this);; すべての選択部分を編集する
+(key-chord-define-global "ow" 'win-switch-dispatch) ;;window切り替え
 
 ;; pdfをdiredで開く
 (key-chord-define-global "op" 'crux-open-with)
@@ -458,7 +460,7 @@
 
 ;; vim likeに　view-modeで常に開く
 ;; http://nvnote.com/emacs-open-file-always-read-only/
-(add-hook 'find-file-hooks 'view-mode)
+;;(add-hook 'find-file-hooks 'view-mode)
 ;;問題点これのせいでpackege　が上手く入らない?<=正解？しかし，直前にEmacs.appから入れようとして失敗した影響かもしれない．
 
 ;; view-modeの設定
@@ -633,7 +635,7 @@
 ;; window size
 ;; http://d.hatena.ne.jp/khiker/20100119/window_resize
 ;; http://d.hatena.ne.jp/mooz/20100119/p1
-(global-set-key "\C-c\C-r" 'my-window-resizer)
+(global-set-key "\C-c\C-c" 'my-window-resizer)
 (defun my-window-resizer ()
   "Control window size and position."
   (interactive)
@@ -867,3 +869,19 @@
 ;; それぞれを実行すると，別のバッファで C-v，M-v したのと同じようにスクロー ルします
 (global-set-key (kbd "M-n") 'scroll-other-window)
 (global-set-key (kbd "M-p") 'scroll-other-window-down)
+(global-set-key (kbd "M-o") 'other-frame);;frame　切替
+
+;; cycle frame　動かない．
+;;(require 'cycle-windows-frames)
+;;(global-set-key (kbd "C-8") 'cycle-windows)
+
+;;orgmode にて　改行
+;; http://d.hatena.ne.jp/stakizawa/20091025/t1
+(setq org-startup-truncated nil)
+(defun change-truncation()
+  (interactive)
+  (cond ((eq truncate-lines nil)
+         (setq truncate-lines t))
+        (t
+         (setq truncate-lines nil))))
+

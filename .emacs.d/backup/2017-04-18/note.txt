@@ -1,0 +1,43 @@
+#リスト，集合演算
+#引用元　https://uid0130.blogspot.jp/2014/07/haskell.html
+
+Prelude> import Data.List
+Prelude Data.List> union [155756,155757,155758,155759,155760,155761] [155755]
+[155756,155757,155758,155759,155760,155761,155755]
+
+#ex1.1
+x = 1, y = 2, z = 3 で、入力 w に対して (x * y) + z + w を計算する関数 xyzw を以下の四つの方法で定義せよ。
+
+#1
+
+ghci の interactive mode で let を用いて定義する
+
+main :: IO ()
+main = do
+    let x = 1
+        y = 2
+        z = 3
+	putStrLn "wに代入する値を入力して下さい．"
+	w <- getLine
+	xyzw = (x * y) + z + w 
+	ans = "(x * y) + z + w  " ++ w ++
+	putStrLn ans
+
+2
+
+let を使い ; を用いずにファイル中で定義する
+3
+
+where を使ってファイル中で定義する
+4
+
+関数xyzをxyzw中で where を使って定義し、xyz 1 2 3 という形で使用する
+Shinji KONO / Tue May 17 12:45:51 2016
+
+
+#stack　による　プロジェクトの構築
+/Users/e155755/Desktop/Software-engineering%　stack new project1
+/Users/e155755/Desktop/Software-engineering/project1% cd project1/
+/Users/e155755/Desktop/Software-engineering/project1% stack build
+/Users/e155755/Desktop/Software-engineering/project1% stack exec project1-exe
+

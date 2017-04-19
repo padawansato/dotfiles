@@ -7,3 +7,4 @@ if [ -d "$GHC_DOT_APP" ]; then
 fi
 
 
+PATH=$PATH:~/.cabal/bin

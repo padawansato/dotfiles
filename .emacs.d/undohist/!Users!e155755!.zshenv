@@ -1,5 +1,5 @@
 
-((digest . "8f5a64b873221a089610fa25ae5cbf71") (undo-list (394 . 395) nil (371 . 394) (t 22764 37394 0 0) nil ("
+((digest . "65bfc9440932ada04d0659438fd75f8c") (undo-list nil ("q" . -1) ((marker . 5101) . -1) 2 nil (1 . 2) (t 22767 27854 0 0) nil (379 . 381) (372 . 374) (280 . 282) (247 . 249) (96 . 98) 395 (t 22767 414 0 0) nil (394 . 395) nil (371 . 394) (t 22764 37394 0 0) nil ("
 " . 371) nil ("
 " . 371) nil ("fi" . 371) nil ("
 " . 371) nil ("  export PATH=\"${HOME}/.local/bin:${HOME}/.cabal/bin:${GHC_DOT_APP}/Contents/bin:${PATH}\"" . 371) nil ("

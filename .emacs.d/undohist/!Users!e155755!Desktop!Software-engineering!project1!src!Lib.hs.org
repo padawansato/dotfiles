@@ -1,0 +1,2 @@
+
+((digest . "aabfb9c35cd9c7c6da34db7fe633dd28") (undo-list nil (209 . 258) nil (176 . 178) (t 22772 22345 0 0) nil (71 . 157) nil (70 . 71) nil (39 . 70) nil ("i" . -39) ((marker) . -1) ("m" . -40) ((marker) . -1) 41 nil (39 . 41) nil ("i" . -39) ((marker) . -1) 40 nil (39 . 40) (t 22772 21968 0 0)))
