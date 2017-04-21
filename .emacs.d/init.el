@@ -348,8 +348,8 @@
 (key-chord-define-global "kl" 'view-mode)
 (key-chord-define-global "vm" 'view-mode);;C-{をvimlikeにviewmode切り替えにしたほうがいいかも，押し間違えによる文字挿入がないし
 (key-chord-define-global "ｋｌ" 'view-mode);;
-(key-chord-define-global "lj" 'er/expand-region);;expand-region
-(key-chord-define-global "kj" 'er/contract-region);;expand-region　縮める
+(key-chord-define-global "jk" 'er/expand-region);;expand-region
+(key-chord-define-global "jl" 'er/contract-region);;expand-region　縮める
 ;;(key-chord-define-global "hj" 'er/contract-region);;expand-region　縮める
 (key-chord-define-global ";j" 'mc/mark-all-like-this);; すべての選択部分を編集する
 (key-chord-define-global "ow" 'win-switch-dispatch) ;;window切り替え
@@ -875,7 +875,7 @@
 ;;(require 'cycle-windows-frames)
 ;;(global-set-key (kbd "C-8") 'cycle-windows)
 
-;;orgmode にて　改行
+;; orgmode にて　改行　折り返し
 ;; http://d.hatena.ne.jp/stakizawa/20091025/t1
 (setq org-startup-truncated nil)
 (defun change-truncation()

@@ -1,0 +1,54 @@
+#リスト，集合演算
+#引用元　https://uid0130.blogspot.jp/2014/07/haskell.html
+
+Prelude> import Data.List
+Prelude Data.List> union [155756,155757,155758,155759,155760,155761] [155755]
+[155756,155757,155758,155759,155760,155761,155755]
+
+#ex1.1
+x = 1, y = 2, z = 3 で、入力 w に対して (x * y) + z + w を計算する関数 xyzw を以下の四つの方法で定義せよ。
+
+#1 ghci の interactive mode で let を用いて定義する
+
+main :: IO ()
+main = do
+    let x = 1
+        y = 2
+        z = 3
+	putStrLn "wに代入する値を入力して下さい．"
+	w <- getLine
+	xyzw x y z w = (x * y) + z + w 
+	ans = (xyzw x y z w)
+	putStrLn ans
+
+#解答
+Prelude> let xyzw x y z w =  (x * y) + z + w 
+Prelude> x = 1
+Prelude> y = 2
+Prelude> z = 3
+Prelude> xyzw x y z 4
+9
+
+#2 let を使い ; を用いずにファイル中で定義する
+
+
+
+#3 where を使ってファイル中で定義する
+#4関数xyzをxyzw中で where を使って定義し、xyz 1 2 3 という形で使用する
+
+
+
+#stack　による　プロジェクトの構築
+/Users/e155755/Desktop/Software-engineering%　stack new project1
+/Users/e155755/Desktop/Software-engineering/project1% cd project1/
+/Users/e155755/Desktop/Software-engineering/project1% stack build
+/Users/e155755/Desktop/Software-engineering/project1% stack exec project1-exe
+
+#参考になったサイト
+https://wiki.haskell.org/10%E5%88%86%E3%81%A7%E5%AD%A6%E3%81%B6Haskell
+
+#「ふつうのHaskellプログラミング」を読んで
+###遅延評価が他と違う
+
+
+

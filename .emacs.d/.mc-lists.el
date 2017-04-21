@@ -13,6 +13,7 @@
       '(
 	View-scroll-page-backward
 	eval-last-sexp
+	mark-whole-buffer
 	seq-end
 	seq-home
 	))
