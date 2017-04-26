@@ -4,6 +4,7 @@
 (setq mc/cmds-to-run-for-all
       '(
 	View-scroll-line-backward
+	org-cycle-agenda-files
 	org-delete-char
 	org-kill-line
 	org-self-insert-command

@@ -1,1 +1,0 @@
-/Users/e155755/.pyenv/shims:/Users/e155755/.pyenv/bin:/Users/e155755/.pyenv/shims:/Users/e155755/.pyenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/TeX/texbin:/Users/e155755/.pyenv/shims:/Users/e155755/.pyenv/bin:/Users/e155755/anaconda/bin:/Users/e155755/anaconda/bin:/Users/e155755/anaconda/bin

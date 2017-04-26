@@ -351,7 +351,7 @@
 (key-chord-define-global "jk" 'er/expand-region);;expand-region
 (key-chord-define-global "jl" 'er/contract-region);;expand-region　縮める
 ;;(key-chord-define-global "hj" 'er/contract-region);;expand-region　縮める
-(key-chord-define-global ";j" 'mc/mark-all-like-this);; すべての選択部分を編集する
+;;(key-chord-define-global ";j" 'mc/mark-all-like-this);; すべての選択部分を編集する
 (key-chord-define-global "ow" 'win-switch-dispatch) ;;window切り替え
 
 ;; pdfをdiredで開く
