@@ -885,6 +885,3 @@
         (t
          (setq truncate-lines nil))))
 
-;;YaTeX で C-c t j と打った時に pdf も作成する
-;;http://kyotokyotto.blog.fc2.com/blog-entry-8.html
-(setq tex-command "sh ~/.platex2pdf")
