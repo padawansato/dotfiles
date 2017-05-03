@@ -1,5 +1,5 @@
 
-((digest . "87a48ee17b6c62fda53cd98f19bd38ca") (undo-list (31879 . 31880) 31789 nil (31757 . 31789) nil (" " . -31757) ((marker . 31789) . -1) 31758 nil (31755 . 31758) nil (31758 . 31807) nil (31759 . 31796) nil (" " . 31758) ((marker . 31789) . -1) (31759 . 31760) nil (31756 . 31759) nil (31755 . 31756) (t . 0) nil (5171 . 5410) ("(custom-set-faces
+((digest . "332899eb2881b2953a92b47a2c435c14") (undo-list nil (31842 . 31844) (t 22789 30495 0 0) nil (31879 . 31880) 31789 nil (31757 . 31789) nil (" " . -31757) 31758 nil (31755 . 31758) nil (31758 . 31807) nil (31759 . 31796) nil (" " . 31758) (31759 . 31760) nil (31756 . 31759) nil (31755 . 31756) (t . 0) nil (5171 . 5410) ("(custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.

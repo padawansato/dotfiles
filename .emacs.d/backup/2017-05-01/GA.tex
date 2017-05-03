@@ -1,0 +1,68 @@
+\documentclass[9pt,fleqn]{jarticle} %記事や論文を書く際にjarticleを使用
+
+%枠付文章とpng画像を出力するため
+\usepackage{ascmac}%枠付き文字出力
+\usepackage{fancybx}
+\usepackage{framed}
+\usepackage[dvipdfmx]{graphicx}%pdf出力のための
+\usepackage{listings,jlisting}
+\usepackage{amsmath,amssymb}
+\usepackage{mediabb}
+\usepackage{titlesec}
+\titleformat*{\section}{\normalsize\bfseries}
+\titleformat*{\subsection}{\normalsize\bfseries}
+\usepackage{url}
+
+\begin{document}
+\begin{titlepage}
+    \begin{center} %vspaceは縦方向のスペースで，hspaceは横方向のスペース
+        \fontsize{25pt}{0pt}\selectfont %フォントサイズと行送りを設定
+        \vspace*{100truept}
+        \bf{ソフトコンピューティング}\\ %タイトル1行目
+        \vspace*{10truept}
+        \bf{4.24 TSPのコーディングを考える}\\ 
+        \vspace{240truept}
+    \end{center}
+    \begin{flushright}
+        {\large
+            \fontsize{16pt}{0pt}\selectfont
+          所  属  :琉球大学 工学部 情報工学科\\
+            \vspace{5truept}
+          学籍番号:155755G\\
+            \vspace{5truept}
+          氏  名  :佐藤　匠\\
+            \vspace{5truept}
+          提 出 日:2017-05-01\\
+            \vspace{5truept}
+        }    
+    \end{flushright}
+\end{titlepage}
+
+\tableofcontents{\tiny} %目次を自動作成するコマンド
+\setcounter{page}{1} %ページ数を1とする
+\pagestyle{plain}
+
+\newpage
+
+\section{問題}
+\begin{itembox}{}
+TSPをGAで解くと仮定して、コーディング／交叉法(+突然変異)を提案せよ。
+\end{itembox}
+\subsection{問題の要旨}
+本稿では，TSP(最短経路問題)をGA(遺伝的アルゴリズム)を用いて，解く時のコーディング手法，交叉法，突然変異の方法を提案する．
+\section{
+
+
+
+
+
+
+
+
+
+
+
+\begin{thebibliography}{9} 
+  \bibitem{} \url{}
+\end{thebibliography}
+\end{document}
