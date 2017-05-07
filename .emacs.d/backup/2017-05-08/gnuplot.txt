@@ -1,0 +1,4 @@
+plot "1-1-KP_List.data-10.max" with line
+set terminal tgif
+set output "result.obj"
+replot

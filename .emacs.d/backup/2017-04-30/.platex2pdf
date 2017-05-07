@@ -1,8 +1,0 @@
-export file=$1
-# 拡張子除いたファイル名をnameに格納
-export name=${file%.*}
-# 文字コードeucのファイルを作成
-nkf -e $1 > $name.euc
-platex -kanji=euc $name.euc
-dvipdfmx ${file%.*}.dvi
-#open ${file%.*}.pdf #pdfを開くことまで自動で行いたい場合はコメントアウト

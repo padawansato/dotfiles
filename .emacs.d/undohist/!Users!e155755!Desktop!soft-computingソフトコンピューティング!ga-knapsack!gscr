@@ -1,0 +1,4 @@
+
+((digest . "51b44ff3b739ab7d68fde896399ea615") (undo-list (101 . 102) nil (95 . 101) ("outp" . -95) ((marker . 101) . -4) ((marker*) . 4) 99 nil (91 . 99) (t 22799 41018 0 0) nil ("
+" . 91) ((marker . 91) . -1) nil ("\"" . 91) nil ("
+" . 1) nil ("gnuplot -e \"" . 1) (t 22799 40560 0 0)))

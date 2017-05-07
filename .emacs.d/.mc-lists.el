@@ -13,6 +13,7 @@
 (setq mc/cmds-to-run-once
       '(
 	View-scroll-page-backward
+	electric-newline-and-maybe-indent
 	eval-last-sexp
 	mark-whole-buffer
 	seq-end
