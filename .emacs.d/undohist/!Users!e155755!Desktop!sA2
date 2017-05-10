@@ -1,0 +1,68 @@
+
+((digest . "2d112a32c15fe1ee851ea75b26da2764") (undo-list nil (1 . 1073) nil ("/Users/e155755% sudo nmap -sA ie.u-ryukyu.ac.jp
+
+Starting Nmap 7.40 ( https://nmap.org ) at 2017-05-10 09:01 JST
+Nmap scan report for ie.u-ryukyu.ac.jp (10.100.10.30)
+Host is up (0.067s latency).
+Other addresses for ie.u-ryukyu.ac.jp (not scanned): 2001:2f8:1c:a532::30
+rDNS record for 10.100.10.30: urasoe.ie.u-ryukyu.ac.jp
+Not shown: 978 filtered ports
+PORT      STATE      SERVICE
+22/tcp    unfiltered ssh
+80/tcp    unfiltered http
+443/tcp   unfiltered https
+3306/tcp  unfiltered mysql
+4444/tcp  unfiltered krb524
+4567/tcp  unfiltered tram
+49152/tcp unfiltered unknown
+49153/tcp unfiltered unknown
+49154/tcp unfiltered unknown
+49155/tcp unfiltered unknown
+49156/tcp unfiltered unknown
+49157/tcp unfiltered unknown
+49158/tcp unfiltered unknown
+49159/tcp unfiltered unknown
+49160/tcp unfiltered unknown
+49161/tcp unfiltered unknown
+49163/tcp unfiltered unknown
+49165/tcp unfiltered unknown
+49167/tcp unfiltered unknown
+49175/tcp unfiltered unknown
+49176/tcp unfiltered unknown
+49400/tcp unfiltered compaqdiag
+
+Nmap done: 1 IP address (1 host up) scanned in 17.23 seconds
+/Users/e155755% sudo nmap -sA ie.u-ryukyu.ac.jp
+
+Starting Nmap 7.40 ( https://nmap.org ) at 2017-05-10 09:01 JST
+Nmap scan report for ie.u-ryukyu.ac.jp (10.100.10.30)
+Host is up (0.067s latency).
+Other addresses for ie.u-ryukyu.ac.jp (not scanned): 2001:2f8:1c:a532::30
+rDNS record for 10.100.10.30: urasoe.ie.u-ryukyu.ac.jp
+Not shown: 978 filtered ports
+PORT      STATE      SERVICE
+22/tcp    unfiltered ssh
+80/tcp    unfiltered http
+443/tcp   unfiltered https
+3306/tcp  unfiltered mysql
+4444/tcp  unfiltered krb524
+4567/tcp  unfiltered tram
+49152/tcp unfiltered unknown
+49153/tcp unfiltered unknown
+49154/tcp unfiltered unknown
+49155/tcp unfiltered unknown
+49156/tcp unfiltered unknown
+49157/tcp unfiltered unknown
+49158/tcp unfiltered unknown
+49159/tcp unfiltered unknown
+49160/tcp unfiltered unknown
+49161/tcp unfiltered unknown
+49163/tcp unfiltered unknown
+49165/tcp unfiltered unknown
+49167/tcp unfiltered unknown
+49175/tcp unfiltered unknown
+49176/tcp unfiltered unknown
+49400/tcp unfiltered compaqdiag
+
+Nmap done: 1 IP address (1 host up) scanned in 17.23 seconds
+" . 1) ((marker . 1) . -2144) ((marker . 1) . -2144) ((marker . 1) . -1072) ((marker . 1) . -2144) ((marker) . -2144) nil (1 . 1073) (t 22802 22699 0 0) nil (1 . 1073) (t . 0)))
