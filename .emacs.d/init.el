@@ -704,7 +704,8 @@
 ;; http://emacs.clickyourstyle.com/articles/265
 (setq delete-auto-save-files t)
 ;; http://ja.stackoverflow.com/questions/9875/emacsで編集したデータを1日毎にディレクトリを分けてバックアップしたい
-;; .emacs.d/backup　に入る．しかし，上記のオートセーブファイルを消す機能と競合してはいまいか．確かめれば良いこと．
+;; .emacs.d/backup　に入る．しかし，上記のオートセーブファイルを消す機能と競合してはいまいか．確かめれば良いこと．2017-05-11時点で，競合してはいないようである．
+
 (defun my:make-backup-file-name (file)
   (let ((dirname (file-name-as-directory
                   (format-time-string
@@ -888,3 +889,7 @@
 ;;YaTeX で C-c t j と打った時に pdf も作成する
 ;;http://kyotokyotto.blog.fc2.com/blog-entry-8.html
 ;;(setq tex-command "sh ~/.platex2pdf")
+
+;; 自動で　#hoge# のようなバックアップを作らない
+;; しかし，.emacs.d 以下に自動で作るようにしたバックアップとの依存関係は分からない．
+(setq auto-save-default nil)
