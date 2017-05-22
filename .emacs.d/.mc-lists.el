@@ -4,6 +4,7 @@
 (setq mc/cmds-to-run-for-all
       '(
 	View-scroll-line-backward
+	c-electric-delete-forward
 	org-cycle-agenda-files
 	org-delete-char
 	org-kill-line
