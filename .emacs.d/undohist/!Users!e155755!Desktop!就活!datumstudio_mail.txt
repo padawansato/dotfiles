@@ -1,0 +1,33 @@
+
+((digest . "8bfc198576651fb4156aae34993d60ee") (undo-list nil ("（" . -169) ((marker . 169) . -1) ("※" . -170) ((marker . 169) . -1) ("面" . -171) ((marker . 169) . -1) ("談" . -172) ((marker . 169) . -1) ("は" . -173) ((marker . 169) . -1) ("S" . -174) ((marker . 169) . -1) ("k" . -175) ((marker . 169) . -1) ("y" . -176) ((marker . 169) . -1) ("p" . -177) ((marker . 169) . -1) ("e" . -178) ((marker . 169) . -1) ("を" . -179) ((marker . 169) . -1) ("利" . -180) ((marker . 169) . -1) ("用" . -181) ((marker . 169) . -1) ("し" . -182) ((marker . 169) . -1) ("て" . -183) ((marker . 169) . -1) ("実" . -184) ((marker . 169) . -1) ("施" . -185) ((marker . 169) . -1) ("し" . -186) ((marker . 169) . -1) ("ま" . -187) ((marker . 169) . -1) ("す" . -188) ((marker . 169) . -1) ("）" . -189) ((marker . 169) . -1) ((marker*) . 1) ((marker) . -1) 190 (t 22823 47885 0 0) nil (559 . 560) nil (1 . 559) nil ("・プログラミング利用経験について
+
+
+
+
+・（もしあれば）データ解析の経験について
+・（もしあれば）これまで作成したプログラムの成果物（URL等ありましたらご指定下さい）
+
+
+C,Java,python,
+
+
+
+・Skype ID（※面談はSkypeを利用して実施します）
+・プログラミング利用経験について
+大学の講義の課題で，C(6ヶ月),Java(6ヶ月)
+自己学習により python(8ヶ月)．Swift(2ヶ月)
+データを扱う際は，pythonを用いています．
+
+・使用したことのある言語
+C,Java,Python,Swift
+
+・（もしあれば）データ解析の経験について
+大学の講義で，雨天と電波強度のデータから無線通信における降雨減衰特性のモデリングを行いました．
+
+・（もしあれば）これまで作成したプログラムの成果物（URL等ありましたらご指定下さい）
+大学の講義で，Swiftを用いてiOSアプリケーションをチームでアジャイル開発しました．
+https://github.com/TakamichiNakamura/ie-ranger
+
+私のアカウントは以下です．
+https://github.com/psato/
+" . 1) ((marker . 1) . -520) ((marker) . -154) ((marker) . -154) ((marker . 157) . -520) ((marker . 1) . -16) ((marker) . -137) ((marker) . -137) ((marker) . -106) ((marker) . -106) ((marker) . -105) ((marker) . -105) ((marker) . -104) ((marker) . -104) ((marker) . -103) ((marker) . -103) ((marker) . -88) ((marker) . -88) ((marker) . -87) ((marker) . -87) ((marker) . -86) ((marker) . -86) ((marker) . -42) ((marker) . -42) ((marker) . -21) ((marker) . -21) ((marker) . -20) ((marker) . -20) ((marker) . -19) ((marker) . -19) ((marker) . -18) ((marker) . -18) ((marker) . -17) ((marker) . -17) ((marker . 1) . -16) ((marker . 1) . -106) ((marker) . -181) ((marker) . -181) ((marker) . -212) ((marker) . -212) ((marker) . -236) ((marker) . -236) ((marker) . -237) ((marker) . -237) ((marker) . -250) ((marker) . -250) ((marker) . -270) ((marker) . -270) ((marker) . -271) ((marker) . -271) ((marker) . -292) ((marker) . -292) ((marker) . -342) ((marker) . -342) ((marker) . -343) ((marker) . -343) ((marker) . -387) ((marker) . -387) ((marker) . -432) ((marker) . -432) ((marker) . -479) ((marker) . -479) ((marker) . -480) ((marker) . -480) ((marker) . -494) ((marker) . -494) ((marker . 1) . -520) ((marker . 157) . -520) ((marker . 158) . -520) ((marker . 1) . -520) ((marker . 2) . -520) ((marker . 1) . -106) ((marker . 2) . -107) ((marker . 1) . -16) ((marker . 2) . -17) ((marker) . -520) (t 22823 47481 0 0) nil (416 . 420) nil (234 . 236) nil (213 . 234) nil (213 . 214) nil undo-tree-canary))

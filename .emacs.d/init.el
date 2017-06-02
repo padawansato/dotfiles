@@ -926,3 +926,8 @@
      (if asciip "ja" "en")
      string)))
 (global-set-key (kbd "C-c t") 'google-translate-enja-or-jaen)
+
+
+;; ssh scp
+(require 'tramp)
+(setq tramp-default-method "ssh")

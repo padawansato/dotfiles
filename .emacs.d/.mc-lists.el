@@ -15,6 +15,7 @@
       '(
 	View-scroll-page-backward
 	electric-newline-and-maybe-indent
+	electric-pair-delete-pair
 	eval-last-sexp
 	mark-whole-buffer
 	seq-end
