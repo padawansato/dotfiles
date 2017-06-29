@@ -270,15 +270,16 @@ bindkey '^R' peco-history-selection
 PATH=$PATH:$HOME/anaconda/bin
 
 ### Virtualenvwrapper
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-    export WORKON_HOME=$HOME/.virtualenvs
-    source /usr/local/bin/virtualenvwrapper.sh
-fi
+# if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+#     export WORKON_HOME=$HOME/.virtualenvs
+#     source /usr/local/bin/virtualenvwrapper.sh
+# fi
 
 #pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
 alias sl='ls'
 alias -g zshrc="/Users/e155755/.dotfiles/dotfiles/.zshrc"
 
@@ -326,4 +327,9 @@ if [ -d "$GHC_DOT_APP" ]; then
 fi
 
 
- 
+# from tawada report
+export PYENV_ROOT=${HOME}/.pyenv
+if [ -d "${PYENV_ROOT}" ]; then
+    export PATH=${PYENV_ROOT}/bin:$PATH
+#   export PATH=${PYENV_ROOT}/bin:$PATH
+fi

@@ -5,6 +5,7 @@
       '(
 	View-scroll-line-backward
 	c-electric-delete-forward
+	markdown-exdent-or-delete
 	org-cycle-agenda-files
 	org-delete-char
 	org-kill-line
