@@ -1,0 +1,491 @@
+
+((digest . "ea8c80887928f70b914107763203588c") (undo-list (1660 . 1661) nil (1 . 2) ("[" . -1) (1 . 2) nil (apply activate-cursor-for-undo 490) ("
+" . -1638) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 490) (apply activate-cursor-for-undo 328) ("[" . -1) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 328) (apply activate-cursor-for-undo 329) ("
+" . -12) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 329) (apply activate-cursor-for-undo 330) ("
+" . -22) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 330) (apply activate-cursor-for-undo 331) ("
+" . -33) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 331) (apply activate-cursor-for-undo 332) ("
+" . -41) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 332) (apply activate-cursor-for-undo 333) ("
+" . -51) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 333) (apply activate-cursor-for-undo 334) ("
+" . -61) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 334) (apply activate-cursor-for-undo 335) ("
+" . -69) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 335) (apply activate-cursor-for-undo 336) ("
+" . -78) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 336) (apply activate-cursor-for-undo 337) ("
+" . -88) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 337) (apply activate-cursor-for-undo 338) ("
+" . -98) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 338) (apply activate-cursor-for-undo 339) ("
+" . -110) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 339) (apply activate-cursor-for-undo 340) ("
+" . -122) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 340) (apply activate-cursor-for-undo 341) ("
+" . -133) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 341) (apply activate-cursor-for-undo 342) ("
+" . -145) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 342) (apply activate-cursor-for-undo 343) ("
+" . -156) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 343) (apply activate-cursor-for-undo 344) ("
+" . -168) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 344) (apply activate-cursor-for-undo 345) ("
+" . -178) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 345) (apply activate-cursor-for-undo 346) ("
+" . -189) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 346) (apply activate-cursor-for-undo 347) ("
+" . -199) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 347) (apply activate-cursor-for-undo 348) ("
+" . -210) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 348) (apply activate-cursor-for-undo 349) ("
+" . -223) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 349) (apply activate-cursor-for-undo 350) ("
+" . -233) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 350) (apply activate-cursor-for-undo 351) ("
+" . -245) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 351) (apply activate-cursor-for-undo 352) ("
+" . -255) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 352) (apply activate-cursor-for-undo 353) ("
+" . -265) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 353) (apply activate-cursor-for-undo 354) ("
+" . -277) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 354) (apply activate-cursor-for-undo 355) ("
+" . -289) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 355) (apply activate-cursor-for-undo 356) ("
+" . -300) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 356) (apply activate-cursor-for-undo 357) ("
+" . -310) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 357) (apply activate-cursor-for-undo 358) ("
+" . -320) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 358) (apply activate-cursor-for-undo 359) ("
+" . -330) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 359) (apply activate-cursor-for-undo 360) ("
+" . -342) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 360) (apply activate-cursor-for-undo 361) ("
+" . -352) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 361) (apply activate-cursor-for-undo 362) ("
+" . -364) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 362) (apply activate-cursor-for-undo 363) ("
+" . -374) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 363) (apply activate-cursor-for-undo 364) ("
+" . -384) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 364) (apply activate-cursor-for-undo 365) ("
+" . -394) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 365) (apply activate-cursor-for-undo 366) ("
+" . -404) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 366) (apply activate-cursor-for-undo 367) ("
+" . -416) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 367) (apply activate-cursor-for-undo 368) ("
+" . -426) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 368) (apply activate-cursor-for-undo 369) ("
+" . -436) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 369) (apply activate-cursor-for-undo 370) ("
+" . -448) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 370) (apply activate-cursor-for-undo 371) ("
+" . -459) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 371) (apply activate-cursor-for-undo 372) ("
+" . -470) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 372) (apply activate-cursor-for-undo 373) ("
+" . -482) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 373) (apply activate-cursor-for-undo 374) ("
+" . -492) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 374) (apply activate-cursor-for-undo 375) ("
+" . -502) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 375) (apply activate-cursor-for-undo 376) ("
+" . -513) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 376) (apply activate-cursor-for-undo 377) ("
+" . -524) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 377) (apply activate-cursor-for-undo 378) ("
+" . -534) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 378) (apply activate-cursor-for-undo 379) ("
+" . -543) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 379) (apply activate-cursor-for-undo 380) ("
+" . -553) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 380) (apply activate-cursor-for-undo 381) ("
+" . -565) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 381) (apply activate-cursor-for-undo 382) ("
+" . -577) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 382) (apply activate-cursor-for-undo 383) ("
+" . -587) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 383) (apply activate-cursor-for-undo 384) ("
+" . -597) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 384) (apply activate-cursor-for-undo 385) ("
+" . -609) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 385) (apply activate-cursor-for-undo 386) ("
+" . -621) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 386) (apply activate-cursor-for-undo 387) ("
+" . -630) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 387) (apply activate-cursor-for-undo 388) ("
+" . -641) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 388) (apply activate-cursor-for-undo 389) ("
+" . -652) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 389) (apply activate-cursor-for-undo 390) ("
+" . -662) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 390) (apply activate-cursor-for-undo 391) ("
+" . -674) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 391) (apply activate-cursor-for-undo 392) ("
+" . -685) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 392) (apply activate-cursor-for-undo 393) ("
+" . -695) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 393) (apply activate-cursor-for-undo 394) ("
+" . -705) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 394) (apply activate-cursor-for-undo 395) ("
+" . -716) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 395) (apply activate-cursor-for-undo 396) ("
+" . -726) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 396) (apply activate-cursor-for-undo 397) ("
+" . -736) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 397) (apply activate-cursor-for-undo 398) ("
+" . -746) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 398) (apply activate-cursor-for-undo 399) ("
+" . -758) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 399) (apply activate-cursor-for-undo 400) ("
+" . -768) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 400) (apply activate-cursor-for-undo 401) ("
+" . -779) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 401) (apply activate-cursor-for-undo 402) ("
+" . -791) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 402) (apply activate-cursor-for-undo 403) ("
+" . -803) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 403) (apply activate-cursor-for-undo 404) ("
+" . -814) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 404) (apply activate-cursor-for-undo 405) ("
+" . -825) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 405) (apply activate-cursor-for-undo 406) ("
+" . -837) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 406) (apply activate-cursor-for-undo 407) ("
+" . -849) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 407) (apply activate-cursor-for-undo 408) ("
+" . -860) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 408) (apply activate-cursor-for-undo 409) ("
+" . -871) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 409) (apply activate-cursor-for-undo 410) ("
+" . -881) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 410) (apply activate-cursor-for-undo 411) ("
+" . -891) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 411) (apply activate-cursor-for-undo 412) ("
+" . -903) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 412) (apply activate-cursor-for-undo 413) ("
+" . -915) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 413) (apply activate-cursor-for-undo 414) ("
+" . -927) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 414) (apply activate-cursor-for-undo 415) ("
+" . -939) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 415) (apply activate-cursor-for-undo 416) ("
+" . -950) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 416) (apply activate-cursor-for-undo 417) ("
+" . -961) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 417) (apply activate-cursor-for-undo 418) ("
+" . -971) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 418) (apply activate-cursor-for-undo 419) ("
+" . -981) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 419) (apply activate-cursor-for-undo 420) ("
+" . -992) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 420) (apply activate-cursor-for-undo 421) ("
+" . -1003) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 421) (apply activate-cursor-for-undo 422) ("
+" . -1015) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 422) (apply activate-cursor-for-undo 423) ("
+" . -1027) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 423) (apply activate-cursor-for-undo 424) ("
+" . -1038) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 424) (apply activate-cursor-for-undo 425) ("
+" . -1049) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 425) (apply activate-cursor-for-undo 426) ("
+" . -1060) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 426) (apply activate-cursor-for-undo 427) ("
+" . -1071) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 427) (apply activate-cursor-for-undo 428) ("
+" . -1083) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 428) (apply activate-cursor-for-undo 429) ("
+" . -1095) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 429) (apply activate-cursor-for-undo 430) ("
+" . -1107) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 430) (apply activate-cursor-for-undo 431) ("
+" . -1117) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 431) (apply activate-cursor-for-undo 432) ("
+" . -1128) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 432) (apply activate-cursor-for-undo 433) ("
+" . -1138) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 433) (apply activate-cursor-for-undo 434) ("
+" . -1150) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 434) (apply activate-cursor-for-undo 435) ("
+" . -1162) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 435) (apply activate-cursor-for-undo 436) ("
+" . -1174) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 436) (apply activate-cursor-for-undo 437) ("
+" . -1185) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 437) (apply activate-cursor-for-undo 438) ("
+" . -1197) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 438) (apply activate-cursor-for-undo 439) ("
+" . -1209) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 439) (apply activate-cursor-for-undo 440) ("
+" . -1221) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 440) (apply activate-cursor-for-undo 441) ("
+" . -1232) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 441) (apply activate-cursor-for-undo 442) ("
+" . -1243) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 442) (apply activate-cursor-for-undo 443) ("
+" . -1254) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 443) (apply activate-cursor-for-undo 444) ("
+" . -1265) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 444) (apply activate-cursor-for-undo 445) ("
+" . -1277) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 445) (apply activate-cursor-for-undo 446) ("
+" . -1290) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 446) (apply activate-cursor-for-undo 447) ("
+" . -1301) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 447) (apply activate-cursor-for-undo 448) ("
+" . -1313) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 448) (apply activate-cursor-for-undo 449) ("
+" . -1325) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 449) (apply activate-cursor-for-undo 450) ("
+" . -1336) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 450) (apply activate-cursor-for-undo 451) ("
+" . -1348) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 451) (apply activate-cursor-for-undo 452) ("
+" . -1358) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 452) (apply activate-cursor-for-undo 453) ("
+" . -1368) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 453) (apply activate-cursor-for-undo 454) ("
+" . -1381) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 454) (apply activate-cursor-for-undo 455) ("
+" . -1393) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 455) (apply activate-cursor-for-undo 456) ("
+" . -1406) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 456) (apply activate-cursor-for-undo 457) ("
+" . -1417) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 457) (apply activate-cursor-for-undo 458) ("
+" . -1428) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 458) (apply activate-cursor-for-undo 459) ("
+" . -1439) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 459) (apply activate-cursor-for-undo 460) ("
+" . -1449) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 460) (apply activate-cursor-for-undo 461) ("
+" . -1459) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 461) (apply activate-cursor-for-undo 462) ("
+" . -1472) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 462) (apply activate-cursor-for-undo 463) ("
+" . -1483) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 463) (apply activate-cursor-for-undo 464) ("
+" . -1496) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 464) (apply activate-cursor-for-undo 465) ("
+" . -1507) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 465) (apply activate-cursor-for-undo 466) ("
+" . -1519) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 466) (apply activate-cursor-for-undo 467) ("
+" . -1530) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 467) (apply activate-cursor-for-undo 468) ("
+" . -1542) ((marker . 1660) . -1) ((marker . 1) . -1) ((marker) . -1) ((marker) . -1) (apply deactivate-cursor-after-undo 468) (apply activate-cursor-for-undo 469) ("
+" . -1554) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 469) (apply activate-cursor-for-undo 470) ("
+" . -1565) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 470) (apply activate-cursor-for-undo 471) ("
+" . -1576) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 471) (apply activate-cursor-for-undo 472) ("
+" . -1588) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 472) (apply activate-cursor-for-undo 473) ("
+" . -1600) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 473) (apply activate-cursor-for-undo 474) ("
+" . -1611) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 474) (apply activate-cursor-for-undo 475) ("
+" . -1623) ((marker . 1660) . -1) ((marker) . -1) (apply deactivate-cursor-after-undo 475) (apply activate-cursor-for-undo 476) ("
+" . -1633) ((marker . 1660) . -1) ((marker) . -1) (apply deactivate-cursor-after-undo 476) (apply activate-cursor-for-undo 477) ("
+" . -1646) ((marker . 1660) . -1) ((marker) . -1) (apply deactivate-cursor-after-undo 477) (apply activate-cursor-for-undo 478) ("
+" . -1656) ((marker . 1660) . -1) ((marker) . -1) (apply deactivate-cursor-after-undo 478) (apply activate-cursor-for-undo 479) ("
+" . -1668) ((marker . 1660) . -1) ((marker) . -1) (apply deactivate-cursor-after-undo 479) (apply activate-cursor-for-undo 480) ("
+" . -1681) ((marker . 1660) . -1) ((marker) . -1) (apply deactivate-cursor-after-undo 480) (apply activate-cursor-for-undo 481) ("
+" . -1692) ((marker . 1660) . -1) ((marker) . -1) (apply deactivate-cursor-after-undo 481) (apply activate-cursor-for-undo 482) ("
+" . -1705) ((marker . 1660) . -1) ((marker . 1552) . -1) ((marker . 1552) . -1) ((marker . 1552) . -1) ((marker . 1552) . -1) ((marker . 1552) . -1) ((marker . 1552) . -1) ((marker . 1552) . -1) ((marker . 1552) . -1) ((marker . 1552) . -1) ((marker . 1552) . -1) ((marker . 1552) . -1) ((marker . 1552) . -1) ((marker . 1552) . -1) ((marker . 1552) . -1) ((marker . 1552) . -1) ((marker . 1552) . -1) ((marker) . -1) (apply deactivate-cursor-after-undo 482) (apply activate-cursor-for-undo 483) ("
+" . -1715) ((marker . 1660) . -1) ((marker) . -1) (apply deactivate-cursor-after-undo 483) (apply activate-cursor-for-undo 484) ("
+" . -1727) ((marker . 1660) . -1) ((marker) . -1) (apply deactivate-cursor-after-undo 484) (apply activate-cursor-for-undo 485) ("
+" . -1740) ((marker . 1660) . -1) ((marker) . -1) (apply deactivate-cursor-after-undo 485) (apply activate-cursor-for-undo 486) ("
+" . -1752) ((marker . 1660) . -1) ((marker) . -1) (apply deactivate-cursor-after-undo 486) (apply activate-cursor-for-undo 487) ("
+" . -1765) ((marker . 1660) . -1) ((marker) . -1) (apply deactivate-cursor-after-undo 487) (apply activate-cursor-for-undo 488) ("
+" . -1776) ((marker . 1660) . -1) ((marker) . -1) (apply deactivate-cursor-after-undo 488) (apply activate-cursor-for-undo 489) ("
+" . -1788) ((marker . 1660) . -1) (apply deactivate-cursor-after-undo 489) ("
+" . -1811) ((marker . 1660) . -1) ((marker . 1) . -1) ((marker . 1649) . -1) ((marker . 1649) . -1) ((marker . 1649) . -1) ((marker . 1649) . -1) ((marker . 1649) . -1) ((marker . 1649) . -1) ((marker . 1649) . -1) ((marker . 1649) . -1) ((marker) . -1) ((marker) . -1) 1812 nil (1 . 1823) nil ("(1, 90.5)
+(2, 122)
+(3, 85.5)
+(4, 4)
+(5, 210)
+(6, 155)
+(7, 4)
+(8, 48)
+(9, 235)
+(10, 56)
+(11, 52.6)
+(12, 55.4)
+(13, 460)
+(14, 40.5)
+(15, 220)
+(16, 39.5)
+(17, 13)
+(18, 0.1)
+(19, 30)
+(20, 130)
+(21, 132.5)
+(22, 29)
+(23, 24.5)
+(24, 54)
+(25, 25)
+(26, 49.8)
+(27, 50.2)
+(28, 120)
+(29, 80)
+(30, 60)
+(31, 59)
+(32, 76.6)
+(33, 95)
+(34, 36.5)
+(35, 30)
+(36, 55)
+(37, 60)
+(38, 62)
+(39, 44.5)
+(40, 35)
+(41, 40)
+(42, 78.5)
+(43, 9.5)
+(44, 8.5)
+(45, 88.4)
+(46, 30)
+(47, 80)
+(48, 300)
+(49, 120)
+(50, 39)
+(51, 9)
+(52, 30)
+(53, 16.5)
+(54, 66.6)
+(55, 45)
+(56, 60)
+(57, 29.5)
+(58, 19.9)
+(59, 6)
+(60, 6.9)
+(61, 210)
+(62, 30)
+(63, 75.6)
+(64, 3.3)
+(65, 19)
+(66, 12)
+(67, 9.9)
+(68, 32)
+(69, 32)
+(70, 54)
+(71, 56.5)
+(72, 60)
+(73, 6.5)
+(74, 65.5)
+(75, 34.6)
+(76, 6.5)
+(76, 6.5)
+(77, 11.5)
+(77, 11.5)
+(78, 7.5)
+(78, 7.5)
+(79, 36)
+(79, 36)
+(80, 70.5)
+(80, 70.5)
+(81, 22.5)
+(81, 22.5)
+(82, 1.8)
+(82, 1.8)
+(83, 19)
+(83, 19)
+(84, 120)
+(84, 120)
+(85, 85.2)
+(85, 85.2)
+(86, 115)
+(86, 115)
+(87, 0.1)
+(87, 0.1)
+(88, 12.4)
+(88, 12.4)
+(89, 19.5)
+(90, 20)
+(91, 100)
+(92, 28)
+(93, 19.5)
+(94, 29.5)
+(95, 19.6)
+(96, 105)
+(97, 12.5)
+(98, 33.3)
+(99, 18.6)
+(100, 40)
+(101, 25)
+(102, 55)
+(103, 38)
+(104, 2.5)
+(105, 32.4)
+(106, 65)
+(107, 0.8)
+(108, 8.6)
+(109, 55)
+(110, 5.5)
+(111, 7)
+(112, 9)
+(113, 15.5)
+(114, 6.4)
+(115, 18.5)
+(116, 30)
+(117, 90)
+(118, 39)
+(119, 4)
+(120, 6)
+(121, 34.5)
+(122, 20)
+(123, 19.5)
+(124, 30)
+(125, 5.4)
+(126, 15)
+(127, 8.8)
+(128, 6.5)
+(129, 35)
+(130, 15)
+(131, 3.5)
+(132, 4.2)
+(133, 12)
+(134, 6.9)
+(135, 4)
+(136, 54.5)
+(137, 1)
+(138, 7.5)
+(139, 10.4)
+(140, 32)
+(141, 40.6)
+(142, 2)
+(143, 5.4)
+(144, 45.5)
+(145, 7.5)
+(146, 29.5)
+(147, 10)
+(148, 3.2)
+(149, 2.9)
+(150, 10)
+(151, 9.9)" . 1) ((marker . 1660) . -1657) ((marker*) . 1657) ((marker) . -1) ((marker*) . 1649) ((marker) . -9) ((marker) . -1657) ((marker) . -1657) ((marker) . -9) ((marker) . -10) ((marker) . -1647) ((marker) . -1648) ((marker) . -1657) nil (1 . 1658) nil ("[1, 90.5]
+[2, 122]
+[3, 85.5]
+[4, 4]
+[5, 210]
+[6, 155]
+[7, 4]
+[8, 48]
+[9, 235]
+[10, 56]
+[11, 52.6]
+[12, 55.4]
+[13, 460]
+[14, 40.5]
+[15, 220]
+[16, 39.5]
+[17, 13]
+[18, 0.1]
+[19, 30]
+[20, 130]
+[21, 132.5]
+[22, 29]
+[23, 24.5]
+[24, 54]
+[25, 25]
+[26, 49.8]
+[27, 50.2]
+[28, 120]
+[29, 80]
+[30, 60]
+[31, 59]
+[32, 76.6]
+[33, 95]
+[34, 36.5]
+[35, 30]
+[36, 55]
+[37, 60]
+[38, 62]
+[39, 44.5]
+[40, 35]
+[41, 40]
+[42, 78.5]
+[43, 9.5]
+[44, 8.5]
+[45, 88.4]
+[46, 30]
+[47, 80]
+[48, 300]
+[49, 120]
+[50, 39]
+[51, 9]
+[52, 30]
+[53, 16.5]
+[54, 66.6]
+[55, 45]
+[56, 60]
+[57, 29.5]
+[58, 19.9]
+[59, 6]
+[60, 6.9]
+[61, 210]
+[62, 30]
+[63, 75.6]
+[64, 3.3]
+[65, 19]
+[66, 12]
+[67, 9.9]
+[68, 32]
+[69, 32]
+[70, 54]
+[71, 56.5]
+[72, 60]
+[73, 6.5]
+[74, 65.5]
+[75, 34.6]
+[76, 6.5]
+[76, 6.5]
+[77, 11.5]
+[77, 11.5]
+[78, 7.5]
+[78, 7.5]
+[79, 36]
+[79, 36]
+[80, 70.5]
+[80, 70.5]
+[81, 22.5]
+[81, 22.5]
+[82, 1.8]
+[82, 1.8]
+[83, 19]
+[83, 19]
+[84, 120]
+[84, 120]
+[85, 85.2]
+[85, 85.2]
+[86, 115]
+[86, 115]
+[87, 0.1]
+[87, 0.1]
+[88, 12.4]
+[88, 12.4]
+[89, 19.5]
+[90, 20]
+[91, 100]
+[92, 28]
+[93, 19.5]
+[94, 29.5]
+[95, 19.6]
+[96, 105]
+[97, 12.5]
+[98, 33.3]
+[99, 18.6]
+[100, 40]
+[101, 25]
+[102, 55]
+[103, 38]
+[104, 2.5]
+[105, 32.4]
+[106, 65]
+[107, 0.8]
+[108, 8.6]
+[109, 55]
+[110, 5.5]
+[111, 7]
+[112, 9]
+[113, 15.5]
+[114, 6.4]
+[115, 18.5]
+[116, 30]
+[117, 90]
+[118, 39]
+[119, 4]
+[120, 6]
+[121, 34.5]
+[122, 20]
+[123, 19.5]
+[124, 30]
+[125, 5.4]
+[126, 15]
+[127, 8.8]
+[128, 6.5]
+[129, 35]
+[130, 15]
+[131, 3.5]
+[132, 4.2]
+[133, 12]
+[134, 6.9]
+[135, 4]
+[136, 54.5]
+[137, 1]
+[138, 7.5]
+[139, 10.4]
+[140, 32]
+[141, 40.6]
+[142, 2]
+[143, 5.4]
+[144, 45.5]
+[145, 7.5]
+[146, 29.5]
+[147, 10]
+[148, 3.2]
+[149, 2.9]
+[150, 10]
+[151, 9.9]" . 1) ((marker . 1660) . -1657) ((marker*) . 1657) ((marker) . -1) ((marker*) . 1649) ((marker) . -9) ((marker) . -1657) ((marker) . -1657) ((marker) . -1657) ((marker) . -1657) ((marker) . -1) ((marker) . -2) ((marker) . -10) ((marker) . -11) ((marker) . -2) ((marker) . -3) ((marker) . -1647) ((marker) . -1648) ((marker) . -2) ((marker) . -3) ((marker) . -1657) nil ("'" . 3) ((marker . 1) . -1) ((marker) . -1) nil ("'" . -1658) (1659 . 1659) ("'" . -1655) (1656 . 1656) ("'" . -1653) (1654 . 1654) ("'" . -1650) (1651 . 1651) ("'" . -1647) (1648 . 1648) ("'" . -1645) (1646 . 1646) ("'" . -1643) (1644 . 1644) ("'" . -1640) (1641 . 1641) ("'" . -1637) (1638 . 1638) ("'" . -1634) (1635 . 1635) ("'" . -1632) (1633 . 1633) ("'" . -1629) (1630 . 1630) ("'" . -1626) (1627 . 1627) ("'" . -1623) (1624 . 1624) ("'" . -1621) (1622 . 1622) ("'" . -1618) (1619 . 1619) ("'" . -1615) (1616 . 1616) ("'" . -1613) (1614 . 1614) ("'" . -1611) (1612 . 1612) ("'" . -1608) (1609 . 1609) ("'" . -1605) (1606 . 1606) ("'" . -1601) (1602 . 1602) ("'" . -1599) (1600 . 1600) ("'" . -1596) (1597 . 1597) ("'" . -1593) (1594 . 1594) ("'" . -1590) (1591 . 1591) ("'" . -1588) (1589 . 1589) ("'" . -1585) (1586 . 1586) ("'" . -1582) (1583 . 1583) ("'" . -1578) (1579 . 1579) ("'" . -1576) (1577 . 1577) ("'" . -1573) (1574 . 1574) ("'" . -1570) (1571 . 1571) ("'" . -1567) (1568 . 1568) ("'" . -1565) (1566 . 1566) ("'" . -1562) (1563 . 1563) ("'" . -1559) (1560 . 1560) ("'" . -1558) (1559 . 1559) ("'" . -1556) (1557 . 1557) ("'" . -1553) (1554 . 1554) ("'" . -1550) (1551 . 1551) ("'" . -1546) (1547 . 1547) ("'" . -1544) (1545 . 1545) ("'" . -1541) (1542 . 1542) ("'" . -1538) (1539 . 1539) ("'" . -1536) (1537 . 1537) ("'" . -1534) (1535 . 1535) ("'" . -1531) (1532 . 1532) ("'" . -1528) (1529 . 1529) ("'" . -1524) (1525 . 1525) ("'" . -1522) (1523 . 1523) ("'" . -1519) (1520 . 1520) ("'" . -1516) (1517 . 1517) ("'" . -1513) (1514 . 1514) ("'" . -1511) (1512 . 1512) ("'" . -1508) (1509 . 1509) ("'" . -1505) (1506 . 1506) ("'" . -1504) (1505 . 1505) ("'" . -1502) (1503 . 1503) ("'" . -1499) (1500 . 1500) ("'" . -1496) (1497 . 1497) ("'" . -1492) (1493 . 1493) ("'" . -1490) (1491 . 1491) ("'" . -1487) (1488 . 1488) ("'" . -1484) (1485 . 1485) ("'" . -1483) (1484 . 1484) ("'" . -1481) (1482 . 1482) ("'" . -1478) (1479 . 1479) ("'" . -1475) (1476 . 1476) ("'" . -1472) (1473 . 1473) ("'" . -1470) (1471 . 1471) ("'" . -1467) (1468 . 1468) ("'" . -1464) (1465 . 1465) ("'" . -1462) (1463 . 1463) ("'" . -1460) (1461 . 1461) ("'" . -1457) (1458 . 1458) ("'" . -1454) (1455 . 1455) ("'" . -1451) (1452 . 1452) ("'" . -1449) (1450 . 1450) ("'" . -1446) (1447 . 1447) ("'" . -1443) (1444 . 1444) ("'" . -1440) (1441 . 1441) ("'" . -1438) (1439 . 1439) ("'" . -1435) (1436 . 1436) ("'" . -1432) (1433 . 1433) ("'" . -1430) (1431 . 1431) ("'" . -1428) (1429 . 1429) ("'" . -1425) (1426 . 1426) ("'" . -1422) (1423 . 1423) ("'" . -1420) (1421 . 1421) ("'" . -1418) (1419 . 1419) ("'" . -1415) (1416 . 1416) ("'" . -1412) (1413 . 1413) ("'" . -1409) (1410 . 1410) ("'" . -1407) (1408 . 1408) ("'" . -1404) (1405 . 1405) ("'" . -1401) (1402 . 1402) ("'" . -1398) (1399 . 1399) ("'" . -1396) (1397 . 1397) ("'" . -1393) (1394 . 1394) ("'" . -1390) (1391 . 1391) ("'" . -1388) (1389 . 1389) ("'" . -1386) (1387 . 1387) ("'" . -1383) (1384 . 1384) ("'" . -1380) (1381 . 1381) ("'" . -1377) (1378 . 1378) ("'" . -1375) (1376 . 1376) ("'" . -1372) (1373 . 1373) ("'" . -1369) (1370 . 1370) ("'" . -1367) (1368 . 1368) ("'" . -1365) (1366 . 1366) ("'" . -1362) (1363 . 1363) ("'" . -1359) (1360 . 1360) ("'" . -1355) (1356 . 1356) ("'" . -1353) (1354 . 1354) ("'" . -1350) (1351 . 1351) ("'" . -1347) (1348 . 1348) ("'" . -1345) (1346 . 1346) ("'" . -1343) (1344 . 1344) ("'" . -1340) (1341 . 1341) ("'" . -1337) (1338 . 1338) ("'" . -1333) (1334 . 1334) ("'" . -1331) (1332 . 1332) ("'" . -1328) (1329 . 1329) ("'" . -1325) (1326 . 1326) ("'" . -1324) (1325 . 1325) ("'" . -1322) (1323 . 1323) ("'" . -1319) (1320 . 1320) ("'" . -1316) (1317 . 1317) ("'" . -1315) (1316 . 1316) ("'" . -1313) (1314 . 1314) ("'" . -1310) (1311 . 1311) ("'" . -1307) (1308 . 1308) ("'" . -1305) (1306 . 1306) ("'" . -1303) (1304 . 1304) ("'" . -1300) (1301 . 1301) ("'" . -1297) (1298 . 1298) ("'" . -1295) (1296 . 1296) ("'" . -1293) (1294 . 1294) ("'" . -1290) (1291 . 1291) ("'" . -1287) (1288 . 1288) ("'" . -1285) (1286 . 1286) ("'" . -1283) (1284 . 1284) ("'" . -1280) (1281 . 1281) ("'" . -1277) (1278 . 1278) ("'" . -1273) (1274 . 1274) ("'" . -1271) (1272 . 1272) ("'" . -1268) (1269 . 1269) ("'" . -1265) (1266 . 1266) ("'" . -1262) (1263 . 1263) ("'" . -1260) (1261 . 1261) ("'" . -1257) (1258 . 1258) ("'" . -1254) (1255 . 1255) ("'" . -1250) (1251 . 1251) ("'" . -1248) (1249 . 1249) ("'" . -1245) (1246 . 1246) ("'" . -1242) (1243 . 1243) ("'" . -1241) (1242 . 1242) ("'" . -1239) (1240 . 1240) ("'" . -1236) (1237 . 1237) ("'" . -1233) (1234 . 1234) ("'" . -1232) (1233 . 1233) ("'" . -1230) (1231 . 1231) ("'" . -1227) (1228 . 1228) ("'" . -1224) (1225 . 1225) ("'" . -1221) (1222 . 1222) ("'" . -1219) (1220 . 1220) ("'" . -1216) (1217 . 1217) ("'" . -1213) (1214 . 1214) ("'" . -1211) (1212 . 1212) ("'" . -1209) (1210 . 1210) ("'" . -1206) (1207 . 1207) ("'" . -1203) (1204 . 1204) ("'" . -1200) (1201 . 1201) ("'" . -1198) (1199 . 1199) ("'" . -1195) (1196 . 1196) ("'" . -1192) (1193 . 1193) ("'" . -1189) (1190 . 1190) ("'" . -1187) (1188 . 1188) ("'" . -1184) (1185 . 1185) ("'" . -1181) (1182 . 1182) ("'" . -1179) (1180 . 1180) ("'" . -1177) (1178 . 1178) ("'" . -1174) (1175 . 1175) ("'" . -1171) (1172 . 1172) ("'" . -1167) (1168 . 1168) ("'" . -1165) (1166 . 1166) ("'" . -1162) (1163 . 1163) ("'" . -1159) (1160 . 1160) ("'" . -1156) (1157 . 1157) ("'" . -1154) (1155 . 1155) ("'" . -1151) (1152 . 1152) ("'" . -1148) (1149 . 1149) ("'" . -1146) (1147 . 1147) ("'" . -1144) (1145 . 1145) ("'" . -1141) (1142 . 1142) ("'" . -1138) (1139 . 1139) ("'" . -1136) (1137 . 1137) ("'" . -1134) (1135 . 1135) ("'" . -1131) (1132 . 1132) ("'" . -1128) (1129 . 1129) ("'" . -1126) (1127 . 1127) ("'" . -1124) (1125 . 1125) ("'" . -1121) (1122 . 1122) ("'" . -1118) (1119 . 1119) ("'" . -1116) (1117 . 1117) ("'" . -1114) (1115 . 1115) ("'" . -1111) (1112 . 1112) ("'" . -1108) (1109 . 1109) ("'" . -1104) (1105 . 1105) ("'" . -1102) (1103 . 1103) ("'" . -1100) (1101 . 1101) ("'" . -1097) (1098 . 1098) ("'" . -1093) (1094 . 1094) ("'" . -1091) (1092 . 1092) ("'" . -1089) (1090 . 1090) ("'" . -1086) (1087 . 1087) ("'" . -1082) (1083 . 1083) ("'" . -1080) (1081 . 1081) ("'" . -1078) (1079 . 1079) ("'" . -1075) (1076 . 1076) ("'" . -1072) (1073 . 1073) ("'" . -1070) (1071 . 1071) ("'" . -1068) (1069 . 1069) ("'" . -1065) (1066 . 1066) ("'" . -1061) (1062 . 1062) ("'" . -1059) (1060 . 1060) ("'" . -1057) (1058 . 1058) ("'" . -1054) (1055 . 1055) ("'" . -1050) (1051 . 1051) ("'" . -1048) (1049 . 1049) ("'" . -1046) (1047 . 1047) ("'" . -1043) (1044 . 1044) ("'" . -1039) (1040 . 1040) ("'" . -1037) (1038 . 1038) ("'" . -1035) (1036 . 1036) ("'" . -1032) (1033 . 1033) ("'" . -1030) (1031 . 1031) ("'" . -1028) (1029 . 1029) ("'" . -1026) (1027 . 1027) ("'" . -1023) (1024 . 1024) ("'" . -1020) (1021 . 1021) ("'" . -1018) (1019 . 1019) ("'" . -1016) (1017 . 1017) ("'" . -1013) (1014 . 1014) ("'" . -1011) (1012 . 1012) ("'" . -1009) (1010 . 1010) ("'" . -1007) (1008 . 1008) ("'" . -1004) (1005 . 1005) ("'" . -1000) (1001 . 1001) ("'" . -998) (999 . 999) ("'" . -996) (997 . 997) ("'" . -993) (994 . 994) ("'" . -989) (990 . 990) ("'" . -987) (988 . 988) ("'" . -985) (986 . 986) ("'" . -982) (983 . 983) ("'" . -978) (979 . 979) ("'" . -976) (977 . 977) ("'" . -974) (975 . 975) ("'" . -971) (972 . 972) ("'" . -968) (969 . 969) ("'" . -966) (967 . 967) ("'" . -964) (965 . 965) ("'" . -961) (962 . 962) ("'" . -958) (959 . 959) ("'" . -956) (957 . 957) ("'" . -954) (955 . 955) ("'" . -951) (952 . 952) ("'" . -948) (949 . 949) ("'" . -946) (947 . 947) ("'" . -944) (945 . 945) ("'" . -941) (942 . 942) ("'" . -938) (939 . 939) ("'" . -936) (937 . 937) ("'" . -934) (935 . 935) ("'" . -931) (932 . 932) ("'" . -927) (928 . 928) ("'" . -925) (926 . 926) ("'" . -923) (924 . 924) ("'" . -920) (921 . 921) ("'" . -916) (917 . 917) ("'" . -914) (915 . 915) ("'" . -912) (913 . 913) ("'" . -909) (910 . 910) ("'" . -906) (907 . 907) ("'" . -904) (905 . 905) ("'" . -902) (903 . 903) ("'" . -899) (900 . 900) ("'" . -896) (897 . 897) ("'" . -894) (895 . 895) ("'" . -892) (893 . 893) ("'" . -889) (890 . 890) ("'" . -887) (888 . 888) ("'" . -885) (886 . 886) ("'" . -883) (884 . 884) ("'" . -880) (881 . 881) ("'" . -878) (879 . 879) ("'" . -876) (877 . 877) ("'" . -874) (875 . 875) ("'" . -871) (872 . 872) ("'" . -868) (869 . 869) ("'" . -866) (867 . 867) ("'" . -864) (865 . 865) ("'" . -861) (862 . 862) ("'" . -858) (859 . 859) ("'" . -856) (857 . 857) ("'" . -854) (855 . 855) ("'" . -851) (852 . 852) ("'" . -847) (848 . 848) ("'" . -845) (846 . 846) ("'" . -843) (844 . 844) ("'" . -840) (841 . 841) ("'" . -836) (837 . 837) ("'" . -834) (835 . 835) ("'" . -832) (833 . 833) ("'" . -829) (830 . 830) ("'" . -825) (826 . 826) ("'" . -823) (824 . 824) ("'" . -821) (822 . 822) ("'" . -818) (819 . 819) ("'" . -814) (815 . 815) ("'" . -812) (813 . 813) ("'" . -810) (811 . 811) ("'" . -807) (808 . 808) ("'" . -805) (806 . 806) ("'" . -803) (804 . 804) ("'" . -801) (802 . 802) ("'" . -798) (799 . 799) ("'" . -796) (797 . 797) ("'" . -794) (795 . 795) ("'" . -792) (793 . 793) ("'" . -789) (790 . 790) ("'" . -786) (787 . 787) ("'" . -784) (785 . 785) ("'" . -782) (783 . 783) ("'" . -779) (780 . 780) ("'" . -776) (777 . 777) ("'" . -774) (775 . 775) ("'" . -772) (773 . 773) ("'" . -769) (770 . 770) ("'" . -765) (766 . 766) ("'" . -763) (764 . 764) ("'" . -761) (762 . 762) ("'" . -758) (759 . 759) ("'" . -754) (755 . 755) ("'" . -752) (753 . 753) ("'" . -750) (751 . 751) ("'" . -747) (748 . 748) ("'" . -744) (745 . 745) ("'" . -742) (743 . 743) ("'" . -740) (741 . 741) ("'" . -737) (738 . 738) ("'" . -734) (735 . 735) ("'" . -732) (733 . 733) ("'" . -730) (731 . 731) ("'" . -727) (728 . 728) ("'" . -723) (724 . 724) ("'" . -721) (722 . 722) ("'" . -719) (720 . 720) ("'" . -716) (717 . 717) ("'" . -712) (713 . 713) ("'" . -710) (711 . 711) ("'" . -708) (709 . 709) ("'" . -705) (706 . 706) ("'" . -702) (703 . 703) ("'" . -700) (701 . 701) ("'" . -698) (699 . 699) ("'" . -695) (696 . 696) ("'" . -693) (694 . 694) ("'" . -691) (692 . 692) ("'" . -689) (690 . 690) ("'" . -686) (687 . 687) ("'" . -682) (683 . 683) ("'" . -680) (681 . 681) ("'" . -678) (679 . 679) ("'" . -675) (676 . 676) ("'" . -673) (674 . 674) ("'" . -671) (672 . 672) ("'" . -669) (670 . 670) ("'" . -666) (667 . 667) ("'" . -664) (665 . 665) ("'" . -662) (663 . 663) ("'" . -660) (661 . 661) ("'" . -657) (658 . 658) ("'" . -655) (656 . 656) ("'" . -653) (654 . 654) ("'" . -651) (652 . 652) ("'" . -648) (649 . 649) ("'" . -645) (646 . 646) ("'" . -643) (644 . 644) ("'" . -641) (642 . 642) ("'" . -638) (639 . 639) ("'" . -636) (637 . 637) ("'" . -634) (635 . 635) ("'" . -632) (633 . 633) ("'" . -629) (630 . 630) ("'" . -627) (628 . 628) ("'" . -625) (626 . 626) ("'" . -623) (624 . 624) ("'" . -620) (621 . 621) ("'" . -617) (618 . 618) ("'" . -615) (616 . 616) ("'" . -613) (614 . 614) ("'" . -610) (611 . 611) ("'" . -606) (607 . 607) ("'" . -604) (605 . 605) ("'" . -602) (603 . 603) ("'" . -599) (600 . 600) ("'" . -597) (598 . 598) ("'" . -595) (596 . 596) ("'" . -593) (594 . 594) ("'" . -590) (591 . 591) ("'" . -587) (588 . 588) ("'" . -585) (586 . 586) ("'" . -583) (584 . 584) ("'" . -580) (581 . 581) ("'" . -577) (578 . 578) ("'" . -575) (576 . 576) ("'" . -573) (574 . 574) ("'" . -570) (571 . 571) ("'" . -569) (570 . 570) ("'" . -567) (568 . 568) ("'" . -565) (566 . 566) ("'" . -562) (563 . 563) ("'" . -558) (559 . 559) ("'" . -556) (557 . 557) ("'" . -554) (555 . 555) ("'" . -551) (552 . 552) ("'" . -547) (548 . 548) ("'" . -545) (546 . 546) ("'" . -543) (544 . 544) ("'" . -540) (541 . 541) ("'" . -538) (539 . 539) ("'" . -536) (537 . 537) ("'" . -534) (535 . 535) ("'" . -531) (532 . 532) ("'" . -529) (530 . 530) ("'" . -527) (528 . 528) ("'" . -525) (526 . 526) ("'" . -522) (523 . 523) ("'" . -518) (519 . 519) ("'" . -516) (517 . 517) ("'" . -514) (515 . 515) ("'" . -511) (512 . 512) ("'" . -507) (508 . 508) ("'" . -505) (506 . 506) ("'" . -503) (504 . 504) ("'" . -500) (501 . 501) ("'" . -498) (499 . 499) ("'" . -496) (497 . 497) ("'" . -494) (495 . 495) ("'" . -491) (492 . 492) ("'" . -490) (491 . 491) ("'" . -488) (489 . 489) ("'" . -486) (487 . 487) ("'" . -483) (484 . 484) ("'" . -481) (482 . 482) ("'" . -479) (480 . 480) ("'" . -477) (478 . 478) ("'" . -474) (475 . 475) ("'" . -471) (472 . 472) ("'" . -469) (470 . 470) ("'" . -467) (468 . 468) ("'" . -464) (465 . 465) ("'" . -461) (462 . 462) ("'" . -459) (460 . 460) ("'" . -457) (458 . 458) ("'" . -454) (455 . 455) ("'" . -452) (453 . 453) ("'" . -450) (451 . 451) ("'" . -448) (449 . 449) ("'" . -445) (446 . 446) ("'" . -443) (444 . 444) ("'" . -441) (442 . 442) ("'" . -439) (440 . 440) ("'" . -436) (437 . 437) ("'" . -432) (433 . 433) ("'" . -430) (431 . 431) ("'" . -428) (429 . 429) ("'" . -425) (426 . 426) ("'" . -422) (423 . 423) ("'" . -420) (421 . 421) ("'" . -418) (419 . 419) ("'" . -415) (416 . 416) ("'" . -412) (413 . 413) ("'" . -410) (411 . 411) ("'" . -408) (409 . 409) ("'" . -405) (406 . 406) ("'" . -401) (402 . 402) ("'" . -399) (400 . 400) ("'" . -397) (398 . 398) ("'" . -394) (395 . 395) ("'" . -392) (393 . 393) ("'" . -390) (391 . 391) ("'" . -388) (389 . 389) ("'" . -385) (386 . 386) ("'" . -383) (384 . 384) ("'" . -381) (382 . 382) ("'" . -379) (380 . 380) ("'" . -376) (377 . 377) ("'" . -372) (373 . 373) ("'" . -370) (371 . 371) ("'" . -368) (369 . 369) ("'" . -365) (366 . 366) ("'" . -363) (364 . 364) ("'" . -361) (362 . 362) ("'" . -359) (360 . 360) ("'" . -356) (357 . 357) ("'" . -354) (355 . 355) ("'" . -352) (353 . 353) ("'" . -350) (351 . 351) ("'" . -347) (348 . 348) ("'" . -345) (346 . 346) ("'" . -343) (344 . 344) ("'" . -341) (342 . 342) ("'" . -338) (339 . 339) ("'" . -336) (337 . 337) ("'" . -334) (335 . 335) ("'" . -332) (333 . 333) ("'" . -329) (330 . 330) ("'" . -325) (326 . 326) ("'" . -323) (324 . 324) ("'" . -321) (322 . 322) ("'" . -318) (319 . 319) ("'" . -316) (317 . 317) ("'" . -314) (315 . 315) ("'" . -312) (313 . 313) ("'" . -309) (310 . 310) ("'" . -305) (306 . 306) ("'" . -303) (304 . 304) ("'" . -301) (302 . 302) ("'" . -298) (299 . 299) ("'" . -296) (297 . 297) ("'" . -294) (295 . 295) ("'" . -292) (293 . 293) ("'" . -289) (290 . 290) ("'" . -287) (288 . 288) ("'" . -285) (286 . 286) ("'" . -283) (284 . 284) ("'" . -280) (281 . 281) ("'" . -278) (279 . 279) ("'" . -276) (277 . 277) ("'" . -274) (275 . 275) ("'" . -271) (272 . 272) ("'" . -268) (269 . 269) ("'" . -266) (267 . 267) ("'" . -264) (265 . 265) ("'" . -261) (262 . 262) ("'" . -257) (258 . 258) ("'" . -255) (256 . 256) ("'" . -253) (254 . 254) ("'" . -250) (251 . 251) ("'" . -246) (247 . 247) ("'" . -244) (245 . 245) ("'" . -242) (243 . 243) ("'" . -239) (240 . 240) ("'" . -237) (238 . 238) ("'" . -235) (236 . 236) ("'" . -233) (234 . 234) ("'" . -230) (231 . 231) ("'" . -228) (229 . 229) ("'" . -226) (227 . 227) ("'" . -224) (225 . 225) ("'" . -221) (222 . 222) ("'" . -217) (218 . 218) ("'" . -215) (216 . 216) ("'" . -213) (214 . 214) ("'" . -210) (211 . 211) ("'" . -208) (209 . 209) ("'" . -206) (207 . 207) ("'" . -204) (205 . 205) ("'" . -201) (202 . 202) ("'" . -196) (197 . 197) ("'" . -194) (195 . 195) ("'" . -192) (193 . 193) ("'" . -189) (190 . 190) ("'" . -186) (187 . 187) ("'" . -184) (185 . 185) ("'" . -182) (183 . 183) ("'" . -179) (180 . 180) ("'" . -177) (178 . 178) ("'" . -175) (176 . 176) ("'" . -173) (174 . 174) ("'" . -170) (171 . 171) ("'" . -167) (168 . 168) ("'" . -165) (166 . 166) ("'" . -163) (164 . 164) ("'" . -160) (161 . 161) ("'" . -158) (159 . 159) ("'" . -156) (157 . 157) ("'" . -154) (155 . 155) ("'" . -151) (152 . 152) ("'" . -147) (148 . 148) ("'" . -145) (146 . 146) ("'" . -143) (144 . 144) ("'" . -140) (141 . 141) ("'" . -137) (138 . 138) ("'" . -135) (136 . 136) ("'" . -133) (134 . 134) ("'" . -130) (131 . 131) ("'" . -126) (127 . 127) ("'" . -124) (125 . 125) ("'" . -122) (123 . 123) ("'" . -119) (120 . 120) ("'" . -116) (117 . 117) ("'" . -114) (115 . 115) ("'" . -112) (113 . 113) ("'" . -109) (110 . 110) ("'" . -105) (106 . 106) ("'" . -103) (104 . 104) ("'" . -101) (102 . 102) ("'" . -98) (99 . 99) ("'" . -94) (95 . 95) ("'" . -92) (93 . 93) ("'" . -90) (91 . 91) ("'" . -87) (88 . 88) ("'" . -85) (86 . 86) ("'" . -83) (84 . 84) ("'" . -81) (82 . 82) ("'" . -78) (79 . 79) ("'" . -75) (76 . 76) ("'" . -73) (74 . 74) ("'" . -72) (73 . 73) ("'" . -69) (70 . 70) ("'" . -67) (68 . 68) ("'" . -65) (66 . 66) ("'" . -64) (65 . 65) ("'" . -61) (62 . 62) ("'" . -60) (61 . 61) ("'" . -58) (59 . 59) ("'" . -57) (58 . 58) ("'" . -54) (55 . 55) ("'" . -51) (52 . 52) ("'" . -49) (50 . 50) ("'" . -48) (49 . 49) ("'" . -45) (46 . 46) ("'" . -42) (43 . 43) ("'" . -40) (41 . 41) ("'" . -39) (40 . 40) ("'" . -36) (37 . 37) ("'" . -35) (36 . 36) ("'" . -33) (34 . 34) ("'" . -32) (33 . 33) ("'" . -29) (30 . 30) ("'" . -25) (26 . 26) ("'" . -23) (24 . 24) ("'" . -22) (23 . 23) ("'" . -19) (20 . 20) ("'" . -16) (17 . 17) ("'" . -14) (15 . 15) ("'" . -13) (14 . 14) ("'" . -10) (11 . 11) ("'" . -6) (7 . 7) 4))

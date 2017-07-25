@@ -9,12 +9,17 @@ alias relogin='exec $SHELL -l'
 #
 # LANG
 #
-export LANG=ja_JP.UTF-8
+export LANG=ja_JP.UTF-8 ## pandas
 case ${UID} in
 0)
     LANG=C
     ;;
 esac
+
+## eigo python pandas
+## https://stackoverflow.com/questions/30761152/how-to-solve-import-error-for-pandas
+export LC_ALL=ja_JP.UTF-8 # en_US.UTF-8 #
+export LANG= #ja_JP.UTF-8
 
 
 ## Default shell configuration
@@ -333,3 +338,14 @@ if [ -d "${PYENV_ROOT}" ]; then
     export PATH=${PYENV_ROOT}/bin:$PATH
 #   export PATH=${PYENV_ROOT}/bin:$PATH
 fi
+
+# jupyter notebook
+export BROWSER=open
+
+## Go 環境設定
+# if [ -x "`which go`" ]; then
+#     export GOPATH=$HOME/.go
+#     export PATH=$PATH:$GOPATH/bin
+# fi
+
+#

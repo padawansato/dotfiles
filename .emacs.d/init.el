@@ -160,7 +160,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (markdown-toc google-translate yatex haskell-mode c-eldoc quickrun helm-migemo ace-isearch helm-swoop sr-speedbar redo+ undohist crux key-chord init-loader esup migemo init-open-recentf ace-jump-mode sequential-command flycheck-pos-tip undo-tree helm auto-complete yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff))))
+    (smooth-scrolling markdown-toc google-translate yatex haskell-mode c-eldoc quickrun helm-migemo ace-isearch helm-swoop sr-speedbar redo+ undohist crux key-chord init-loader esup migemo init-open-recentf ace-jump-mode sequential-command flycheck-pos-tip undo-tree helm auto-complete yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -237,7 +237,7 @@
 
 ;; (global-set-key (kbd "C-:") 'ace-jump-mode)
 ;; (ace-jump-mode t)
-;; (defun add-keys-to-ace-jump-mode (prefix c &optional mode) 
+;; (defun add-keys-to-ace-jump-mode (prefix c &optional mode)
 ;;   (define-key global-map
 ;;     (read-kbd-macro (concat prefix (string c)))
 ;;     `(lambda ()
@@ -939,3 +939,36 @@
 
 ;;ipython notebook with emacs
 ;;https://github.com/millejoh/emacs-ipython-notebook
+
+;; smooth-scrolling
+(require 'smooth-scrolling)
+(smooth-scrolling-mode 1)
+
+
+;; markdown-toc-generate-toc
+(global-set-key (kbd "M-m") 'markdown-toc-generate-toc)
+
+;; mouse 
+(setq
+ ;; ホイールでスクロールする行数を設定
+ mouse-wheel-scroll-amount '(1 ((shift) . 2) ((control)))
+ ;; 速度を無視する
+ mouse-wheel-progressive-speed nil)
+
+(setq scroll-preserve-screen-position 'always)
+
+
+;; ;; haskell-mode
+;; ;; フックを設定
+;; (add-hook 'haskell-mode-hook 'haskell-indentation-mode)
+;; (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
+;; (add-hook 'haskell-mode-hook 'haskell-decl-scan-mode)
+;; (add-hook 'haskell-mode-hook 'haskell-doc-mode)
+;; ;; (add-hook 'haskell-mode-hook 'view-mode)
+
+;; (setq haskell-process-type 'stack-ghci)
+;; (setq haskell-process-path-ghci "stack")
+;; (setq haskell-process-args-ghci "ghci")
+
+;; ;; 環境変数PATHを設定しない場合は必要な設定
+;; (add-to-list 'exec-path "~/stack-1.1.2-osx-x86_64")

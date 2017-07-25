@@ -1,0 +1,82 @@
+ Keystone 
+Keystone          @   (admin)      
+# source ~/openstack-deploy/all-in-one/ocata/credentials/administrator
+                     
+##        
+# 
+openstack token issue;openstack service list;openstack endpoint list;openstack project list;openstack role list;openstack user list
+
+
+openstack project create --domain default --description "Service Project" service
+
+mysql << EOF
+create database glance;
+GRANT ALL PRIVILEGES ON glance.* TO 'glance'@'localhost' IDENTIFIED BY 'handson'; GRANT ALL PRIVILEGES ON glance.* TO 'glance'@'%' IDENTIFIED BY 'handson';
+EOF
+
+openstack user create --domain default --password glance glance;
+openstack role add --project service --user glance admin
+
+source ~/openstack-deploy/all-in-one/ocata/credentials/administrator
+
+su -s /bin/sh -c "keystone-manage db_sync" keystone
+cp -fb ~/openstack-deploy/all-in-one/ocata/configure/keystone/keystone.conf /etc/keystone/keystone.conf
+
+sed -i 's/172.19.0.68/172.19.0.68/g' /etc/keystone/keystone.conf
+
+su -s /bin/sh -c "keystone-manage db_sync" keystone
+
+
+
+
+
+cp -fb ~/openstack-deploy/all-in-one/ocata/configure/keystone/keystone.conf /etc/keystone/keystone.conf
+
+mysql -u keystone -p keystone << handson
+show tables;'
+
+keystone-manage bootstrap --bootstrap-password handson \
+ --bootstrap-admin-url http://172.19.0.68:35357/v3/ \
+ --bootstrap-internal-url http://172.19.0.68:5000/v3/ \
+ --bootstrap-public-url http://172.19.0.68:5000/v3/ \
+ --bootstrap-region-id RegionOne
+
+
+##        
+# openstack token issue
+##              
+# openstack service list ##                 # openstack endpoint list
+##                 # openstack project list
+##             
+# openstack role list
+##             
+# openstack user list
+
+mysql << EOF
+create database glance;
+GRANT ALL PRIVILEGES ON glance.* TO 'glance'@'localhost' IDENTIFIED BY 'handson'; GRANT ALL PRIVILEGES ON glance.* TO 'glance'@'%' IDENTIFIED BY 'handson';
+EOF
+openstack user create --domain default --password glance glance
+openstack role add --project service --user glance admin
+
+
+
+
+
+
+
+
+openstack endpoint create --region RegionOne image public http://172.19.0.68:9292
+openstack endpoint create --region RegionOne image internal http://172.19.0.68:9292
+openstack endpoint create --region RegionOne image admin http://172.19.0.68:9292
+
+
+
+Glance      
+cp -fb ~/openstack-deploy/all-in-one/ocata/configure/glance/glance-api.conf /etc/glance/glance-api.conf
+cp -fb ~/openstack-deploy/all-in-one/ocata/configure/glance/glance-registry.conf /etc/glance/glance-registry.conf
+sed -i 's/##management-ip##/172.19.0.68/g' /etc/glance/glance-api.conf
+sed -i 's/##management-ip##/172.19.0.68/g' /etc/glance/glance-registry.conf
+su -s /bin/sh -c "glance-manage db_sync" glance
+
+rm /var/log/glance/*

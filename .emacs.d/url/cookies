@@ -2,9 +2,12 @@
 ;; Automatically generated file!!! DO NOT EDIT!!!
 
 (setq url-cookie-storage
- '((".google.com"
-  [url-cookie "NID" "103=PRRePtHv-8uCtNuCFEo4rl9RNc5JZTain-mEHFjksrPKlkZgoLBrWHEb-ZAFWascRy2kL2EmEYeiQ0LyPHF34tAMjHkl1MNiFfY5OGtJ04pG18DqiUChIemc0cY3c0sw" "16-Nov-2017 10:19:37.00 GMT" "/" ".google.com" nil]
-  [url-cookie "HttpOnly" nil "16-Nov-2017 10:19:37.00 GMT" "/" ".google.com" nil]))
+ '((".google.co.jp"
+  [url-cookie "NID" "107=oCxCxEF4sUPmCTVx8RjxmodQn4LPB1hFEdRIY32LPzAtP8RSYH9NfPU30idQ0zhwSYUWWqxV02csQDrVPaW5Vwx3RWArhFTRHQ52bR5r8i4uzzo0CZql9_DO332Moju6" "11-Jan-2018 00:09:33.00 GMT" "/" ".google.co.jp" nil]
+  [url-cookie "HttpOnly" nil "11-Jan-2018 00:09:33.00 GMT" "/" ".google.co.jp" nil])
+ (".google.com"
+  [url-cookie "HttpOnly" nil "16-Nov-2017 10:19:37.00 GMT" "/" ".google.com" nil]
+  [url-cookie "NID" "103=PRRePtHv-8uCtNuCFEo4rl9RNc5JZTain-mEHFjksrPKlkZgoLBrWHEb-ZAFWascRy2kL2EmEYeiQ0LyPHF34tAMjHkl1MNiFfY5OGtJ04pG18DqiUChIemc0cY3c0sw" "16-Nov-2017 10:19:37.00 GMT" "/" ".google.com" nil]))
 )
 (setq url-cookie-secure-storage
  'nil)

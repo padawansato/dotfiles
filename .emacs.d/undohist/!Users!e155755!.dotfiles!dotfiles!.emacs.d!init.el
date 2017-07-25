@@ -1,2 +1,2 @@
 
-((digest . "c7992c2c05172504fddb18bffe84b211") (undo-list (33478 . 33479) nil (33428 . 33478) nil (" " . -33428) ((marker . 33478) . -1) 33429 nil (33426 . 33429) nil (33425 . 33426) nil (" " . -33425) ((marker . 33478) . -1) 33426 nil (33413 . 33426) nil (33398 . 33413) nil ("j" . -33398) ((marker . 33478) . -1) ("u" . -33399) ((marker . 33478) . -1) 33400 nil (33398 . 33400) nil (" " . -33398) ((marker . 33478) . -1) 33399 nil (33396 . 33399) nil (33395 . 33396) (t 22851 25635 0 0) nil (nil rear-nonsticky nil 33352 . 33353) (33349 . 33353) nil ("or m" . 33350) nil (33348 . 33350) ("(" . -33348) (33348 . 33349) nil ("8" . -33348) 33349 nil undo-tree-canary))
+((digest . "0a2fd5e542179e76fc0c04d4cbdb28fd") (undo-list nil undo-tree-canary))
