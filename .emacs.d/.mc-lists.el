@@ -5,6 +5,7 @@
       '(
 	View-scroll-line-backward
 	c-electric-delete-forward
+	indent-for-tab-command
 	markdown-cycle
 	markdown-exdent-or-delete
 	org-cycle-agenda-files

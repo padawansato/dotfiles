@@ -146,8 +146,8 @@
 (show-paren-mode t)
 
 ;; 現在行を目立たせる
-(setq hl-line-face 'underline)
-(global-hl-line-mode)
+;; (setq hl-line-face 'underline)
+;; (global-hl-line-mode)
 
 ;; テーマを設定する
 (load-theme 'manoj-dark t)
@@ -160,7 +160,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (smooth-scrolling markdown-toc google-translate yatex haskell-mode c-eldoc quickrun helm-migemo ace-isearch helm-swoop sr-speedbar redo+ undohist crux key-chord init-loader esup migemo init-open-recentf ace-jump-mode sequential-command flycheck-pos-tip undo-tree helm auto-complete yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff))))
+    (tabbar go-playground smooth-scrolling markdown-toc google-translate yatex haskell-mode c-eldoc quickrun helm-migemo ace-isearch helm-swoop sr-speedbar redo+ undohist crux key-chord init-loader esup migemo init-open-recentf ace-jump-mode sequential-command flycheck-pos-tip undo-tree helm auto-complete yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -972,3 +972,20 @@
 
 ;; ;; 環境変数PATHを設定しない場合は必要な設定
 ;; (add-to-list 'exec-path "~/stack-1.1.2-osx-x86_64")
+
+;; eww
+;; http://www-he.scphys.kyoto-u.ac.jp/member/shotakaha/dokuwiki/doku.php?id=toolbox:emacs:eww:start
+;; q EWWを閉じる
+;; g ページの再読み込み
+;; w ページのURLをコピー
+;; d リンク先ファイルをダウンロード（“~/Downloads/“）
+;; l ページを戻る
+;; r ページを進む
+;; H 履歴を表示（eww history バッファが開く）
+;; b ブックマークに追加
+;; B ブックマーク一覧を表示（eww bookmarksバッファが開く)
+;; & ウェブサイトを外部ブラウザで開く
+;; v ページのソースを表示する
+;; C クッキー一覧を表示する
+(setq eww-search-prefix "http://www.google.co.jp/search?q=")
+;; (setq eww-search-prefix "https://www.google.co.jp/search?btnI&q=")
