@@ -5,6 +5,7 @@
       '(
 	View-scroll-line-backward
 	c-electric-delete-forward
+	helm-M-x
 	indent-for-tab-command
 	markdown-cycle
 	markdown-exdent-or-delete

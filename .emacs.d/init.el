@@ -148,6 +148,13 @@
 ;; 現在行を目立たせる
 ;; (setq hl-line-face 'underline)
 ;; (global-hl-line-mode)
+;; http://keisanbutsuriya.hateblo.jp/entry/2015/02/01/162035
+;; (custom-set-faces
+;; '(hl-line ((t (:background "color-236"))))
+;; )
+
+
+
 
 ;; テーマを設定する
 (load-theme 'manoj-dark t)
@@ -160,7 +167,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (tabbar go-playground smooth-scrolling markdown-toc google-translate yatex haskell-mode c-eldoc quickrun helm-migemo ace-isearch helm-swoop sr-speedbar redo+ undohist crux key-chord init-loader esup migemo init-open-recentf ace-jump-mode sequential-command flycheck-pos-tip undo-tree helm auto-complete yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff))))
+    (helm-dash tabbar go-playground smooth-scrolling markdown-toc google-translate yatex haskell-mode c-eldoc quickrun helm-migemo ace-isearch helm-swoop sr-speedbar redo+ undohist crux key-chord init-loader esup migemo init-open-recentf ace-jump-mode sequential-command flycheck-pos-tip undo-tree helm auto-complete yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -989,3 +996,30 @@
 ;; C クッキー一覧を表示する
 (setq eww-search-prefix "http://www.google.co.jp/search?q=")
 ;; (setq eww-search-prefix "https://www.google.co.jp/search?btnI&q=")
+
+;; helm-dash
+;; https://github.com/areina/helm-dash
+
+;; github like markdown preview "C-c g"
+;; http://qiita.com/shibataka000/items/96f6b35f2e97a9c1cd0b
+;; 怖いから捨て垢
+(setq github-user "satotakuie")
+(setq github-pass "8oV-sNL-t44-czs")
+
+(defun my-markdown-preview ()
+  (interactive)
+  (when (get-process "grip") (kill-process "grip"))
+  (when (get-process "grip<1>") (kill-process "grip<1>"))  ;; プロセスが二重に起動していた場合、そちらもkillする
+  (start-process "grip" "*grip*" "grip" (format "--user=%s" github-user) (format "--pass=%s" github-pass) "--browser" buffer-file-name)
+  (when (get-process "grip") (set-process-query-on-exit-flag (get-process "grip") nil))
+  (when (get-process "grip<1>") (set-process-query-on-exit-flag (get-process "grip<1>") nil))    ;; プロセスが二重に起動していた場合、そちらもフラグを設定する
+  )
+(define-key global-map (kbd "C-c g") 'my-markdown-preview)
+
+;; 警告音もフラッシュも全て無効(警告音が完全に鳴らなくなるので注意)
+(setq ring-bell-function 'ignore)
+
+
+;; https://stackoverflow.com/questions/8010552/how-can-i-stop-emacs-cocoa-osx-making-noise-when-scrolling-and-hitting-the-top
+(setq ring-bell-function (lambda () (message "*beep*")))
+
