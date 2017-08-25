@@ -136,6 +136,11 @@
 (cask-initialize)
 (require 'pallet)
 
+;; pallet error 
+
+;; https://stackoverflow.com/questions/41937723/troubles-using-cask-on-emacs 
+
+
 ;; line number
 ;; http://lisphack.blog137.fc2.com/blog-entry-14.html
 (require 'linum)
@@ -167,7 +172,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (helm-dash tabbar go-playground smooth-scrolling markdown-toc google-translate yatex haskell-mode c-eldoc quickrun helm-migemo ace-isearch helm-swoop sr-speedbar redo+ undohist crux key-chord init-loader esup migemo init-open-recentf ace-jump-mode sequential-command flycheck-pos-tip undo-tree helm auto-complete yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff))))
+    (py-autopep8 helm-dash tabbar go-playground smooth-scrolling markdown-toc google-translate yatex haskell-mode c-eldoc quickrun helm-migemo ace-isearch helm-swoop sr-speedbar redo+ undohist crux key-chord init-loader esup migemo init-open-recentf ace-jump-mode sequential-command flycheck-pos-tip undo-tree helm auto-complete yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -1022,4 +1027,15 @@
 
 ;; https://stackoverflow.com/questions/8010552/how-can-i-stop-emacs-cocoa-osx-making-noise-when-scrolling-and-hitting-the-top
 (setq ring-bell-function (lambda () (message "*beep*")))
+
+
+;; autopep8 region
+;; http://qiita.com/fujimisakari/items/74e32eddb78dff4be585
+require 'py-autopep8)
+(define-key python-mode-map (kbd "C-c F") 'py-autopep8)   
+; バッファ全体のコード整形
+(define-key python-mode-map (kbd "C-c f") 'py-autopep8-region)
+; 選択リジョン内のコード整形
+;; 保存時にバッファ全体を自動整形する
+;; (add-hook 'before-save-hook 'py-autopep8-before-save)
 
