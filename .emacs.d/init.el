@@ -135,7 +135,7 @@
 (require 'cask "~/.cask/cask.el")
 (cask-initialize)
 (require 'pallet)
-
+;;(pallet-mode t)
 ;; pallet error 
 
 ;; https://stackoverflow.com/questions/41937723/troubles-using-cask-on-emacs 
