@@ -1,2 +1,2 @@
 
-((digest . "d0ea29f8ae4cd5bad0325a2c30daba01") (undo-list nil (4153 . 4155) nil undo-tree-canary))
+((digest . "8ace7496f6cda26033b567ffbfe55d4b") (undo-list nil (36842 . 36848) nil (36837 . 36838) nil ("s" . -36837) ((marker . 36848) . -1) ("i" . -36838) ((marker . 36848) . -1) ("t" . -36839) ((marker . 36848) . -1) ("e" . -36840) ((marker . 36848) . -1) ("-" . -36841) ((marker . 36848) . -1) 36842 nil (36854 . 36856) nil ("7" . -36854) ((marker . 36848) . -1) ("8" . -36855) ((marker . 36848) . -1) ("." . -36856) ((marker . 36848) . -1) 36857 nil ("4" . -36857) ((marker . 36848) . -1) 36858 nil (36642 . 37310) nil (36641 . 36642) (t 22967 34422 0 0) nil (36464 . 36465) (t 22967 34406 0 0) nil undo-tree-canary))

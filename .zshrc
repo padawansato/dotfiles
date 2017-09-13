@@ -175,17 +175,17 @@ alias e="emacs"
 alias えまｃｓ="emacs"
 alias え="emacs"
 
-alias E="/usr/local/Cellar/emacs/25.1/Emacs.app/ ; open Emacs.app"
-#alias Emacs="/usr/local/Cellar/emacs/25.1/Emacs.app/ ; open -a Emacs.app"
-alias emacs='/usr/local/Cellar/emacs/25.1/Emacs.app/Contents/MacOS/Emacs -nw'
+alias E="/usr/local/Cellar/emacs/25.2/Emacs.app/ ; open Emacs.app"
+#alias Emacs="/usr/local/Cellar/emacs/25.2/Emacs.app/ ; open -a Emacs.app"
+#alias emacs='/usr/local/Cellar/emacs/25.2/Emacs.app/Contents/MacOS/Emacs -nw'
 alias ea="open -a emacs "#Emacs.app　windowが複数できる．
 #http://keisanbutsuriya.hateblo.jp/entry/2015/02/13/133858
 alias ekill="emacsclient -e '(kill-emacs)'"
 alias ee='emacsclient -n' #Emacs.appで素早く開くためM-x server start->ekill
-alias Emacs='/usr/local/Cellar/emacs/25.1/Emacs.app/ ; open Emacs.app;popd;emacsclient -n' #Emacs.appで素早く開くためM-x server start->ekill
+#alias Emacs='/usr/local/Cellar/emacs/25.2/Emacs.app/ ; open Emacs.app;popd;emacsclient -n' #Emacs.appで素早く開くためM-x server start->ekill
 #alias ec='emacsclient -n ""'#error , eeなら
-
-
+alias Emacs='/Applications/Emacs.app/Contents/MacOS ; open Emacs    .app;popd;emacsclient -n'
+alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
 #$emacs hogeで普通に開ける
 #2017/03/23時点
 #しかし，上記aliasがなくてもターミナルで開かれる，これはなぜか分からない
@@ -349,3 +349,4 @@ export BROWSER=open
 # fi
 
 #
+export PATH="/usr/local/bin:$PATH"

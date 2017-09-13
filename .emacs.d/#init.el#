@@ -135,6 +135,11 @@
 (require 'cask "~/.cask/cask.el")
 (cask-initialize)
 (require 'pallet)
+;;(pallet-mode t)
+;; pallet error 
+
+;; https://stackoverflow.com/questions/41937723/troubles-using-cask-on-emacs 
+
 
 ;; line number
 ;; http://lisphack.blog137.fc2.com/blog-entry-14.html
@@ -146,8 +151,15 @@
 (show-paren-mode t)
 
 ;; 現在行を目立たせる
-(setq hl-line-face 'underline)
-(global-hl-line-mode)
+;; (setq hl-line-face 'underline)
+;; (global-hl-line-mode)
+;; http://keisanbutsuriya.hateblo.jp/entry/2015/02/01/162035
+;; (custom-set-faces
+;; '(hl-line ((t (:background "color-236"))))
+;; )
+
+
+
 
 ;; テーマを設定する
 (load-theme 'manoj-dark t)
@@ -160,7 +172,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (google-translate yatex haskell-mode c-eldoc quickrun helm-migemo ace-isearch helm-swoop sr-speedbar redo+ undohist crux key-chord init-loader esup migemo init-open-recentf ace-jump-mode sequential-command flycheck-pos-tip undo-tree helm auto-complete yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff))))
+    (py-autopep8 helm-dash tabbar go-playground smooth-scrolling markdown-toc google-translate yatex haskell-mode c-eldoc quickrun helm-migemo ace-isearch helm-swoop sr-speedbar redo+ undohist crux key-chord init-loader esup migemo init-open-recentf ace-jump-mode sequential-command flycheck-pos-tip undo-tree helm auto-complete yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -237,7 +249,7 @@
 
 ;; (global-set-key (kbd "C-:") 'ace-jump-mode)
 ;; (ace-jump-mode t)
-;; (defun add-keys-to-ace-jump-mode (prefix c &optional mode) 
+;; (defun add-keys-to-ace-jump-mode (prefix c &optional mode)
 ;;   (define-key global-map
 ;;     (read-kbd-macro (concat prefix (string c)))
 ;;     `(lambda ()
@@ -926,3 +938,104 @@
      (if asciip "ja" "en")
      string)))
 (global-set-key (kbd "C-c t") 'google-translate-enja-or-jaen)
+
+
+;; ssh scp
+(require 'tramp)
+(setq tramp-default-method "ssh")
+
+;; markdown
+;; http://qiita.com/gooichi/items/2b185dbdf24166a15ca4
+;; C-c C-c p (or m)
+(setq markdown-command "multimarkdown")
+
+;;ipython notebook with emacs
+;;https://github.com/millejoh/emacs-ipython-notebook
+
+;; smooth-scrolling
+(require 'smooth-scrolling)
+(smooth-scrolling-mode 1)
+
+
+;; markdown-toc-generate-toc
+(global-set-key (kbd "M-m") 'markdown-toc-generate-toc)
+
+;; mouse 
+(setq
+ ;; ホイールでスクロールする行数を設定
+ mouse-wheel-scroll-amount '(1 ((shift) . 2) ((control)))
+ ;; 速度を無視する
+ mouse-wheel-progressive-speed nil)
+
+(setq scroll-preserve-screen-position 'always)
+
+
+;; ;; haskell-mode
+;; ;; フックを設定
+;; (add-hook 'haskell-mode-hook 'haskell-indentation-mode)
+;; (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
+;; (add-hook 'haskell-mode-hook 'haskell-decl-scan-mode)
+;; (add-hook 'haskell-mode-hook 'haskell-doc-mode)
+;; ;; (add-hook 'haskell-mode-hook 'view-mode)
+
+;; (setq haskell-process-type 'stack-ghci)
+;; (setq haskell-process-path-ghci "stack")
+;; (setq haskell-process-args-ghci "ghci")
+
+;; ;; 環境変数PATHを設定しない場合は必要な設定
+;; (add-to-list 'exec-path "~/stack-1.1.2-osx-x86_64")
+
+;; eww
+;; http://www-he.scphys.kyoto-u.ac.jp/member/shotakaha/dokuwiki/doku.php?id=toolbox:emacs:eww:start
+;; q EWWを閉じる
+;; g ページの再読み込み
+;; w ページのURLをコピー
+;; d リンク先ファイルをダウンロード（“~/Downloads/“）
+;; l ページを戻る
+;; r ページを進む
+;; H 履歴を表示（eww history バッファが開く）
+;; b ブックマークに追加
+;; B ブックマーク一覧を表示（eww bookmarksバッファが開く)
+;; & ウェブサイトを外部ブラウザで開く
+;; v ページのソースを表示する
+;; C クッキー一覧を表示する
+(setq eww-search-prefix "http://www.google.co.jp/search?q=")
+;; (setq eww-search-prefix "https://www.google.co.jp/search?btnI&q=")
+
+;; helm-dash
+;; https://github.com/areina/helm-dash
+
+;; github like markdown preview "C-c g"
+;; http://qiita.com/shibataka000/items/96f6b35f2e97a9c1cd0b
+;; 怖いから捨て垢
+(setq github-user "satotakuie")
+(setq github-pass "8oV-sNL-t44-czs")
+
+(defun my-markdown-preview ()
+  (interactive)
+  (when (get-process "grip") (kill-process "grip"))
+  (when (get-process "grip<1>") (kill-process "grip<1>"))  ;; プロセスが二重に起動していた場合、そちらもkillする
+  (start-process "grip" "*grip*" "grip" (format "--user=%s" github-user) (format "--pass=%s" github-pass) "--browser" buffer-file-name)
+  (when (get-process "grip") (set-process-query-on-exit-flag (get-process "grip") nil))
+  (when (get-process "grip<1>") (set-process-query-on-exit-flag (get-process "grip<1>") nil))    ;; プロセスが二重に起動していた場合、そちらもフラグを設定する
+  )
+(define-key global-map (kbd "C-c g") 'my-markdown-preview)
+
+;; 警告音もフラッシュも全て無効(警告音が完全に鳴らなくなるので注意)
+(setq ring-bell-function 'ignore)
+
+
+;; https://stackoverflow.com/questions/8010552/how-can-i-stop-emacs-cocoa-osx-making-noise-when-scrolling-and-hitting-the-top
+(setq ring-bell-function (lambda () (message "*beep*")))
+
+
+;; autopep8 region
+;; http://qiita.com/fujimisakari/items/74e32eddb78dff4be585
+require 'py-autopep8)
+(define-key python-mode-map (kbd "C-c F") 'py-autopep8)   
+; バッファ全体のコード整形
+(define-key python-mode-map (kbd "C-c f") 'py-autopep8-region)
+; 選択リジョン内のコード整形
+;; 保存時にバッファ全体を自動整形する
+;; (add-hook 'before-save-hook 'py-autopep8-before-save)
+

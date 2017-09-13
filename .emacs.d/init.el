@@ -8,6 +8,19 @@
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
+;; http://qiita.com/tadsan/items/6c658cc471be61cbc8f6
+;; これを参考に，emacsのパッケージ管理をcaskでやることにした．
+
+;; http://qiita.com/kametaro/items/2a0197c74cfd38fddb6b
+(require 'cask "~/.cask/cask.el")
+(cask-initialize)
+(require 'pallet)
+(pallet-mode t)
+;; pallet error
+
+;; https://stackoverflow.com/questions/41937723/troubles-using-cask-on-emacs
+
+
 (package-initialize)
 
 (set-language-environment "Japanese")
@@ -128,17 +141,6 @@
 
 (put 'upcase-region 'disabled nil)
 
-;; http://qiita.com/tadsan/items/6c658cc471be61cbc8f6
-;; これを参考に，emacsのパッケージ管理をcaskでやることにした．
-
-;; http://qiita.com/kametaro/items/2a0197c74cfd38fddb6b
-(require 'cask "~/.cask/cask.el")
-(cask-initialize)
-(require 'pallet)
-;;(pallet-mode t)
-;; pallet error 
-
-;; https://stackoverflow.com/questions/41937723/troubles-using-cask-on-emacs 
 
 
 ;; line number
@@ -214,6 +216,7 @@
 ;;(helm-migemo-mode 1);;http://qiita.com/ballforest/items/4db3d66df16d84a027d0;;error
 
 ;; projectile
+(require 'helm-projectile)
 (projectile-global-mode)
 (setq projectile-completion-system 'helm)
 (helm-projectile-on)
@@ -832,10 +835,10 @@
 ;;             (c-turn-on-eldoc-mode)
 ;;             ))
 ;;http://futurismo.biz/archives/3071
-(require 'c-eldoc)
-(add-hook 'c-mode-hook 'c-turn-on-eldoc-mode)
-(add-hook 'c++-mode-hook 'c-turn-on-eldoc-mode)
-(setq c-eldoc-buffer-regenerate-time 60)
+;; (require 'c-eldoc)
+;; (add-hook 'c-mode-hook 'c-turn-on-eldoc-mode)
+;; (add-hook 'c++-mode-hook 'c-turn-on-eldoc-mode)
+;; (setq c-eldoc-buffer-regenerate-time 60)
 
 ;; multiple-cursor
 ;; https://gist.github.com/ongaeshi/5891530
@@ -1031,11 +1034,30 @@
 
 ;; autopep8 region
 ;; http://qiita.com/fujimisakari/items/74e32eddb78dff4be585
-require 'py-autopep8)
-(define-key python-mode-map (kbd "C-c F") 'py-autopep8)   
-; バッファ全体のコード整形
-(define-key python-mode-map (kbd "C-c f") 'py-autopep8-region)
+;; (require 'py-autopep8)
+;; (define-key python-mode-map (kbd "C-c F") 'py-autopep8)   
+;; バッファ全体のコード整形
+;; (define-key python-mode-map (kbd "C-c f") 'py-autopep8-region)
 ; 選択リジョン内のコード整形
 ;; 保存時にバッファ全体を自動整形する
 ;; (add-hook 'before-save-hook 'py-autopep8-before-save)
 
+
+;; ---------------------------------------------------------
+;; YaTeX の設定
+;; ---------------------------------------------------------
+   
+;; Add library path
+(add-to-list 'load-path "~/.emacs.d/elisp/yatex/yatex1.80")
+;; YaTeX mode
+(setq auto-mode-alist
+    (cons (cons "\\.tex$" 'yatex-mode) auto-mode-alist))
+(autoload 'yatex-mode "yatex" "Yet Another LaTeX mode" t)
+(setq tex-command "platex")
+(setq dviprint-command-format "dvipdfmx %s")
+;; use Preview.app
+(setq dvi2-command "open -a Preview")
+(defvar YaTeX-dvi2-command-ext-alist    
+  '(("xdvi" . ".dvi")                   
+      ("ghostview\\|gv" . ".ps")
+      ("acroread\\|pdf\\|Preview\\|open" . ".pdf")))

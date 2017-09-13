@@ -3,9 +3,9 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "package-build" "package-build.el" (22799 36851
-;;;;;;  0 0))
-;;; Generated autoloads from package-build.el
+;;;### (autoloads nil "package-build" "../../../../../../../.emacs.d/.cask/25.2/bootstrap/package-build-20170506.1759/package-build.el"
+;;;;;;  "7f56a260d84537be278b68c4e42598d4")
+;;; Generated autoloads from ../../../../../../../.emacs.d/.cask/25.2/bootstrap/package-build-20170506.1759/package-build.el
 
 (autoload 'package-build-archive "package-build" "\
 Build a package archive for package NAME.
@@ -45,6 +45,12 @@ Create a new recipe for package NAME using FETCHER.
 Build archive for the recipe defined in the current buffer.
 
 \(fn)" t nil)
+
+;;;***
+
+;;;### (autoloads nil nil ("../../../../../../../.emacs.d/.cask/25.2/bootstrap/package-build-20170506.1759/package-build-autoloads.el"
+;;;;;;  "../../../../../../../.emacs.d/.cask/25.2/bootstrap/package-build-20170506.1759/package-build.el")
+;;;;;;  (22948 9280 0 0))
 
 ;;;***
 
