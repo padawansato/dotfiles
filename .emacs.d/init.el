@@ -174,7 +174,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (py-autopep8 helm-dash tabbar go-playground smooth-scrolling markdown-toc google-translate yatex haskell-mode c-eldoc quickrun helm-migemo ace-isearch helm-swoop sr-speedbar redo+ undohist crux key-chord init-loader esup migemo init-open-recentf ace-jump-mode sequential-command flycheck-pos-tip undo-tree helm auto-complete yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff))))
+    (ein jedi win-switch py-autopep8 helm-dash tabbar go-playground smooth-scrolling markdown-toc google-translate yatex haskell-mode c-eldoc quickrun helm-migemo ace-isearch helm-swoop sr-speedbar redo+ undohist crux key-chord init-loader esup migemo init-open-recentf ace-jump-mode sequential-command flycheck-pos-tip undo-tree helm auto-complete yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -1061,3 +1061,19 @@
   '(("xdvi" . ".dvi")                   
       ("ghostview\\|gv" . ".ps")
       ("acroread\\|pdf\\|Preview\\|open" . ".pdf")))
+
+
+;; jedi
+;; http://tkf.github.io/emacs-jedi/latest/
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:complete-on-dot t)                 
+
+
+;; ipython ein
+;; https://tkf.github.io/emacs-ipython-notebook/
+(require 'ein)
+
+
+;; shellのパスの引き継ぎ
+;; http://keisanbutsuriya.hateblo.jp/entry/2017/06/21/010257
+(exec-path-from-shell-initialize)
