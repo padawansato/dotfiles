@@ -1,19 +1,18 @@
 
-((digest . "e76d11fe6e0940b0159a2589bc80b53d") (undo-list (5536 . 5775) ("(custom-set-faces
+((digest . "778b2884ea65991313aedb198e3d92bf") (undo-list (5623 . 5862) ("(custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )" . -5536) (5533 . 5535) (4981 . 4985) (" " . -4981) ("
-" . -5530) (4981 . 4982) (5529 . 5530) (4980 . 4981) (" " . 4980) (4970 . 5529) (" " . 4970) (4697 . 4971) ("(custom-set-variables
+ )" . -5623) (5570 . 5622) (4981 . 4985) (" " . -4981) ("
+" . -5567) (4981 . 4982) (5566 . 5567) (4980 . 4981) (" " . 4980) (4970 . 5566) (" " . 4970) (4697 . 4971) ("(custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (jedi win-switch py-autopep8 helm-dash tabbar go-playground smooth-scrolling markdown-toc google-translate yatex haskell-mode c-eldoc quickrun helm-migemo ace-isearch helm-swoop sr-speedbar redo+ undohist crux key-chord init-loader esup migemo init-open-recentf ace-jump-mode sequential-command flycheck-pos-tip undo-tree helm auto-complete yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff))))" . -4697) nil (37331 . 37335) nil ("ipython" . 37331) (t 22969 21166 0 0) nil (37469 . 37470) 37423 nil ("optional" . 37469) nil (";" . -37469) ((marker . 37339) . -1) (" " . -37470) ((marker . 37339) . -1) 37471 nil ("
-" . 37382) ((marker . 37383) . -1) ((marker . 37383) . -1) nil ("
-" . 37382) nil ("
-" . 37382) nil ("(setq jedi:complete-on-dot t)" . 37382) ((marker . 37383) . -29) ((marker . 37383) . -29) ((marker . 37383) . -29) ((marker*) . 29) ((marker) . -1) ((marker*) . 1) ((marker) . -29) nil ("
-" . 37382) nil ("(add-hook 'python-mode-hook 'jedi:setup)" . 37382) ((marker*) . 40) ((marker) . -1) ((marker*) . 1) ((marker) . -40) nil (37455 . 37552) nil (37452 . 37455) nil (37342 . 37381) nil (37339 . 37342) nil (37338 . 37339) nil (37328 . 37338) nil (37326 . 37328) nil (37327 . 37397) nil undo-tree-canary))
+    (markdown-mode cl-generic ein jedi win-switch py-autopep8 helm-dash tabbar go-playground smooth-scrolling markdown-toc google-translate yatex haskell-mode c-eldoc quickrun helm-migemo ace-isearch helm-swoop sr-speedbar redo+ undohist crux key-chord init-loader esup migemo init-open-recentf ace-jump-mode sequential-command flycheck-pos-tip undo-tree helm auto-complete yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff)))
+ '(showkey-log-mode t)
+ '(showkey-tooltip-mode t))" . -4697) nil (38215 . 38216) (t 22978 18566 0 0) nil ("
+" . -38084) ((marker . 411093) . -1) 38085 nil (38084 . 38085) (t 22978 18561 0 0) nil (apply activate-cursor-for-undo 1) (38124 . 38125) (apply deactivate-cursor-after-undo 1) (apply activate-cursor-for-undo 2) (38168 . 38169) (apply deactivate-cursor-after-undo 2) (38083 . 38084) (apply activate-cursor-for-undo 1) (38122 . 38123) (apply deactivate-cursor-after-undo 1) (apply activate-cursor-for-undo 2) (38165 . 38166) (apply deactivate-cursor-after-undo 2) (38082 . 38083) (t 22978 18443 0 0) nil (38208 . 38209) nil (38082 . 38208) nil (38081 . 38082) nil (38072 . 38081) nil (38071 . 38072) (t 22978 18168 0 0) nil (37659 . 37733) nil (37609 . 37658) nil (37606 . 37609) nil (37606 . 37608) (t 22978 16786 0 0) nil undo-tree-canary))

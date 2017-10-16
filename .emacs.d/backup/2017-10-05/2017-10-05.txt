@@ -1,0 +1,18 @@
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-generate-toc again -->
+**Table of Contents**
+
+- [-](#-)
+    - [日付](#日付)
+    - [議事録](#議事録)
+
+<!-- markdown-toc end -->
+## 議事録
+
+### 日付
+2017-10-05
+
+### 議事録
+* レシート情報から，残り物を推測できるのか．
+  * 商品の消費期限を大まかにとり，ユーザーに余ってますか？と通知で聞く．
+
+

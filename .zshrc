@@ -175,16 +175,22 @@ alias e="emacs"
 alias えまｃｓ="emacs"
 alias え="emacs"
 
-alias E="/usr/local/Cellar/emacs/25.2/Emacs.app/ ; open Emacs.app"
+
+
+# 前の設定
+#alias E="/usr/local/Cellar/emacs/25.2/Emacs.app/ ; open Emacs.app"
 #alias Emacs="/usr/local/Cellar/emacs/25.2/Emacs.app/ ; open -a Emacs.app"
 #alias emacs='/usr/local/Cellar/emacs/25.2/Emacs.app/Contents/MacOS/Emacs -nw'
-alias ea="open -a emacs "#Emacs.app　windowが複数できる．
+#alias ea="open -a emacs "#Emacs.app　windowが複数できる．
+
 #http://keisanbutsuriya.hateblo.jp/entry/2015/02/13/133858
+
 alias ekill="emacsclient -e '(kill-emacs)'"
 alias ee='emacsclient -n' #Emacs.appで素早く開くためM-x server start->ekill
+
 #alias Emacs='/usr/local/Cellar/emacs/25.2/Emacs.app/ ; open Emacs.app;popd;emacsclient -n' #Emacs.appで素早く開くためM-x server start->ekill
 #alias ec='emacsclient -n ""'#error , eeなら
-alias Emacs='/Applications/Emacs.app/Contents/MacOS ; open Emacs    .app;popd;emacsclient -n'
+alias Emacs='/Applications/Emacs.app/Contents/MacOS ; open Emacs.app;popd;emacsclient -n'
 alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
 #$emacs hogeで普通に開ける
 #2017/03/23時点
@@ -350,3 +356,52 @@ export BROWSER=open
 
 #
 export PATH="/usr/local/bin:$PATH"
+
+export PATH="/usr/local/opt/libxml2/bin:$PATH"
+export PATH="/usr/local/opt/libxslt/bin:$PATH"
+
+# bundle exec
+alias be="bundle exec"
+
+# git status 表示
+# https://qiita.com/nishina555/items/f4f1ddc6ed7b0b296825
+
+# ブランチ名を色付きで表示させるメソッド
+function rprompt-git-current-branch {
+  local branch_name st branch_status
+
+  if [ ! -e  ".git" ]; then
+    # gitで管理されていないディレクトリは何も返さない
+    return
+  fi
+  branch_name=`git rev-parse --abbrev-ref HEAD 2> /dev/null`
+  st=`git status 2> /dev/null`
+  if [[ -n `echo "$st" | grep "^nothing to"` ]]; then
+    # 全てcommitされてクリーンな状態
+    branch_status="%F{green}"
+  elif [[ -n `echo "$st" | grep "^Untracked files"` ]]; then
+    # gitに管理されていないファイルがある状態
+    branch_status="%F{red}?"
+  elif [[ -n `echo "$st" | grep "^Changes not staged for commit"` ]]; then
+    # git addされていないファイルがある状態
+    branch_status="%F{red}+"
+  elif [[ -n `echo "$st" | grep "^Changes to be committed"` ]]; then
+    # git commitされていないファイルがある状態
+    branch_status="%F{yellow}!"
+  elif [[ -n `echo "$st" | grep "^rebase in progress"` ]]; then
+    # コンフリクトが起こった状態
+    echo "%F{red}!(no branch)"
+    return
+  else
+    # 上記以外の状態の場合は青色で表示させる
+    branch_status="%F{blue}"
+  fi
+  # ブランチ名を色付きで表示する
+  echo "${branch_status}[$branch_name]"
+}
+
+# プロンプトが表示されるたびにプロンプト文字列を評価、置換する
+setopt prompt_subst
+
+# プロンプトの右側(RPROMPT)にメソッドの結果を表示させる
+RPROMPT='`rprompt-git-current-branch`'

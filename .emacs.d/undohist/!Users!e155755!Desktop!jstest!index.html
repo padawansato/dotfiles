@@ -1,0 +1,158 @@
+
+((digest . "3f11742b4edc63234b9b822011aae55a") (undo-list nil (75 . 100) nil (73 . 75) nil (72 . 73) (t 23000 48985 0 0) nil (116 . 135) nil ("j" . -116) ((marker . 75) . -1) ((marker . 144) . -1) ("q" . -117) ((marker . 75) . -1) ((marker . 144) . -1) ("u" . -118) ((marker . 75) . -1) ((marker . 144) . -1) ("e" . -119) ((marker . 75) . -1) ((marker . 144) . -1) ("r" . -120) ((marker . 75) . -1) ((marker . 144) . -1) ("y" . -121) ((marker . 75) . -1) ((marker . 144) . -1) ("-" . -122) ((marker . 75) . -1) ((marker . 144) . -1) ("." . -123) ((marker . 75) . -1) ((marker . 2) . -1) ("m" . -124) ((marker . 75) . -1) ("i" . -125) ((marker . 75) . -1) ("n" . -126) ((marker . 75) . -1) ("." . -127) ((marker . 75) . -1) ("j" . -128) ((marker . 75) . -1) ("s" . -129) ((marker . 75) . -1) 130 nil ("2" . -123) ((marker . 75) . -1) ((marker . 144) . -1) ("2" . -124) ((marker . 75) . -1) ((marker . 2) . -1) ("." . -125) ((marker . 75) . -1) ("3" . -126) ((marker . 75) . -1) 127 nil (124 . 127) nil ("." . -124) ((marker . 75) . -1) ((marker . 2) . -1) ("2" . -125) ((marker . 75) . -1) ("." . -126) ((marker . 75) . -1) ("0" . -127) ((marker . 75) . -1) 128 (t 23000 48890 0 0) nil (226 . 227) nil (1 . 226) nil ("<!DOCTYPE html>
+<html lang=\"ja\" xmlns:og=\"http://ogp.me/ns#\" xmlns:mixi=\"http://mixi-platform.com/ns#\" xmlns:fb=\"http://www.facebook.com/2008/fbml\">
+
+<head>
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+    <meta name=\"description\" content=\"あなたの残り物を管理するツール\">
+    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge,chrome=1\">
+    <meta name=\"twitter:card\" content=\"summary_large_image\">
+    <meta name=\"twitter:title\" content=\"残り物を管理するツール\">
+    <meta name=\"twitter:description\" content=\"enpitER班の作成しているツールです\">
+    <title>冷蔵庫.com</title>
+</head>
+
+<body>
+  <script src=\"../bower_components/jquery/dist/jquery.js></script>
+  <script>
+  // ＋ボタン(class=\"add\")がクリックされたら
+  $(document).on(\"click\", \".add\", function () {
+
+   // 選択された親要素をコピーし、親要素の後に追加する
+   // ※親要素は<div id=\"item\">になる
+   $(this).parent().clone(true).insertAfter($(this).parent());
+
+  });
+  // －ボタン(class=\"del\")がクリックされたら
+  $(document).on(\"click\", \".del\", function () {
+
+   // 2ヵ所で使うので選択された親要素を変数targetに格納
+   // ※親要素は<div id=\"item\">になる
+   var target = $(this).parent();
+
+   // targetの親要素の配下の要素数が1以下だったら
+   // ※targetの親要素は<div id=\"list\">になる
+   if(target.parent().children().length > 1){
+
+   // <div id=\"item\">を削除する
+   target.remove();
+
+   }
+
+  });
+  </script>
+      <div id=\"list\">
+       <div id=\"item\">
+       <label for=\"label1\" style=\"width: 20%\">ラベル：</label>
+       <input type=\"text\" name=\"itemNm\" style=\"width: 20%\">
+       <label for=\"label2\" style=\"width: 20%\">ラベル：</label>
+       <input type=\"number\" name=\"number\" style=\"width: 20%\">
+       <input type=\"button\" value=\"＋\" class=\"add\" style=\"width: 10%\">
+       <input type=\"button\" value=\"－\" class=\"del\" style=\"width: 10%\">
+       </div>
+    <div id=\"chois\">
+
+        <p>残っているものを選択してください</p>
+
+        <ul>
+            <div id=\"beef\">
+                <li>牛肉</li>
+                <div class=\"form-inline\">
+                    <label class=\"checkbox-inline\"><input type=\"radio\" name=\"q1\"value=\"yes\"> Yes</label>
+                    <label class=\"checkbox-inline\"><input type=\"radio\" name=\"q1\"value=\"no\"> No</label>
+                </div>
+            </div>
+
+            <br>
+
+            <div id=\"kimuchi\">
+                <li>キムチ</li>
+                <div class=\"form-inline\">
+                    <label class=\"checkbox-inline\"><input type=\"radio\" name=\"q2\"value=\"yes\"> Yes</label>
+                    <label class=\"checkbox-inline\"><input type=\"radio\" name=\"q2\"value=\"no\"> No</label>
+                </div>
+            </div>
+
+            <br>
+
+            <div id=\"cabbage\">
+                <li>白菜</li>
+                <div class=\"form-inline\">
+                    <label class=\"checkbox-inline\"><input type=\"radio\" name=\"q3\"value=\"yes\"> Yes</label>
+                    <label class=\"checkbox-inline\"><input type=\"radio\" name=\"q3\"value=\"no\"> No</label>
+                </div>
+            </div>
+
+            <br>
+
+            <div id=\"poak\">
+                <li>豚肉</li>
+                <div class=\"form-inline\">
+                    <label class=\"checkbox-inline\"><input type=\"radio\" name=\"q4\"value=\"yes\"> Yes</label>
+                    <label class=\"checkbox-inline\"><input type=\"radio\" name=\"q4\"value=\"no\"> No</label>
+                </div>
+            </div>
+
+            <br>
+
+            <div id=\"tofu\">
+                <li>豆腐</li>
+                <div class=\"form-inline\">
+                    <label class=\"checkbox-inline\"><input type=\"radio\" name=\"q5\"value=\"yes\"> Yes</label>
+                    <label class=\"checkbox-inline\"><input type=\"radio\" name=\"q5\"value=\"no\"> No</label>
+                </div>
+            </div>
+
+
+            <br>
+
+            <div id=\"mushroom\">
+                <li>きのこ</li>
+                <div class=\"form-inline\">
+                    <label class=\"checkbox-inline\"><input type=\"radio\" name=\"q6\"value=\"yes\"> Yes</label>
+                    <label class=\"checkbox-inline\"><input type=\"radio\" name=\"q6\"value=\"no\"> No</label>
+                </div>
+            </div>
+
+            <br>
+
+            <div id=\"chicken\">
+                <li>鶏肉</li>
+                <div class=\"form-inline\">
+                    <label class=\"checkbox-inline\"><input type=\"radio\" name=\"q7\"value=\"yes\"> Yes</label>
+                    <label class=\"checkbox-inline\"><input type=\"radio\" name=\"q7\"value=\"no\"> No</label>
+                </div>
+            </div>
+
+            <br>
+
+            <div id=\"negi\">
+                <li>長ネギ</li>
+                <div class=\"form-inline\">
+                    <label class=\"checkbox-inline\"><input type=\"radio\" name=\"q8\"value=\"yes\"> Yes</label>
+                    <label class=\"checkbox-inline\"><input type=\"radio\" name=\"q8\"value=\"no\"> No</label>
+                </div>
+            </div>
+
+            <br>
+
+            <div id=\"daikon\">
+                <li>大根</li>
+                <div class=\"form-inline\">
+                    <label class=\"checkbox-inline\"><input type=\"radio\" name=\"q9\"value=\"yes\"> Yes</label>
+                    <label class=\"checkbox-inline\"><input type=\"radio\" name=\"q9\"value=\"no\"> No</label>
+                </div>
+            </div>
+
+        </ul>
+        <button type=\"button\" id=\"submit\" onclick=\"window.open('./list.html')\" >残り物を確定</button>
+        <!-- 押したらそれ以外のが下に表示されるイメージ or 消える感じが良さそう… -->
+
+    </div>
+
+
+</body>
+
+</html>
+" . 1) ((marker . 75) . -5274) ((marker . 1) . -5030) ((marker . 246) . -5274) ((marker . 246) . -5274) ((marker . 1) . -5274) ((marker) . -5274) nil (1 . 5275) (t . 0)))

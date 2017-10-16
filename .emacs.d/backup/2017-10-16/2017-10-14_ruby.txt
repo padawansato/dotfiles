@@ -1,0 +1,27 @@
+# 参考
+
+## html
+### ボタン生成
+http://alphasis.info/2013/07/javascript-dom-documentobject-createelement/
+https://oshiete.goo.ne.jp/qa/2230965.html
+http://yume.hacca.jp/koiki/form/button-link.htm
+
+
+
+http://joyplot.com/documents/2016/11/21/add-tag-dom/
+http://akiok-jp.hatenablog.com/entry/2013/04/21/215225
+http://www.shurey.com/js/samples/1_tips3.html
+
+
+### rails ルーティング(routes)設定
+```
+$rails rake routes
+
+           Prefix Verb URI Pattern                  Controller#Action
+static_pages_home GET  /static_pages/home(.:format) static_pages#home
+static_pages_help GET  /static_pages/help(.:format) static_pages#help
+             root GET  /                            application#hello
+
+```
+ルーティングが見れるコマンド．http://localhost:3000/rails/info/routesでも同じ結果が見られる．
+これらは，ローカルの場合，*http://localhost:3000/static_pages/help*のように叩けばそのページが見えるよということ．

@@ -174,7 +174,9 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (jedi win-switch py-autopep8 helm-dash tabbar go-playground smooth-scrolling markdown-toc google-translate yatex haskell-mode c-eldoc quickrun helm-migemo ace-isearch helm-swoop sr-speedbar redo+ undohist crux key-chord init-loader esup migemo init-open-recentf ace-jump-mode sequential-command flycheck-pos-tip undo-tree helm auto-complete yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff))))
+    (markdown-mode cl-generic showkey ein jedi win-switch py-autopep8 helm-dash tabbar go-playground smooth-scrolling markdown-toc google-translate yatex haskell-mode c-eldoc quickrun helm-migemo ace-isearch helm-swoop sr-speedbar redo+ undohist crux key-chord init-loader esup migemo init-open-recentf ace-jump-mode sequential-command flycheck-pos-tip undo-tree helm auto-complete yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff)))
+ '(showkey-log-mode t)
+ '(showkey-tooltip-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -909,8 +911,6 @@
 ;; しかし，.emacs.d 以下に自動で作るようにしたバックアップとの依存関係は分からない．
 (setq auto-save-default nil)
 
-;; regionをGoogle翻訳する
-;; http://emacs.rubikitch.com/google-translate-sentence/
 (require 'google-translate)
 
 (defvar google-translate-english-chars "[:ascii:]’“”–"
@@ -941,7 +941,6 @@
      (if asciip "ja" "en")
      string)))
 (global-set-key (kbd "C-c t") 'google-translate-enja-or-jaen)
-
 
 ;; ssh scp
 (require 'tramp)
@@ -1067,3 +1066,23 @@
 ;; http://tkf.github.io/emacs-jedi/latest/
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)                 
+
+
+;; ipython ein
+;; https://tkf.github.io/emacs-ipython-notebook/
+(require 'ein)
+(setq ein:use-auto-complete t)
+(setq ein:use-smartrep t)
+
+
+;; shellのパスの引き継ぎ
+;; http://keisanbutsuriya.hateblo.jp/entry/2017/06/21/010257
+(exec-path-from-shell-initialize)
+
+;; showkey
+;; コマンドの履歴
+;; http://emacs.rubikitch.com/showkey/
+;; (require 'showkey)
+;; M-x showkey-log-mode は別フレームで操作履歴を表示
+;; M-x showkey-tooltip-mode は操作中のキーをカーソルの近くで表示
+;; これでも行ける　C-h l / <f1> l (view-lossage) は最近実行したキーを表示
