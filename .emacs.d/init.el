@@ -203,7 +203,7 @@
 (helm-mode 1)
   (define-key global-map (kbd "M-x")     'helm-M-x)
   (define-key global-map (kbd "C-x C-f") 'helm-find-files)
-  (define-key global-map (kbd "C-x C-r") 'helm-recentf)
+;;  (define-key global-map (kbd "C-x C-r") 'helm-recentf)
   (define-key global-map (kbd "M-y")     'helm-show-kill-ring)
   (define-key global-map (kbd "C-c i")   'helm-imenu)
   (define-key global-map (kbd "C-x C-b") 'helm-buffers-list)
@@ -618,7 +618,7 @@
 
 ;; view-modeであることが一目で分かるようにする．
 ;; https://books.google.co.jp/books?id=TaNQMRcneSQC&pg=PA220&lpg=PA220&dq=emacs+view-mode+color&source=bl&ots=JpHeQwcU9w&sig=vPbf_1gp4R069oXV9cvjnqqthD8&hl=ja&sa=X&ved=0ahUKEwiOypv-yvnSAhWIxLwKHQqADZsQ6AEITzAH#v=onepage&q=emacs%20view-mode%20color&f=false
-;;(require 'viewer)
+(require 'viewer)
 ;; 色名を指定する
 ;;(viewer-change-modelinge-color-setup)
 
@@ -854,25 +854,25 @@
 ;; https://gist.github.com/ongaeshi/5891530
 ;; http://ongaeshi.hatenablog.com/entry/20121205/1354672102
 ;; http://qiita.com/ongaeshi/items/3521b814aa4bf162181d
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-9") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-8") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 ;; http://tam5917.hatenablog.com/entry/20121208/1354931551
 (require 'multiple-cursors)
-;; (require 'smartrep)
-;; (declare-function smartrep-define-key "smartrep")
+(require 'smartrep)
+(declare-function smartrep-define-key "smartrep")
 (global-set-key (kbd "C-M-c") 'mc/edit-lines)
 (global-set-key (kbd "C-;")   'mc/mark-all-like-this)
-;;(global-unset-key "\C-i")
-;; (smartrep-define-key global-map "C-i"
-;;   '(("C-p"      . 'mc/mark-previous-like-this)
-;;     ("C-n"      . 'mc/mark-next-like-this)
-;;     ("u"        . 'mc/unmark-next-like-this)
-;;     ("U"        . 'mc/unmark-previous-like-this)
-;;     ("s"        . 'mc/skip-to-next-like-this)
-;;     ("S"        . 'mc/skip-to-previous-like-this)
-;;     ("*"        . 'mc/mark-all-like-this)))
+(global-unset-key "\C-i")
+(smartrep-define-key global-map "C-i"
+  '(("C-p"      . 'mc/mark-previous-like-this)
+    ("C-n"      . 'mc/mark-next-like-this)
+    ("u"        . 'mc/unmark-next-like-this)
+    ("U"        . 'mc/unmark-previous-like-this)
+    ("s"        . 'mc/skip-to-next-like-this)
+    ("S"        . 'mc/skip-to-previous-like-this)
+    (";"        . 'mc/mark-all-like-this)))
 
 
 ;; 週間emacs
@@ -1112,3 +1112,76 @@
 (require 'ruby-electric)
 (add-hook 'ruby-mode-hook '(lambda () (ruby-electric-mode t)))
 (setq ruby-electric-expand-delimiters-list nil)
+
+;; ,dired Copy 
+;; http://emacs.rubikitch.com/helm-dired-history/
+(with-eval-after-load 'dired
+  (require 'helm-dired-history)
+  (define-key dired-mode-map "," 'helm-dired-history-view))
+
+;; git-gutter-fringe
+;; https://github.com/syohex/emacs-git-gutter-fringe
+(require 'git-gutter-fringe)
+(global-git-gutter-mode t)
+(set-face-foreground 'git-gutter-fr:modified "red")
+(set-face-foreground 'git-gutter-fr:added    "green")
+(set-face-foreground 'git-gutter-fr:deleted  "white")
+
+;; full screan
+(global-set-key (kbd "C-^") 'toggle-frame-fullscrean)
+
+;; full screan
+;; http://akaneko85r.hatenablog.com/category/Emacs?page=1428848584
+; fullscrean-mode ----------------------------------------
+(require 'fullscreen-mode)
+(setq fullfullscreen-flg nil)
+(defun fullscreen-mode-fullfullscreen-toggle ()
+  (interactive)
+  (if fullfullscreen-flg
+      (progn (tool-bar-mode 1)
+         (menu-bar-mode 1)
+         (fullscreen-mode-windowed)
+         (setq fullfullscreen-flg nil))
+    (progn (tool-bar-mode 0)
+       (menu-bar-mode 0)
+       (fullscreen-mode-fullscreen)
+       (setq fullfullscreen-flg t))))
+(define-key global-map (kbd "<f11>") 'fullscreen-mode-fullfullscreen-toggle)
+; ---------------------------------------- fullscrean-mode
+
+;; projectile-rails
+;; https://qiita.com/elbowroomer/items/8e3c4b075a181f224591
+(require 'projectile)
+(projectile-global-mode)
+(require 'projectile-rails)
+(add-hook 'projectile-mode-hook 'projectile-rails-on)
+
+;; web-mode
+;; https://qiita.com/elbowroomer/items/30bdf1c062a6ed3fa488
+(require 'web-mode)
+;; 拡張子の設定
+(add-to-list 'auto-mode-alist '("\\.phtml$"     . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tpl\\.php$" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.jsp$"       . web-mode))
+(add-to-list 'auto-mode-alist '("\\.as[cp]x$"   . web-mode))
+(add-to-list 'auto-mode-alist '("\\.erb$"       . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html?$"     . web-mode))
+;; インデント関係
+(defun web-mode-hook ()
+  "Hooks for Web mode."
+  (setq web-mode-html-offset   4)
+  (setq web-mode-css-offset    4)
+  (setq web-mode-script-offset 4)
+  (setq web-mode-php-offset    4)
+  (setq web-mode-java-offset   4)
+  (setq web-mode-asp-offset    4)
+  (setq indent-tabs-mode t)
+  (setq tab-width 4))
+(add-hook 'web-mode-hook 'web-mode-hook)
+;; https://qiita.com/hayamiz/items/130727c09230fab0c097
+(setq web-mode-auto-close-style 2)
+(setq web-mode-tag-auto-close-style t)
+(setq web-mode-enable-auto-pairing t)
+
+;; this is the end line
+

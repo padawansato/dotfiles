@@ -1,0 +1,31 @@
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-generate-toc again -->
+**Table of Contents**
+
+- [タスク名](#タスク名)
+    - [プロフィールの必要な要素の選定．](#プロフィールの必要な要素の選定)
+        - [清家くん想定](#清家くん想定)
+        - [LINEAPIから持ってこれる情報](#lineapiから持ってこれる情報)
+
+<!-- markdown-toc end -->
+# タスク名
+プロフィールの詳細を決める．
+## プロフィールの必要な要素の選定．
+### 清家くん想定
+* 性別
+* 年齢
+* 職業
+* 趣味
+* 目的
+* ユーザー名
+
+### LINEAPIから持ってこれる情報
+プロパティ	|タイプ|	説明
+displayName	|String|	ユーザーの表示名
+userId  	|String|	ユーザーの識別子
+pictureUrl	|String|	プロフィール画像のURL。httpsで指定します。ユーザーがプロフィール画像を設定していない場合はレスポンスに含まれません。
+statusMessage	|String|	ユーザーのステータスメッセージ。ユーザーがステータスメッセージを設定していない場合はレスポンスに含まれません。
+
+
+
+
+https://developers.line.me/ja/docs/social-api/reference/#anchor-7c7c6e9779e9bd5927ee0469a9b15ac44ef5c546

@@ -1,0 +1,37 @@
+
+((digest . "8dc52789cfcf2018ecbe029dba8ba60b") (undo-list (146 . 147) nil (1 . 146) nil ("#[List View]
+/index
+
+--> Add View
+
+Click add button
+==> GET /add
+
+
+#[Add View]
+/add
+
+--> List View
+
+--> Add View
+
+Click back button
+==> GET /index
+
+Click submit button
+==> POST /add
+" . 1) ((marker . 1) . -182) ((marker . 1) . -181) ((marker . 1) . -182) ((marker . 2) . -182) ((marker . 1) . -181) ((marker . 2) . -182) ((marker) . -182) (t 23025 54233 0 0) nil (182 . 183) nil (1 . 182) nil ("
+#[一覧画面]
+/index
+
+--> 新規作成画面
+
+#[新規作成画面]
+/add
+
+--> 一覧画面
+
+--> 新規作成画面
+
+#[サーバエラー画面]
+" . 1) ((marker . 1) . -79) ((marker . 146) . -78) ((marker . 1) . -78) ((marker . 1) . -78) ((marker . 1) . -79) ((marker . 1) . -1) ((marker . 1) . -79) ((marker . 2) . -79) ((marker . 1) . -1) ((marker . 2) . -2) ((marker . 1) . -79) ((marker . 2) . -79) ((marker . 1) . -78) ((marker . 2) . -79) ((marker) . -79) nil (1 . 2) (t 23025 54061 0 0) nil (78 . 79) nil (1 . 78) (t . 0)))

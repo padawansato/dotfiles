@@ -3,25 +3,29 @@
 
 (setq mc/cmds-to-run-for-all
       '(
-	View-scroll-line-backward
-	c-electric-delete-forward
-	helm-M-x
-	indent-for-tab-command
-	markdown-cycle
-	markdown-exdent-or-delete
-	org-cycle-agenda-files
-	org-delete-char
-	org-kill-line
-	org-self-insert-command
-	))
+        View-scroll-line-backward
+        c-electric-delete-forward
+        comment-dwim
+        helm-M-x
+        indent-for-tab-command
+        markdown-cycle
+        markdown-exdent-or-delete
+        org-cycle-agenda-files
+        org-delete-char
+        org-kill-line
+        org-self-insert-command
+        ))
 
 (setq mc/cmds-to-run-once
       '(
-	View-scroll-page-backward
-	electric-newline-and-maybe-indent
-	electric-pair-delete-pair
-	eval-last-sexp
-	mark-whole-buffer
-	seq-end
-	seq-home
-	))
+        View-scroll-page-backward
+        electric-newline-and-maybe-indent
+        electric-pair-delete-pair
+        eval-last-sexp
+        mark-whole-buffer
+        markdown-outdent-or-delete
+        scroll-other-window
+        seq-end
+        seq-home
+        win-switch-dispatch
+        ))
