@@ -292,14 +292,18 @@
 (define-key helm-swoop-map (kbd "C-r") 'helm-previous-line)
 (define-key helm-swoop-map (kbd "C-s") 'helm-next-line)
 ;; キーバインドはお好みで
-(global-set-key (kbd "M-i") 'helm-swoop)
-(global-set-key (kbd "M-I") 'helm-swoop-back-to-last-point)
+(global-set-key (kbd "M-i") 'helm-swoop);;下で2回でmultiに変更．
+(global-set-key (kbd "M-l") 'helm-swoop-back-to-last-point)
 (global-set-key (kbd "C-c M-i") 'helm-multi-swoop)
 (global-set-key (kbd "C-x M-i") 'helm-multi-swoop-all)
 ;; isearch実行中にhelm-swoopに移行
 (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-isearch)
 ;; helm-swoop実行中にhelm-multi-swoop-allに移行
 (define-key helm-swoop-map (kbd "M-i") 'helm-multi-swoop-all-from-helm-swoop)
+;; 文字列を入力してから検索するまでのタイムラグを設定する（デフォルトは 0.01）
+;; https://ubutun.blogspot.com/2016/01/helm-swoopemacs.html
+(setq helm-input-idle-delay 0.2)
+
 ;; Save buffer when helm-multi-swoop-edit complete
 (setq helm-multi-swoop-edit-save t)
 ;; 値がtの場合はウィンドウ内に分割、nilなら別のウィンドウを使用
@@ -427,7 +431,7 @@
 
 ;; redo+
 (require 'redo+)
-(global-set-key (kbd "C-M-/") 'redo)
+(global-set-key (kbd "C-.") 'redo)
 
 ;; 起動時間計測
 ;; M-x esup
@@ -1147,20 +1151,22 @@
 
 ;; magit
 (require 'magit)
-(global-set-key         (kbd ""M-C-g"")       'magit-status)
+;; http://yamakichi.hatenablog.com/entry/2016/06/29/133246
+(setq-default magit-auto-revert-mode nil)
+(setq vc-handled-backends '())
+(eval-after-load "vc" '(remove-hook 'find-file-hooks 'vc-find-file-hook))
+(bind-key "C-x m" 'magit-status)
+(bind-key "C-c l" 'magit-blame)
 
+(custom-set-faces
+ '(magit-diff-added ((t (:background "black" :foreground "green"))))
+ '(magit-diff-added-highlight ((t (:background "white" :foreground "green"))))
+ '(magit-diff-removed ((t (:background "black" :foreground "blue"))))
+ '(magit-diff-removed-hightlight ((t (:background "white" :foreground "blue"))))
+ '(magit-hash ((t (:foreground "red"))))
+)
 ;; git-gutter-fringe
 (global-git-gutter-mode)
-(global-unset-key       (kbd ""M-C-g C-g""))
-(global-set-key         (kbd ""M-C-g C-g C-t"")       'git-gutter:toggle) ;git-gutterをon/off.
-(global-set-key         (kbd ""M-C-g C-g C-p"")       'git-gutter:previous-hunk);編集箇所に移動．
-(global-set-key         (kbd ""M-C-g C-g C-n"")       'git-gutter:next-hunk)
-;;(global-set-key         (kbd ""M-C-g C-g r"")       'git-gutter:revert-hunk);差分をもとに戻す．
-(global-set-key         (kbd ""M-C-g C-g C-u"")       'git-gutter:popup-hunk) ; popup diff
-(global-set-key         (kbd ""M-C-g C-g C-s"")       'git-gutter:set-start-revision) ; リヴィジョンごとの差分を表示
-;;(global-set-key         (kbd ""C-c C-g C-g"")       'git-gutter) ; Show changes from last commit or Update change information.
-;;(global-set-key         (kbd ""C-c C-g c"")       'git-gutter:clear) ; Clear changes
-
 
 ;; full screan
 ;; (global-set-key (kbd "C-^") 'toggle-frame-fullscrean)
