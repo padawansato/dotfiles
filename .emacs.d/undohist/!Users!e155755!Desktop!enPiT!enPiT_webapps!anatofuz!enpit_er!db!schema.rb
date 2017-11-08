@@ -1,11 +1,2 @@
 
-((digest . "edffd9cfb4be8c2afdc80ff0efe670ab") (undo-list nil ("
-  create_table \"meeting_places\", force: :cascade do |t|
-    t.integer \"user_id\"
-    t.integer \"place_id\"
-    t.datetime \"created_at\", null: false
-    t.datetime \"updated_at\", null: false
-    t.index [\"user_id\"], name: \"index_meeting_places_on_user_id\"
-  end
-
-" . -780) ((marker . 1197) . -106) ((marker . 1197) . -106) ((marker . 1228) . -81) ((marker . 1228) . -81) ((marker . 1234) . -57) ((marker . 1234) . -57) ((marker . 1235) . -1) ((marker . 1235) . -1) ((marker . 1156) . -147) ((marker . 1156) . -147) ((marker . 1115) . -188) ((marker . 1115) . -188) ((marker . 1094) . -253) ((marker . 1094) . -253) ((marker . 1074) . -259) ((marker . 1074) . -259) ((marker . 1027) . -260) ((marker . 1027) . -260) ((marker . 780) . -259) ((marker* . 780) . 1) ((marker* . 780) . 1) ((marker . 780) . -259) ((marker . 780) . -1) ((marker . 780) . -260) ((marker . 780) . -260) ((marker . 780) . -259) ((marker) . -260) ((marker) . -1) ((marker) . -259) ((marker) . -260) 1040 (t 23031 61365 0 0)))
+((digest . "0c0d537872f6e29c930ba9f87a4d261a") (undo-list nil (1039 . 1040) (t 23042 42783 0 0) nil (1039 . 1060) nil ("'" . -1039) ((marker . 1040) . -1) ((marker . 1039) . -1) ((marker . 1040) . -1) ("1" . -1040) ((marker . 1040) . -1) ((marker . 1039) . -1) ("9" . -1041) ((marker . 1040) . -1) ((marker . 1039) . -1) ("9" . -1042) ((marker . 1040) . -1) ((marker . 1039) . -1) ("7" . -1043) ((marker . 1040) . -1) ((marker . 1039) . -1) ("-" . -1044) ((marker . 1040) . -1) ((marker . 1039) . -1) ("0" . -1045) ((marker . 1040) . -1) ((marker . 1039) . -1) ("1" . -1046) ((marker . 1040) . -1) ((marker . 1039) . -1) ("-" . -1047) ((marker . 1040) . -1) ((marker . 1039) . -1) ("0" . -1048) ((marker . 1040) . -1) ((marker . 1039) . -1) ("1" . -1049) ((marker . 1040) . -1) ((marker . 1039) . -1) ("'" . -1050) ((marker . 1040) . -1) ((marker . 1039) . -1) 1051 (t 23042 42764 0 0) nil (1051 . 1052) nil (1039 . 1051) nil ("2" . -1039) ((marker . 1040) . -1) 1040 nil (1039 . 1040) (t 23042 39745 0 0) nil undo-tree-canary))

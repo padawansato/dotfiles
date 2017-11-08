@@ -366,6 +366,17 @@ alias be="bundle exec"
 # git status 表示
 # https://qiita.com/nishina555/items/f4f1ddc6ed7b0b296825
 
+# ここはプロンプトの設定なので今回の設定とは関係ありません
+if [ $UID -eq 0 ];then
+# ルートユーザーの場合
+PROMPT="%F{red}%n:%f%F{green}%d%f [%m] %%
+"
+else
+# ルートユーザー以外の場合
+PROMPT="%f%F{green}%d%f %%
+"
+fi
+
 # ブランチ名を色付きで表示させるメソッド
 function rprompt-git-current-branch {
   local branch_name st branch_status
@@ -405,3 +416,26 @@ setopt prompt_subst
 
 # プロンプトの右側(RPROMPT)にメソッドの結果を表示させる
 RPROMPT='`rprompt-git-current-branch`'
+
+
+# ghq peco hub
+# alias g='cd $(ghq root)/$(ghq list | peco)'
+# alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
+
+# https://qiita.com/ysk_1031/items/8cde9ce8b4d0870a129d
+# function peco-src () {
+#   local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
+#   if [ -n "$selected_dir" ]; then
+#     BUFFER="cd ${selected_dir}"
+#     zle accept-line
+#   fi
+#   zle clear-screen
+# }
+# zle -N peco-src
+# bindkey '^]' peco-src
+
+# git alias
+alias gitc="git checkout"
+alias gits="git status"
+alias git commit="git commit --verbose"
+alias gitb="git branch"

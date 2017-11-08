@@ -14,11 +14,21 @@
 ;; http://qiita.com/kametaro/items/2a0197c74cfd38fddb6b
 (require 'cask "~/.cask/cask.el")
 (cask-initialize)
+;;; init-loader 設定
+;;http://kiririmode.hatenablog.jp/entry/20141228/1419762171
+(require 'init-loader)
+
+(setq init-loader-show-log-after-init "error-only")
+(init-loader-load "~/.emacs.d/inits")
+
+
 (require 'pallet)
 (pallet-mode t)
 ;; pallet error
 
 ;; https://stackoverflow.com/questions/41937723/troubles-using-cask-on-emacs
+
+
 
 
 (package-initialize)
@@ -1078,14 +1088,14 @@
 
 ;; ipython ein
 ;; https://tkf.github.io/emacs-ipython-notebook/
-(require 'ein)
-(setq ein:use-auto-complete t)
-(setq ein:use-smartrep t)
+;; (require 'ein)
+;; (setq ein:use-auto-complete t)
+;; (setq ein:use-smartrep t)
 
 ;; http://millejoh.github.io/emacs-ipython-notebook/
-(require 'ein-loaddefs)
-(require 'ein-notebook)
-(require 'ein-subpackages)
+;; (require 'ein-loaddefs)
+;; (require 'ein-notebook)
+;; (require 'ein-subpackages)
 
 ;; shellのパスの引き継ぎ
 ;; http://keisanbutsuriya.hateblo.jp/entry/2017/06/21/010257
@@ -1113,6 +1123,10 @@
 (add-hook 'ruby-mode-hook '(lambda () (ruby-electric-mode t)))
 (setq ruby-electric-expand-delimiters-list nil)
 
+;; ruby-mode utf-8 マジックコメント
+;; https://qiita.com/tetsuo_jp/items/c05095931ae080f89d21
+(setq ruby-insert-encoding-magic-comment nil)
+
 ;; ,dired Copy 
 ;; http://emacs.rubikitch.com/helm-dired-history/
 (with-eval-after-load 'dired
@@ -1123,30 +1137,51 @@
 ;; https://github.com/syohex/emacs-git-gutter-fringe
 (require 'git-gutter-fringe)
 (global-git-gutter-mode t)
+(setq git-gutter:window-width 2)
+(setq git-gutter:modified-sign "⇔")
+(setq git-gutter:added-sign "⇒")
+(setq git-gutter:deleted-sign "⇐")
 (set-face-foreground 'git-gutter-fr:modified "red")
 (set-face-foreground 'git-gutter-fr:added    "green")
 (set-face-foreground 'git-gutter-fr:deleted  "white")
 
+;; magit
+(require 'magit)
+(global-set-key         (kbd ""M-C-g"")       'magit-status)
+
+;; git-gutter-fringe
+(global-git-gutter-mode)
+(global-unset-key       (kbd ""M-C-g C-g""))
+(global-set-key         (kbd ""M-C-g C-g C-t"")       'git-gutter:toggle) ;git-gutterをon/off.
+(global-set-key         (kbd ""M-C-g C-g C-p"")       'git-gutter:previous-hunk);編集箇所に移動．
+(global-set-key         (kbd ""M-C-g C-g C-n"")       'git-gutter:next-hunk)
+;;(global-set-key         (kbd ""M-C-g C-g r"")       'git-gutter:revert-hunk);差分をもとに戻す．
+(global-set-key         (kbd ""M-C-g C-g C-u"")       'git-gutter:popup-hunk) ; popup diff
+(global-set-key         (kbd ""M-C-g C-g C-s"")       'git-gutter:set-start-revision) ; リヴィジョンごとの差分を表示
+;;(global-set-key         (kbd ""C-c C-g C-g"")       'git-gutter) ; Show changes from last commit or Update change information.
+;;(global-set-key         (kbd ""C-c C-g c"")       'git-gutter:clear) ; Clear changes
+
+
 ;; full screan
-(global-set-key (kbd "C-^") 'toggle-frame-fullscrean)
+;; (global-set-key (kbd "C-^") 'toggle-frame-fullscrean)
 
 ;; full screan
 ;; http://akaneko85r.hatenablog.com/category/Emacs?page=1428848584
 ; fullscrean-mode ----------------------------------------
-(require 'fullscreen-mode)
-(setq fullfullscreen-flg nil)
-(defun fullscreen-mode-fullfullscreen-toggle ()
-  (interactive)
-  (if fullfullscreen-flg
-      (progn (tool-bar-mode 1)
-         (menu-bar-mode 1)
-         (fullscreen-mode-windowed)
-         (setq fullfullscreen-flg nil))
-    (progn (tool-bar-mode 0)
-       (menu-bar-mode 0)
-       (fullscreen-mode-fullscreen)
-       (setq fullfullscreen-flg t))))
-(define-key global-map (kbd "<f11>") 'fullscreen-mode-fullfullscreen-toggle)
+;; (require 'fullscreen-mode)
+;; (setq fullfullscreen-flg nil)
+;; (defun fullscreen-mode-fullfullscreen-toggle ()
+;;   (interactive)
+;;   (if fullfullscreen-flg
+;;       (progn (tool-bar-mode 1)
+;;          (menu-bar-mode 1)
+;;          (fullscreen-mode-windowed)
+;;          (setq fullfullscreen-flg nil))
+;;     (progn (tool-bar-mode 0)
+;;        (menu-bar-mode 0)
+;;        (fullscreen-mode-fullscreen)
+;;        (setq fullfullscreen-flg t))))
+;; (define-key global-map (kbd "<f11>") 'fullscreen-mode-fullfullscreen-toggle)
 ; ---------------------------------------- fullscrean-mode
 
 ;; projectile-rails
@@ -1165,23 +1200,27 @@
 (add-to-list 'auto-mode-alist '("\\.jsp$"       . web-mode))
 (add-to-list 'auto-mode-alist '("\\.as[cp]x$"   . web-mode))
 (add-to-list 'auto-mode-alist '("\\.erb$"       . web-mode))
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?$"     . web-mode))
 ;; インデント関係
 (defun web-mode-hook ()
   "Hooks for Web mode."
-  (setq web-mode-html-offset   4)
+  (setq web-mode-html-offset   2)
   (setq web-mode-css-offset    4)
   (setq web-mode-script-offset 4)
   (setq web-mode-php-offset    4)
   (setq web-mode-java-offset   4)
   (setq web-mode-asp-offset    4)
   (setq indent-tabs-mode t)
-  (setq tab-width 4))
+  (setq tab-width 2))
 (add-hook 'web-mode-hook 'web-mode-hook)
 ;; https://qiita.com/hayamiz/items/130727c09230fab0c097
-(setq web-mode-auto-close-style 2)
+(setq web-mode-auto-close-style 3)
 (setq web-mode-tag-auto-close-style t)
 (setq web-mode-enable-auto-pairing t)
+
+
+
 
 ;; this is the end line
 
