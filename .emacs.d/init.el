@@ -1142,9 +1142,6 @@
 (require 'git-gutter-fringe)
 (global-git-gutter-mode t)
 (setq git-gutter:window-width 2)
-(setq git-gutter:modified-sign "⇔")
-(setq git-gutter:added-sign "⇒")
-(setq git-gutter:deleted-sign "⇐")
 (set-face-foreground 'git-gutter-fr:modified "red")
 (set-face-foreground 'git-gutter-fr:added    "green")
 (set-face-foreground 'git-gutter-fr:deleted  "white")
@@ -1225,6 +1222,29 @@
 (setq web-mode-tag-auto-close-style t)
 (setq web-mode-enable-auto-pairing t)
 
+;; 
+;; server start for emacs-client
+(when window-system                       ; GUI時
+  (require 'server)
+  (unless (eq (server-running-p) 't)
+    (server-start)
+
+    (defun iconify-emacs-when-server-is-done ()
+      (unless server-clients (iconify-frame)))
+
+    ;; ;; C-x C-cに割り当てる(好みに応じて)
+    ;; (global-set-key (kbd "C-x C-c") 'server-edit)
+
+    ;; M-x exitでEmacsを終了できるようにする
+    (defalias 'exit 'save-buffers-kill-emacs)
+
+    ;; 起動時に最小化する
+    (add-hook 'after-init-hook 'iconify-emacs-when-server-is-done)
+
+    ;; 終了時にyes/noの問い合わせ
+    ;; (setq confirm-kill-emacs 'yes-or-no-p)
+    )
+  )
 
 
 
