@@ -106,7 +106,7 @@
 (set-face-foreground 'mode-line-inactive "white")  ;; アクティブでないバッファの文字色
 (set-face-background 'mode-line-inactive "MediumPurple4")  ;; アクティブでないバッファの背景色
 ;; http://th.nao.ac.jp/MEMBER/zenitani/elisp-j.html#color
-(set-face-background 'mode-line "white");;これで白紫に
+;;(set-face-background 'mode-line "white");;これで白紫に
 (set-face-foreground 'mode-line "MediumPurple4");;
 ;; モードごとに色を変える
 ;; http://stackoverflow.com/questions/15906332/change-emacs-mode-line-color-based-on-major-mode
@@ -302,7 +302,7 @@
 (define-key helm-swoop-map (kbd "M-i") 'helm-multi-swoop-all-from-helm-swoop)
 ;; 文字列を入力してから検索するまでのタイムラグを設定する（デフォルトは 0.01）
 ;; https://ubutun.blogspot.com/2016/01/helm-swoopemacs.html
-(setq helm-input-idle-delay 0.2)
+;;(setq helm-input-idle-delay 0.2)
 
 ;; Save buffer when helm-multi-swoop-edit complete
 (setq helm-multi-swoop-edit-save t)
@@ -868,8 +868,8 @@
 ;; https://gist.github.com/ongaeshi/5891530
 ;; http://ongaeshi.hatenablog.com/entry/20121205/1354672102
 ;; http://qiita.com/ongaeshi/items/3521b814aa4bf162181d
-(global-set-key (kbd "C-9") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-8") 'mc/mark-previous-like-this)
+;;(global-set-key (kbd "C-9") 'mc/mark-next-like-this)
+;;(global-set-key (kbd "C-8") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 ;; http://tam5917.hatenablog.com/entry/20121208/1354931551
@@ -1054,14 +1054,16 @@
 
 
 ;; autopep8 region
-;; http://qiita.com/fujimisakari/items/74e32eddb78dff4be585
-;; (require 'py-autopep8)
-;; (define-key python-mode-map (kbd "C-c F") 'py-autopep8)   
+(require 'py-autopep8)
+(add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
 ;; バッファ全体のコード整形
-;; (define-key python-mode-map (kbd "C-c f") 'py-autopep8-region)
-; 選択リジョン内のコード整形
+;;(define-key python-mode-map (kbd "C-c F") 'py-autopep8)   
+;; 選択リジョン内のコード整形
+(define-key python-mode-map (kbd "C-c f") 'py-autopep8-region)
 ;; 保存時にバッファ全体を自動整形する
 ;; (add-hook 'before-save-hook 'py-autopep8-before-save)
+
+
 
 
 ;; ---------------------------------------------------------
@@ -1121,6 +1123,11 @@
 
 ;; websocket
 (require 'websocket)
+
+;; rubyマジックコメントなし
+;; https://qiita.com/tetsuo_jp/items/c05095931ae080f89d21
+(setq ruby-insert-encoding-magic-comment nil)
+
 
 ;; ruby end自動生成
 (require 'ruby-electric)
@@ -1208,15 +1215,16 @@
 ;; インデント関係
 (defun web-mode-hook ()
   "Hooks for Web mode."
-  (setq web-mode-html-offset   2)
-  (setq web-mode-css-offset    4)
-  (setq web-mode-script-offset 4)
-  (setq web-mode-php-offset    4)
-  (setq web-mode-java-offset   4)
-  (setq web-mode-asp-offset    4)
-  (setq indent-tabs-mode t)
-  (setq tab-width 2))
+  (setq web-mode-markup-indent-indent-offset 2);;元々htmlだった．
+  (setq web-mode-css-indent-offset    2)
+  (setq web-mode-script-indent-offset 2)
+  (setq web-mode-php-indent-offset    4)
+  (setq web-mode-java-indent-offset   4)
+  (setq web-mode-asp-indent-offset    4)
+;;  (setq indent-tabs-mode t);;ハードタブ
+;;  (setq tab-width 2))
 (add-hook 'web-mode-hook 'web-mode-hook)
+
 ;; https://qiita.com/hayamiz/items/130727c09230fab0c097
 (setq web-mode-auto-close-style 3)
 (setq web-mode-tag-auto-close-style t)
@@ -1246,7 +1254,9 @@
     )
   )
 
-
+;; dired D削除 ゴミ箱へ
+;; http://yak-shaver.blogspot.com/2013/07/dired.html
+(setq delete-by-moving-to-trash t)
 
 ;; this is the end line
 

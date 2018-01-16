@@ -170,10 +170,10 @@ alias ｃｄ="cd"
 alias pu="pushd"
 alias dirs="dirs -v"
 
-alias emac="emacs"
-alias e="emacs"
-alias えまｃｓ="emacs"
-alias え="emacs"
+alias emac="Emacs"
+alias e="Emacs"
+alias えまｃｓ="Emacs"
+alias え="Emacs"
 
 
 
@@ -184,17 +184,28 @@ alias え="emacs"
 #alias ea="open -a emacs "#Emacs.app　windowが複数できる．
 
 #http://keisanbutsuriya.hateblo.jp/entry/2015/02/13/133858
-
+#emacsclientは-aオプションでデーモンが起動していないときのエディタを指定できる。
+#GUIの場合
 alias ekill="emacsclient -e '(kill-emacs)'"
 alias ee='emacsclient -n' #Emacs.appで素早く開くためM-x server start->ekill
-
 #alias Emacs='/usr/local/Cellar/emacs/25.2/Emacs.app/ ; open Emacs.app;popd;emacsclient -n' #Emacs.appで素早く開くためM-x server start->ekill
 #alias ec='emacsclient -n ""'#error , eeなら
-alias Emacs='/Applications/Emacs.app/Contents/MacOS ; open Emacs.app;popd;emacsclient -n'
-alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
+alias Emacs='emacsclient -n'
+alias emacs='emacsclient -nw -a ""'
+
+
+#他のエディタ
+#export ALTERNATE_EDITOR=""
+#export EDITOR="emacsclient -nw"
+#export VISUAL="emacsclient -c -a vim"#使いづらかった．
+
 #$emacs hogeで普通に開ける
 #2017/03/23時点
 #しかし，上記aliasがなくてもターミナルで開かれる，これはなぜか分からない
+
+
+
+
 
 
 alias yo="youtube-dl"
@@ -436,6 +447,8 @@ RPROMPT='`rprompt-git-current-branch`'
 
 # git alias
 alias gitc="git checkout"
+alias git c="git checkout"
 alias gits="git status"
+alias git s="git status"
 alias git commit="git commit --verbose"
 alias gitb="git branch"
