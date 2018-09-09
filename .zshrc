@@ -452,3 +452,6 @@ alias gits="git status"
 alias git s="git status"
 alias git commit="git commit --verbose"
 alias gitb="git branch"
+
+# mecab
+export PATH="/usr/local/bin/mecab:$PATH"
