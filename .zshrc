@@ -454,4 +454,4 @@ alias git commit="git commit --verbose"
 alias gitb="git branch"
 
 # mecab
-export PATH="/usr/local/bin/mecab:$PATH"
+export PATH=/usr/local/bin/mecab:$PATH
