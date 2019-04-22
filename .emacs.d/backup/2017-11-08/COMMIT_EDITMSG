@@ -1,0 +1,16 @@
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   .emacs.d/init.el
+#	modified:   .emacs.d/recentf
+#
+# Changes not staged for commit:
+#	modified:   .emacs.d/backup/2017-11-08/recentf
+#
+# Untracked files:
+#	.emacs.d/backup/2017-11-08/init.el
+#

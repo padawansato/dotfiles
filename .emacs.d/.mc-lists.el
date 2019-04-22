@@ -7,6 +7,7 @@
         c-electric-delete-forward
         comment-dwim
         helm-M-x
+        helm-recentf
         indent-for-tab-command
         markdown-cycle
         markdown-exdent-or-delete
@@ -14,6 +15,8 @@
         org-delete-char
         org-kill-line
         org-self-insert-command
+        rectangle-number-lines
+        sgml-slash
         ))
 
 (setq mc/cmds-to-run-once
@@ -22,8 +25,11 @@
         electric-newline-and-maybe-indent
         electric-pair-delete-pair
         eval-last-sexp
+        handle-switch-frame
         mark-whole-buffer
         markdown-outdent-or-delete
+        ns-copy-including-secondary
+        ns-handle-scroll-bar-event
         scroll-other-window
         seq-end
         seq-home

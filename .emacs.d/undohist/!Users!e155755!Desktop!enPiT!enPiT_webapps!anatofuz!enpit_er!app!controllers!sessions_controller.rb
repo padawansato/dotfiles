@@ -1,3 +1,8 @@
 
-((digest . "3fd49c4024f10f4413462b77e854d2b2") (undo-list nil ("
-" . 404) ((marker) . -1) ((marker) . -1) ((marker) . -1) (t 23032 27099 0 0)))
+((digest . "bd82c71e799e2e30346915a53755f568") (undo-list nil ("
+" . 1) nil ("# coding: utf-8" . 1) (t 23085 63707 0 0) nil (1 . 17) (t 23085 63707 0 0) nil ("
+" . 1) nil ("# coding: utf-8" . 1) (t 23085 63702 0 0) nil (1 . 17) 260 (t 23085 63702 0 0) nil (141 . 142) nil (135 . 141) nil (110 . 111) nil (104 . 110) nil ("
+" . 1) nil ("# coding: utf-8" . 1) (t 23085 63620 0 0) nil (1 . 17) (t 23085 63620 0 0) nil ("
+" . 1) nil ("# coding: utf-8" . 1) (t 23085 63477 0 0) nil (1 . 17) (t 23085 63477 0 0) nil ("
+" . 1) nil ("# coding: utf-8" . 1) (t 23085 63459 0 0) nil (1 . 17) (t 23085 63459 0 0) nil ("
+" . 1) nil ("# coding: utf-8" . 1) (t 23085 62718 0 0)))

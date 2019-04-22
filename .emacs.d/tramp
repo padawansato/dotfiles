@@ -1,4 +1,4 @@
-;; -*- emacs-lisp -*- <17/06/12 02:39:25 /Users/e155755/.emacs.d/tramp>
+;; -*- emacs-lisp -*- <18/09/05 02:39:43 /Users/e155755/.emacs.d/tramp>
 ;; Tramp connection history.  Don't change this file.
 ;; You can delete it, forcing Tramp to reapply the checks.
 
@@ -18,5 +18,24 @@
   ("id" "/usr/bin/id")
   ("gid-integer" 1001)
   ("gid-string" "student"))
- (["ssh" nil "scp" nil nil]
-  nil))
+ (["ssh" "satotakumi" "testshark.ie.u-ryukyu.ac.jp" nil nil]
+  nil)
+ (["ssh" "satotakumi" "testshark.nal.ie.u-ryukyu.ac.jp" nil nil]
+  ("uname" "Linux 3.10.0-327.el7.x86_64")
+  ("locale" "LC_ALL=en_US.utf8")
+  ("test" "test")
+  ("remote-path"
+   ("/usr/bin" "/bin" "/sbin" "/usr/sbin" "/usr/local/bin" "/usr/local/sbin"))
+  ("remote-shell" "/bin/sh")
+  ("~" "/home/satotakumi")
+  ("file-exists" "test -e")
+  ("stat" nil)
+  ("perl-file-spec" t)
+  ("perl-cwd-realpath" t)
+  ("perl" "\\perl")
+  ("id" "/usr/bin/id")
+  ("gid-integer" 1043)
+  ("gid-string" "satotakumi")
+  ("ls" "/usr/bin/ls --color=never")
+  ("ls-dired" t)
+  ("readlink" "\\readlink")))

@@ -1,0 +1,16 @@
+name tripyramid
+author uehara
+nNode 4
+nSpring 6
+aAmp 1.0
+T 10.0
+node id=0 x=0.0	y=0.0			z=17.32050807568	vx=0.0 vy=0.0 vz=0.0
+node id=1 x=-10.0	y=-5.77350269189 	z=0.0			vx=0.0 vy=0.0 vz=0.0
+node id=2 x=0.0	y=11.54700538378 	z=0.0			vx=0.0 vy=0.0 vz=0.0
+node id=3 x=10.0	y=-5.77350269189 	z=0.0			vx=0.0 vy=0.0 vz=0.0
+spring id=0 b0=0 b1=1 isMuscle=0 rAmp=0.0 th=0.0 ks=125.0 kd=1.0 nLength=-1
+spring id=1 b0=0 b1=2 isMuscle=1 rAmp=0.25 th=0.0 ks=125.0 kd=1.0 nLength=-1
+spring id=2 b0=0 b1=3 isMuscle=0 rAmp=0.0 th=0.0 ks=125.0 kd=1.0 nLength=-1
+spring id=3 b0=1 b1=2 isMuscle=1 rAmp=0.25 th=2.0943951023931954923084289221863 ks=125.0 kd=1.0 nLength=-1
+spring id=4 b0=2 b1=3 isMuscle=1 rAmp=0.25 th=4.1887902047863909846168578443727 ks=125.0 kd=1.0 nLength=-1
+spring id=5 b0=3 b1=1 isMuscle=0 rAmp=0.0 th=0.0 ks=125.0 kd=1.0 nLength=-1

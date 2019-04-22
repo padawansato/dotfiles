@@ -1,8 +1,8 @@
 
-((digest . "1c67433ff653e0700b9ff46b129b7b5d") (undo-list nil ("
-" . 367) ((marker) . -1) ((marker) . -1) ((marker) . -1) nil (">>>>>>> master" . 367) ((marker) . -14) ((marker) . -14) nil ("
-" . 65) ((marker . 213) . -1) ((marker . 213) . -1) ((marker) . -1) nil ("=======" . 65) ((marker) . -7) nil ("
-" . 65) ((marker) . -1) ((marker) . -1) ((marker) . -1) nil ("  # end" . 65) ((marker) . -7) nil ("
-" . 65) ((marker . 213) . -1) ((marker . 213) . -1) ((marker) . -1) nil ("  #   assert true" . 65) ((marker) . -17) nil ("
-" . 65) ((marker) . -1) ((marker) . -1) ((marker) . -1) nil ("  # test \"the truth\" do" . 65) ((marker) . -23) nil ("
-" . 65) ((marker . 213) . -1) ((marker . 213) . -1) ((marker) . -1) nil ("<<<<<<< HEAD" . 65) ((marker*) . 12) ((marker) . -12) ((marker) . -12) (t 23012 23214 0 0)))
+((digest . "34e5f4b390db1d06f77db3874e55a2c1") (undo-list nil (148 . 149) (t 23086 47 0 0) nil (135 . 136) nil ("e" . -135) ((marker*) . 1) ((marker*) . 1) ((marker) . -1) 136 nil ("e" . 137) ("l" . 137) ("p" . 137) ("m" . 137) ("a" . 137) nil (142 . 152) nil ("s" . -142) ((marker) . -1) ("c" . -143) ((marker) . -1) ("r" . -144) ((marker) . -1) ("e" . -145) ((marker) . -1) ("e" . -146) ((marker) . -1) ("n" . -147) ((marker) . -1) 148 nil (142 . 148) nil (136 . 142) nil ("c" . -136) ((marker) . -1) 137 nil (135 . 137) nil ("\"" . -135) (135 . 136) ("\"" . -135) (135 . 136) (134 . 136) ("\"" . -134) (134 . 135) ("\"" . -134) (132 . 135) nil (121 . 132) (t 23085 62718 0 0) nil (" email: \"user@example.com\"," . -121) 148 (t 23017 21442 0 0) nil ("
+" . 367) nil (">>>>>>> master" . 367) nil ("
+" . 65) nil ("=======" . 65) nil ("
+" . 65) nil ("  # end" . 65) nil ("
+" . 65) nil ("  #   assert true" . 65) nil ("
+" . 65) nil ("  # test \"the truth\" do" . 65) nil ("
+" . 65) nil ("<<<<<<< HEAD" . 65) (t 23012 23214 0 0)))

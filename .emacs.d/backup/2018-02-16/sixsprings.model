@@ -1,0 +1,20 @@
+name twosprings
+author uehara
+nNode 3
+nSpring 2
+aAmp 1.0
+T 1.0
+node id=0 x=-10.0 y=0.0 z=0.0 vx=0.0 vy=0.0 vz=0.0
+node id=1 x=0.0 y=0.0 z=0.0 vx=0.0 vy=0.0 vz=0.0
+node id=2 x=10.0 y=0.0 z=0.0 vx=0.0 vy=0.0 vz=0.0
+node id=3 x=10.0 y=0.0 z=0.0 vx=0.0 vy=0.0 vz=0.0
+node id=4 x=0.0 y=0.0 z=0.0 vx=0.0 vy=0.0 vz=0.0
+node id=5 x=10.0 y=0.0 z=0.0 vx=0.0 vy=0.0 vz=0.0
+node id=6 x=0.0 y=0.0 z=0.0 vx=0.0 vy=0.0 vz=0.0
+
+spring id=0 b0=0 b1=1 isMuscle=1 rAmp=0.10 th=0.0 ks=125.0 kd=1.0 nLength=-1
+spring id=1 b0=1 b1=2 isMuscle=1 rAmp=0.10 th=3.1415926535897932384626433832795 ks=125.0 kd=1.0 nLength=-1
+spring id=2 b0=2 b1=3 isMuscle=1 rAmp=0.10 th=3.1415926535897932384626433832795 ks=125.0 kd=1.0 nLength=-1
+spring id=3 b0=3 b1=4 isMuscle=1 rAmp=0.10 th=3.1415926535897932384626433832795 ks=125.0 kd=1.0 nLength=-1
+spring id=4 b0=4 b1=5 isMuscle=1 rAmp=0.10 th=3.1415926535897932384626433832795 ks=125.0 kd=1.0 nLength=-1
+spring id=5 b0=5 b1=6 isMuscle=1 rAmp=0.10 th=3.1415926535897932384626433832795 ks=125.0 kd=1.0 nLength=-1

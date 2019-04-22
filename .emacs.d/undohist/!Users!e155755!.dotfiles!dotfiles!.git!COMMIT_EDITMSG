@@ -1,0 +1,25 @@
+
+((digest . "abb3acc612cb75519e604afe08ec7494") (undo-list nil ("c" . -17) ((marker . 17) . -1) 18 nil (17 . 18) (t 23043 62829 0 0) nil (13 . 17) nil ("t" . -13) ((marker) . -1) ("e" . -14) ((marker) . -1) ("s" . -15) ((marker) . -1) ("t" . -16) ((marker) . -1) (" " . -17) ((marker) . -1) 18 nil (6 . 18) nil (1 . 6) (t 23043 62730 0 0) nil (1 . 2) (t 23043 62730 0 0) (2 . 744) ("
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is ahead of 'origin/master' by 1 commit.
+#   (use \"git push\" to publish your local commits)
+#
+# Changes to be committed:
+#	modified:   .emacs.d/init.el
+#
+# Changes not staged for commit:
+#	modified:   .emacs.d/ac-comphist.dat
+#	modified:   .emacs.d/backup/2017-11-08/recentf
+#	modified:   .emacs.d/recentf
+#	modified:   .emacs.d/undohist/!Users!e155755!.dotfiles!dotfiles!.emacs.d!init.el
+#	modified:   .emacs.d/undohist/!Users!e155755!.dotfiles!dotfiles!.zshrc
+#	modified:   .zshrc
+#
+# Untracked files:
+#	.emacs.d/backup/2017-11-08/COMMIT_EDITMSG
+#	.emacs.d/backup/2017-11-08/init.el
+#	.emacs.d/backup/2017-11-09/
+#	.emacs.d/undohist/!Users!e155755!.dotfiles!dotfiles!.git!COMMIT_EDITMSG
+#	.emacs.d/" . 2) (t 23043 62089 0 0) nil (1 . 2) (t 23043 62089 0 0)))

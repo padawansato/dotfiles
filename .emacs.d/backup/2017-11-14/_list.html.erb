@@ -1,0 +1,15 @@
+<h2>残り物リスト</h2>
+<div class="list_scrollbar">
+<table class="food_tableList">
+<% unless @items.nil? %>
+  <% @items.each do |item| %>
+    <tr>
+      <td><%= item.created_at.strftime('%m月%d日') %></td>
+      <td><%= item.food %></td>
+      <!-- ここをdeleteアクションにしたいね -->
+      <td><input type="button" value="削除"></th>
+    </tr>
+  <% end %>
+<% end %>
+</table>
+</div>
