@@ -170,10 +170,10 @@ alias ｃｄ="cd"
 alias pu="pushd"
 alias dirs="dirs -v"
 
-alias emac="Emacs"
-alias e="Emacs"
-alias えまｃｓ="Emacs"
-alias え="Emacs"
+#alias emac="Emacs"
+#alias e="Emacs"
+#alias えまｃｓ="Emacs"
+#alias え="Emacs"
 
 
 
@@ -186,12 +186,12 @@ alias え="Emacs"
 #http://keisanbutsuriya.hateblo.jp/entry/2015/02/13/133858
 #emacsclientは-aオプションでデーモンが起動していないときのエディタを指定できる。
 #GUIの場合
-alias ekill="emacsclient -e '(kill-emacs)'"
-alias ee='emacsclient -n' #Emacs.appで素早く開くためM-x server start->ekill
+#alias ekill="emacsclient -e '(kill-emacs)'"
+#alias ee='emacsclient -n' #Emacs.appで素早く開くためM-x server start->ekill
 #alias Emacs='/usr/local/Cellar/emacs/25.2/Emacs.app/ ; open Emacs.app;popd;emacsclient -n' #Emacs.appで素早く開くためM-x server start->ekill
 #alias ec='emacsclient -n ""'#error , eeなら
-alias Emacs='emacsclient -n'
-alias emacs='emacsclient -nw -a ""'
+#alias Emacs='emacsclient -n'
+#alias emacs='emacsclient -nw -a ""'
 
 
 #他のエディタ
