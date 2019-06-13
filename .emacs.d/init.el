@@ -184,7 +184,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (python-mode markdown-mode cl-generic ein jedi win-switch py-autopep8 helm-dash tabbar go-playground smooth-scrolling markdown-toc google-translate yatex haskell-mode c-eldoc quickrun helm-migemo ace-isearch helm-swoop sr-speedbar redo+ undohist crux key-chord init-loader esup migemo init-open-recentf ace-jump-mode sequential-command flycheck-pos-tip undo-tree helm auto-complete yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff)))
+    (python-mode markdown-mode cl-generic ein jedi win-switch py-autopep8 helm-dash tabbar go-playground smooth-scrolling markdown-toc google-translate yatex haskell-mode c-eldoc quickrun helm-migemo ace-isearch helm-swoop sr-speedbar redo+ undohist crux key-chord init-loader esup migemo init-open-recentf ace-jump-mode sequential-command flycheck-pos-tip undo-tree helm auto-complete yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet Nyan-mode multiple-cursors Magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell Drag-stuff)))
  '(showkey-log-mode t)
  '(showkey-tooltip-mode t))
 (custom-set-faces
@@ -256,11 +256,11 @@
 
 ;; ace-isearch
 ;; http://emacs.rubikitch.com/ace-isearch/
-;; (global-ace-isearch-mode 1)
-;; (add-hook 'ace-jump-mode-before-jump-hook (lambda ()(message "I am jumping")))
-
 ;; ace-jump-modehttp://d.hatena.ne.jp/rkworks/20120520/1337528737
 (require 'ace-jump-mode)
+(global-ace-isearch-mode 1)
+(add-hook 'ace-jump-mode-before-jump-hook (lambda ()(message "I am jumping")))
+
 
 ;; (global-set-key (kbd "C-:") 'ace-jump-mode)
 ;; (ace-jump-mode t)
@@ -1251,12 +1251,33 @@
 
     ;; 終了時にyes/noの問い合わせ
     ;; (setq confirm-kill-emacs 'yes-or-no-p)
-    )
-  )
+      )
 
 ;; dired D削除 ゴミ箱へ
 ;; http://yak-shaver.blogspot.com/2013/07/dired.html
 (setq delete-by-moving-to-trash t)
 
 ;; this is the end line
+
+;;; init-loader設定
+(require 'init-loader)
+(setq init-loader-show-log-after-init 'error-only)(i
+						   nit-loader-load "~/.dotfiles/dotfiles/.emacs.d/inits")
+
+
+(setq migemo-dictionary "/usr/local/share/migemo/utf-8/migemo-dict")
+(setq migemo-command "cmigemo")
+(setq migemo-options '("-q" "--emacs"))
+(setq migemo-user-dictionary nil)
+(setq migemo-coding-system 'utf-8)
+(setq migemo-regex-dictionary nil)
+(load-library "migemo")
+(migemo-init)
+
+
+# helm-smex
+(require 'helm-smex)
+(global-set-key [remap execute-extended-command] #'helm-smex)
+(global-set-key (kbd "M-X") #'helm-smex-major-mode-commands)
+
 

@@ -1,1 +1,1 @@
-("~/Desktop/NAL研/workspace/" "~/.dotfiles/dotfiles/" "~/Desktop/NAL研/RNNでセンチメントアナリシス/")
+("~/.dotfiles/dotfiles/" "~/Desktop/NAL研/workspace/" "~/Desktop/NAL研/RNNでセンチメントアナリシス/")
