@@ -1,8 +1,8 @@
 
-((digest . "8fe71c9cefbba7d39a3c95761f056533") (undo-list nil (";; redo+
+((digest . "8fe71c9cefbba7d39a3c95761f056533") (undo-list nil ("ｋ" . -68) ((marker . 68) . -1) (68 . 69) ("ｋ" . -68) ((marker . 68) . -1) (68 . 69) (t 23810 15784 464709 131000) nil (";; redo+
 (require 'redo+)
 (global-set-key (kbd \"C-.\") 'redo)
-" . -15651) ((marker . 680) . -61) ((marker . 680) . -61) ((marker . 703) . -26) ((marker . 703) . -26) ((marker . 704) . -9) ((marker . 704) . -9) ((marker . 16240) . -61) ((marker) . -61) ((marker . 15652) . -1) 15712 (t 23810 15275 445723 15000) nil (4626 . 4627) nil ("  
+" . -15651) ((marker) . -61) ((marker) . -61) ((marker . 15652) . -1) 15712 (t 23810 15275 445723 15000) nil (4626 . 4627) nil ("  
 " . 4623) nil (nil rear-nonsticky nil 4622 . 4623) (nil fontified nil 4565 . 4623) (nil fontified nil 4560 . 4565) (nil fontified nil 4558 . 4560) (nil fontified nil 4551 . 4558) (nil fontified nil 4550 . 4551) (nil fontified nil 4499 . 4550) (nil fontified nil 4496 . 4499) (nil fontified nil 4492 . 4496) (nil fontified nil 4484 . 4492) (nil fontified nil 4481 . 4484) (4481 . 4623) nil (";; line number
 ;; http://lisphack.blog137.fc2.com/blog-entry-14.html
 (require 'linum)

@@ -1,0 +1,26 @@
+
+((digest . "67047c930e042012643f16043742aea4") (undo-list nil (1 . 149) nil ("5
+
+Done :
+* 論文読み
+Doing :
+* 論文読み
+  * なるべく、facebookやnetflixみたいなデータで実世界で有名なでーたであれば見栄えが良いのでやる気が出る。現金。
+To Do :
+* トピックモデルをより
+Other :
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+" . 1) ((marker . 1) . -142) ((marker . 1) . -12) ((marker . 149) . -12) ((marker . 1) . -142) ((marker . 2) . -142) ((marker . 1) . -12) ((marker . 2) . -13) ((marker) . -142) ((marker) . -142) ((marker) . -105) ((marker) . -106) ((marker) . -25) ((marker) . -26) ((marker) . -118) ((marker) . -119) ((marker) . -142) (t 23810 16338 52028 382000) nil undo-tree-canary))
