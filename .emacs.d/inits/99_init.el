@@ -892,8 +892,6 @@
     (";"        . 'mc/mark-all-like-this)))
 
 
-;; 週間emacs
-;; http://qiita.com/tadsan/items/82f47ce2dd73decb9c7a#_reference-b779235302958cf8c6c9
 
 ;; outline
 ;; http://emacs.rubikitch.com/origami/
@@ -928,9 +926,6 @@
         (t
          (setq truncate-lines nil))))
 
-;;YaTeX で C-c t j と打った時に pdf も作成する
-;;http://kyotokyotto.blog.fc2.com/blog-entry-8.html
-;;(setq tex-command "sh ~/.platex2pdf")
 
 ;; 自動で　#hoge# のようなバックアップを作らない
 ;; しかし，.emacs.d 以下に自動で作るようにしたバックアップとの依存関係は分からない．
@@ -1056,15 +1051,6 @@
 (setq ring-bell-function (lambda () (message "*beep*")))
 
 
-;; autopep8 region
-(require 'py-autopep8)
-(add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
-;; バッファ全体のコード整形
-;;(define-key python-mode-map (kbd "C-c F") 'py-autopep8)   
-;; 選択リジョン内のコード整形
-;;(define-key python-mode-map (kbd "C-c f") 'py-autopep8-region)
-;; 保存時にバッファ全体を自動整形する
-;; (add-hook 'before-save-hook 'py-autopep8-before-save)
 
 
 
@@ -1150,11 +1136,15 @@
 ;; git-gutter-fringe
 ;; https://github.com/syohex/emacs-git-gutter-fringe
 (require 'git-gutter-fringe)
-(global-git-gutter-mode t)
-(setq git-gutter:window-width 2)
 (set-face-foreground 'git-gutter-fr:modified "red")
 (set-face-foreground 'git-gutter-fr:added    "green")
 (set-face-foreground 'git-gutter-fr:deleted  "white")
+(setq git-gutter-fr:side 'right-fringe);;右側
+
+
+
+;;git-gutterこれをするとguiバグる
+;;(global-git-gutter-mode t)
 
 ;; magit
 (require 'magit)
@@ -1171,8 +1161,7 @@
  '(magit-diff-removed-hightlight ((t (:background "white" :foreground "blue"))))
  '(magit-hash ((t (:foreground "red"))))
 )
-;; git-gutter-fringe
-(global-git-gutter-mode t)
+
 
 
 ;; full screan
@@ -1284,4 +1273,16 @@
 (global-set-key (kbd "M-X") #'helm-smex-major-mode-commands)
 
 
-;; magit
+;; yatex
+(require 'yatex)                ;; パッケージ読み込み
+(add-to-list 'auto-mode-alist '("\\.tex\\'" . yatex)) ;;auto-mode-alistへの追加
+(setq tex-command "latex")       ;; 自分の環境に合わせて""内を変えてください
+(setq bibtex-command "pbibtex")    ;; 自分の環境に合わせて""内を変えてください
+;;reftex-mode
+(add-hook 'yatex-mode-hook
+          #'(lambda ()
+              (reftex-mode 1)
+              (define-key reftex-mode-map
+                (concat YaTeX-prefix ">") 'YaTeX-comment-region)
+              (define-key reftex-mode-map
+                (concat YaTeX-prefix "<") 'YaTeX-uncomment-region)))
