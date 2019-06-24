@@ -226,8 +226,8 @@
   (define-key global-map (kbd "C-x b") 'helm-mini);;
   (define-key helm-map (kbd "C-h") 'delete-backward-char)
   (define-key helm-find-files-map (kbd "C-h") 'delete-backward-char)
-  (define-key helm-find-files-map (kbd "TAB") 'helm-execute-persistent-action)
-  (define-key helm-read-file-map (kbd "TAB") 'helm-execute-persistent-action)
+  (define-key helm-find-files-map (kbd "<tab>") 'helm-execute-persistent-action)
+  (define-key helm-read-file-map (kbd "<tab>") 'helm-execute-persistent-action)
   (define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
 
 ;;(setq search-default-regexp-mode nil);;http://qiita.com/duloxetine/items/a8cfcd9a55cb5791c2f4
@@ -467,7 +467,7 @@
 ;; thing-opt
 ;; http://dev.ariel-networks.com/articles/emacs/part5/
 ;;
-(setq load-path (cons "~/.emacs.d/elisp" load-path))
+(setq load-path (cons "~/.emacs.d/elipsp" load-path))
 (require 'thing-opt)
 (define-thing-commands)
 ;; cc-defs.el
