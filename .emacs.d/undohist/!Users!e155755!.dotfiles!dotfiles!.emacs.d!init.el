@@ -1,14 +1,3 @@
 
-((digest . "8fe71c9cefbba7d39a3c95761f056533") (undo-list nil (";; redo+
-(require 'redo+)
-(global-set-key (kbd \"C-.\") 'redo)
-" . -15651) ((marker) . -9) ((marker) . -10) ((marker . 680) . -61) ((marker . 680) . -61) ((marker . 703) . -26) ((marker . 703) . -26) ((marker . 704) . -9) ((marker . 704) . -9) ((marker . 15651) . -61) ((marker) . -61) ((marker) . -1) 15712 (t 23810 15275 445723 15000) nil (4626 . 4627) nil ("  
-" . 4623) nil (nil rear-nonsticky nil 4622 . 4623) (nil fontified nil 4565 . 4623) (nil fontified nil 4560 . 4565) (nil fontified nil 4558 . 4560) (nil fontified nil 4551 . 4558) (nil fontified nil 4550 . 4551) (nil fontified nil 4499 . 4550) (nil fontified nil 4496 . 4499) (nil fontified nil 4492 . 4496) (nil fontified nil 4484 . 4492) (nil fontified nil 4481 . 4484) (4481 . 4623) nil (";; line number
-;; http://lisphack.blog137.fc2.com/blog-entry-14.html
-(require 'linum)
-(global-linum-mode 1)
-(global-set-key [f6] 'linum-mode)
-" . 4487) 4629 nil (nil rear-nonsticky nil 4479 . 4480) (nil fontified nil 4466 . 4480) (nil fontified nil 4463 . 4466) (nil fontified nil 4461 . 4463) (4461 . 4480) nil ("  ;; ←GUI用設定を、ここに記述" . 4464) nil (nil rear-nonsticky nil 4485 . 4486) (nil fontified nil 4437 . 4486) (4437 . 4486) nil ("い" . -7008) (7008 . 7009) (t 23810 15067 128720 985000) nil (6687 . 6688) nil ("ｔ" . -6687) (6687 . 6688) ("T" . -6687) 6688 nil (6685 . 6688) nil (6683 . 6685) nil (6626 . 6628) nil ("
-" . 830) nil (";; https://stackoverflow.com/questions/41937723/troubles-using-cask-on-emacs" . 830) nil ("
-" . 830) nil ("
-" . 830) nil (";; pallet error" . 830) (t 23810 14499 305560 585000)))
+((digest . "91ae3ff3c4fa28b0fbbd5051bf320eee") (undo-list nil ("
+" . 444) ((marker) . -1) ((marker) . -1) ((marker) . -1) (t 23816 57898 179455 273000) nil ("." . -415) ((marker . 444) . -1) ("e" . -416) ((marker . 444) . -1) ("l" . -417) ((marker . 444) . -1) ("i" . -418) ((marker . 444) . -1) ("n" . -419) ((marker . 444) . -1) ("i" . -420) ((marker . 444) . -1) ("t" . -421) ((marker . 444) . -1) ("-" . -422) ((marker . 444) . -1) ("l" . -423) ((marker . 444) . -1) ("o" . -424) ((marker . 444) . -1) ("a" . -425) ((marker . 444) . -1) ("d" . -426) ((marker . 444) . -1) ("e" . -427) ((marker . 444) . -1) 428 nil ("r" . -428) ((marker . 444) . -1) 429 nil (nil rear-nonsticky nil 431 . 432) (nil mouse-face highlight 418 . 432) (nil help-echo "mouse-2: visit this file in other window" 418 . 432) (nil fontified nil 418 . 432) (nil mouse-face highlight 404 . 418) (nil help-echo "mouse-2: visit this file in other window" 404 . 418) (nil fontified nil 404 . 418) (404 . 432) nil ("i" . -404) ((marker . 404) . -1) ((marker . 404) . -1) ((marker . 404) . -1) ((marker . 444) . -1) ("n" . -405) ((marker . 404) . -1) ((marker . 404) . -1) ((marker . 404) . -1) ((marker . 444) . -1) ("i" . -406) ((marker . 404) . -1) ((marker . 404) . -1) ((marker . 404) . -1) ((marker . 444) . -1) ("t" . -407) ((marker . 404) . -1) ((marker . 404) . -1) ((marker . 404) . -1) ((marker . 444) . -1) 408 nil (403 . 408) nil (nil rear-nonsticky nil 404 . 405) (nil fontified nil 404 . 405) (nil fontified nil 386 . 404) (nil fontified nil 362 . 386) (362 . 405) nil (361 . 362) nil (385 . 386) (t 23816 56201 984101 12000)))

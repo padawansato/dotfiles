@@ -1055,24 +1055,7 @@
 
 
 
-;; ---------------------------------------------------------
-;; YaTeX の設定
-;; ---------------------------------------------------------
-   
-;; Add library path
-(add-to-list 'load-path "~/.emacs.d/elisp/yatex/yatex1.80")
-;; YaTeX mode
-(setq auto-mode-alist
-    (cons (cons "\\.tex$" 'yatex-mode) auto-mode-alist))
-(autoload 'yatex-mode "yatex" "Yet Another LaTeX mode" t)
-(setq tex-command "platex")
-(setq dviprint-command-format "dvipdfmx %s")
-;; use Preview.app
-(setq dvi2-command "open -a Preview")
-(defvar YaTeX-dvi2-command-ext-alist    
-  '(("xdvi" . ".dvi")                   
-      ("ghostview\\|gv" . ".ps")
-      ("acroread\\|pdf\\|Preview\\|open" . ".pdf")))
+
 
 
 ;; jedi
@@ -1274,15 +1257,16 @@
 
 
 ;; yatex
-(require 'yatex)                ;; パッケージ読み込み
-(add-to-list 'auto-mode-alist '("\\.tex\\'" . yatex)) ;;auto-mode-alistへの追加
-(setq tex-command "latex")       ;; 自分の環境に合わせて""内を変えてください
-(setq bibtex-command "pbibtex")    ;; 自分の環境に合わせて""内を変えてください
-;;reftex-mode
-(add-hook 'yatex-mode-hook
-          #'(lambda ()
-              (reftex-mode 1)
-              (define-key reftex-mode-map
-                (concat YaTeX-prefix ">") 'YaTeX-comment-region)
-              (define-key reftex-mode-map
-                (concat YaTeX-prefix "<") 'YaTeX-uncomment-region)))
+;; 拡張子が .tex なら yatex-mode に
+(setq auto-mode-alist
+  (cons (cons "\\.tex$" 'yatex-mode) auto-mode-alist))
+(autoload 'yatex-mode "yatex" "Yet Another LaTeX mode" t)
+
+;; YaTeX が利用する内部コマンドを定義する
+(setq tex-command "platex2pdf") ;; 自作したコマンドを
+(cond
+  ((eq system-type 'gnu/linux) ;; GNU/Linux なら
+    (setq dvi2-command "evince")) ;; evince で PDF を閲覧
+  ((eq system-type 'darwin) ;; Mac なら
+    (setq dvi2-command "open -a Preview"))) ;; プレビューで
+(add-hook 'yatex-mode-hook '(lambda () (setq auto-fill-function nil)))

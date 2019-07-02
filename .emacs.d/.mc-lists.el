@@ -33,5 +33,6 @@
         scroll-other-window
         seq-end
         seq-home
+        undo-tree-visualize
         win-switch-dispatch
         ))

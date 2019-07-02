@@ -1,0 +1,5 @@
+
+((digest . "58760a145fe68f8ea881b041ac51a123") (undo-list (575 . 576) nil (nil rear-nonsticky nil 574 . 575) (nil fontified nil 1 . 575) (1 . 575) nil (";; This buffer is for text that is not saved, and for Lisp evaluation.
+;; To create a file, visit it with C-x C-f and enter text in its buffer.
+
+" . 1) ((marker . 1) . -145) ((marker . 575) . -145) ((marker . 1) . -145) ((marker) . -145) (t . 0) nil (1 . 146) (t . 0)))

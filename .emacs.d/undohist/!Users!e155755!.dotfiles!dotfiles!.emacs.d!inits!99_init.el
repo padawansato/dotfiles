@@ -1,3 +1,41 @@
 
-((digest . "dc54a86f39e91c9ca1868053fff13b25") (undo-list nil (39009 . 39011) nil ("右側" . -39009) ((marker . 39011) . -2) (39009 . 39011) ("みぎがわ" . -39009) ((marker . 39011) . -4) (39009 . 39013) ("みぎがｗ" . -39009) ((marker . 39011) . -4) (39009 . 39013) ("みぎが" . -39009) ((marker . 39011) . -3) (39009 . 39012) ("みぎｇ" . -39009) ((marker . 39011) . -3) (39009 . 39012) ("みぎ" . -39009) ((marker . 39011) . -2) (39009 . 39011) ("みぎあ" . -39009) ((marker . 39011) . -3) (39009 . 39012) ("みぎ" . -39009) ((marker . 39011) . -2) (39009 . 39011) ("みｇ" . -39009) ((marker . 39011) . -2) (39009 . 39011) ("み" . -39009) ((marker . 39011) . -1) (39009 . 39010) ("ｍ" . -39009) ((marker . 39011) . -1) (39009 . 39010) ("逆" . -39009) ((marker . 39011) . -1) ("側" . -39010) ((marker . 39011) . -1) 39011 nil (39009 . 39011) ("逆側" . -39009) ((marker . 39011) . -2) (39009 . 39011) ("ぎゃくがわ" . -39009) ((marker . 39011) . -5) 39014 nil (39009 . 39014) ("ぎゃくがｗ" . -39009) ((marker . 39011) . -5) (39009 . 39014) ("ぎゃくが" . -39009) ((marker . 39011) . -4) (39009 . 39013) ("ぎゃくｇ" . -39009) ((marker . 39011) . -4) (39009 . 39013) ("ぎゃく" . -39009) ((marker . 39011) . -3) (39009 . 39012) ("ぎゃｋ" . -39009) ((marker . 39011) . -3) (39009 . 39012) ("ぎゃ" . -39009) ((marker . 39011) . -2) (39009 . 39011) ("ｇｙ" . -39009) ((marker . 39011) . -2) (39009 . 39011) ("ｇ" . -39009) ((marker . 39011) . -1) (39007 . 39010) nil (nil rear-nonsticky nil 39007 . 39008) (nil fontified nil 38968 . 39008) (38968 . 39008) nil (38968 . 38969) (38968 . 38969) (38968 . 38969) nil ("
-" . 38968) ((marker . 39625) . -1) ((marker . 39625) . -1) (t 23816 54979 421886 930000) nil (";; " . -38914) (";; " . -38860) (";; " . -38808) (";; " . -38779) ((marker . 38969) . -1) ((marker . 39041) . -1) 38980 (t 23816 54383 777511 197000) nil (39002 . 39005) ("バグる" . -39002) ((marker . 39011) . -3) (39002 . 39005) ("ばぐる" . -39002) ((marker . 39011) . -3) (39002 . 39005) ("ばぐｒ" . -39002) ((marker . 39011) . -3) (39002 . 39005) ("ばぐ" . -39002) ((marker . 39011) . -2) (39002 . 39004) ("ばｇ" . -39002) ((marker . 39011) . -2) (39002 . 39004) ("ば" . -39002) ((marker . 39011) . -1) (39002 . 39003) ("ｂ" . -39002) ((marker . 39011) . -1) (38999 . 39003) ("ぐ" . -38999) ((marker . 39011) . -1) (38999 . 39000) ("ｇ" . -38999) ((marker . 39011) . -1) (38996 . 39000) ("すると" . -38996) ((marker . 39011) . -3) (38996 . 38999) ("するｔ" . -38996) ((marker . 39011) . -3) (38996 . 38999) ("する" . -38996) ((marker . 39011) . -2) (38996 . 38998) ("すｒ" . -38996) ((marker . 39011) . -2) (38996 . 38998) ("す" . -38996) ((marker . 39011) . -1) (38996 . 38997) ("ｓ" . -38996) ((marker . 39011) . -1) (38993 . 38997) nil ("これを" . -38993) ((marker . 39011) . -3) (38993 . 38996) ("これｗ" . -38993) ((marker . 39011) . -3) (38993 . 38996) ("これ" . -38993) ((marker . 39011) . -2) (38993 . 38995) ("こｒ" . -38993) ((marker . 39011) . -2) (38993 . 38995) ("こ" . -38993) ((marker . 39011) . -1) (38993 . 38994) ("こ" . -38993) ((marker . 39011) . -1) (38993 . 38994) 39022 nil (38994 . 38996) nil (38980 . 38981) nil (38980 . 38992) nil (nil rear-nonsticky nil 39006 . 39007) (nil fontified nil 38981 . 39007) (38981 . 39007) nil (38980 . 38981) (38980 . 38981) nil (38923 . 38926) (38866 . 38869) (38811 . 38814) (38779 . 38782) 38968 nil undo-tree-canary))
+((digest . "4f1abfe4b31fae86d1fe107d29c672cc") (undo-list nil (";;latex
+(require 'tex)
+(TeX-global-PDF-mode t)
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+(setq-default TeX-master nil)
+(add-hook 'LaTeX-mode-hook 'visual-line-mode)
+(add-hook 'LaTeX-mode-hook 'flyspell-mode)
+(add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
+(add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+(setq reftex-plug-into-AUCTeX t)
+(setq TeX-PDF-mode t)
+" . -36500) ((marker . 36500) . -357) ((marker . 36726) . -357) ((marker . 36726) . -357) ((marker . 36760) . -335) ((marker . 36760) . -335) ((marker . 36789) . -302) ((marker . 36789) . -302) ((marker . 36790) . -258) ((marker . 36790) . -258) ((marker . 36843) . -213) ((marker . 36843) . -213) ((marker . 36870) . -170) ((marker . 36870) . -170) ((marker . 36897) . -124) ((marker . 36897) . -124) ((marker . 36927) . -94) ((marker . 36927) . -94) ((marker . 36928) . -70) ((marker . 36928) . -70) ((marker . 36945) . -47) ((marker . 36945) . -47) ((marker . 37006) . -23) ((marker . 37006) . -23) ((marker . 37040) . -8) ((marker . 37040) . -8) ((marker . 36500) . -198) ((marker . 36500) . -170) ((marker . 36500) . -201) ((marker) . -357) ((marker) . -1) 36857 (t 23834 2729 868010 259000) nil (43293 . 43294) 42788 nil (nil rear-nonsticky nil 43292 . 43293) (nil fontified nil 42788 . 43293) (42788 . 43293) nil (42787 . 42788) nil (42781 . 42787) nil ("y" . -42781) ((marker) . -1) 42782 nil (42779 . 42782) nil (";; yatex
+;; https://qiita.com/Maizu/items/7d8f420817dfeccf4477
+(require 'yatex)                ;; パッケージ読み込み
+(add-to-list 'auto-mode-alist '(\"\\\\.tex\\\\'\" . yatex)) ;;auto-mode-alistへの追加
+(setq tex-command \"latex\")       ;; 自分の環境に合わせて\"\"内を変えてください
+(setq bibtex-command \"pbibtex\")    ;; 自分の環境に合わせて\"\"内を変えてください
+;;reftex-mode
+(add-hook 'yatex-mode-hook
+          #'(lambda ()
+              (reftex-mode 1)
+              (define-key reftex-mode-map
+                (concat YaTeX-prefix \">\") 'YaTeX-comment-region)
+              (define-key reftex-mode-map
+                (concat YaTeX-prefix \"<\") 'YaTeX-uncomment-region)))
+" . -42779) ((marker) . -614) ((marker) . -302) ((marker) . -343) ((marker) . -343) ((marker) . -366) ((marker) . -366) ((marker) . -396) ((marker) . -396) ((marker) . -438) ((marker) . -438) ((marker) . -503) ((marker) . -503) ((marker) . -545) ((marker) . -545) ((marker) . -8) ((marker) . -302) ((marker) . -302) ((marker) . -316) ((marker) . -316) ((marker) . -614) ((marker) . -1) 43393 (t 23833 63450 8064 324000) nil (nil rear-nonsticky nil 42840 . 42841) (nil fontified nil 42791 . 42841) (42791 . 42841) nil (";;; yatex
+(require 'yatex)                ;; パッケージ読み込み
+(add-to-list 'auto-mode-alist '(\"\\\\.tex\\\\'\" . yatex)) ;;auto-mode-alistへの追加
+(setq tex-command \"platex\")       ;; 自分の環境に合わせて\"\"内を変えてください
+(setq bibtex-command \"pbibtex\")    ;; 自分の環境に合わせて\"\"内を変えてください
+;;reftex-mode
+(add-hook 'yatex-mode-hook
+          #'(lambda ()
+              (reftex-mode 1)
+              (define-key reftex-mode-map
+                (concat YaTeX-prefix \">\") 'YaTeX-comment-region)
+              (define-key reftex-mode-map
+                (concat YaTeX-prefix \"<\") 'YaTeX-uncomment-region)))
+" . 42791) ((marker) . -10) ((marker) . -10) ((marker) . -55) ((marker) . -55) ((marker) . -131) ((marker) . -131) ((marker) . -190) ((marker) . -190) ((marker) . -250) ((marker) . -250) ((marker) . -264) ((marker) . -264) ((marker) . -291) ((marker) . -291) ((marker) . -314) ((marker) . -314) ((marker) . -344) ((marker) . -344) ((marker) . -386) ((marker) . -386) ((marker) . -562) ((marker) . -451) ((marker) . -451) ((marker) . -493) ((marker) . -493) ((marker) . -562) ((marker) . -562) ((marker) . -1) ((marker) . -1) ((marker) . -562) 43353 nil (nil rear-nonsticky nil 43352 . 43353) (nil fontified nil 42791 . 43353) (42791 . 43353) nil undo-tree-canary))

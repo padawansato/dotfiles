@@ -7,7 +7,7 @@
 ;; ツールバーを非表示
 (tool-bar-mode 0)
 
-
+(add-to-list 'load-path "~/.emacs.d/elisp")
 
 ;;; 言語環境の指定
 
@@ -226,8 +226,8 @@
   (define-key global-map (kbd "C-x b") 'helm-mini);;
   (define-key helm-map (kbd "C-h") 'delete-backward-char)
   (define-key helm-find-files-map (kbd "C-h") 'delete-backward-char)
-  (define-key helm-find-files-map (kbd "TAB") 'helm-execute-persistent-action)
-  (define-key helm-read-file-map (kbd "TAB") 'helm-execute-persistent-action)
+  (define-key helm-find-files-map (kbd "<tab>") 'helm-execute-persistent-action)
+  (define-key helm-read-file-map (kbd "<tab>") 'helm-execute-persistent-action)
   (define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
 
 ;;(setq search-default-regexp-mode nil);;http://qiita.com/duloxetine/items/a8cfcd9a55cb5791c2f4
@@ -467,7 +467,7 @@
 ;; thing-opt
 ;; http://dev.ariel-networks.com/articles/emacs/part5/
 ;;
-(setq load-path (cons "~/.emacs.d/elisp" load-path))
+(setq load-path (cons "~/.emacs.d/elipsp" load-path))
 (require 'thing-opt)
 (define-thing-commands)
 ;; cc-defs.el
@@ -1139,6 +1139,12 @@
 (set-face-foreground 'git-gutter-fr:modified "red")
 (set-face-foreground 'git-gutter-fr:added    "green")
 (set-face-foreground 'git-gutter-fr:deleted  "white")
+(setq git-gutter-fr:side 'right-fringe);;右側
+
+
+
+;;git-gutterこれをするとguiバグる
+;;(global-git-gutter-mode t)
 
 ;; magit
 (require 'magit)
