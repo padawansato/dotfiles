@@ -440,3 +440,6 @@ alias gitb="git branch"
 # mecab
 export PATH=/usr/local/bin/mecab:$PATH
 export PATH="/usr/local/sbin:$PATH"
+
+# tex
+export PATH=$PATH:~/.dotfiles/dotfiles/platex2pdf

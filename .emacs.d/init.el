@@ -10,7 +10,7 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
-(add-to-list 'load-path "~/.emacs.d/elisp/init-loader.el")
+(add-to-list 'load-path "~/.emacs.d/elisp")
 (init-loader-load "~/.emacs.d/inits/")
 (require 'init-loader)
 (setq init-loader-show-log-after-init 'error-only)

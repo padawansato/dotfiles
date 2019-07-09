@@ -967,10 +967,7 @@
 (require 'tramp)
 (setq tramp-default-method "ssh")
 
-;;
 ;; markdown
-;;
-
 ;; http://qiita.com/gooichi/items/2b185dbdf24166a15ca4
 ;; C-c C-c p (or m)
 (setq markdown-command "multimarkdown")
@@ -985,14 +982,6 @@
 
 ;; markdown-toc-generate-toc
 (global-set-key (kbd "M-m") 'markdown-toc-generate-toc)
-
-
-;;markdown リアルタイム
-(require 'flymd)
-
-;;ここまでmarkdown
-
-
 
 ;; mouse 
 (setq
@@ -1237,13 +1226,14 @@
     (add-hook 'after-init-hook 'iconify-emacs-when-server-is-done)
 
     ;; 終了時にyes/noの問い合わせ
-    (setq confirm-kill-emacs 'yes-or-no-p)
-    )
+    ;; (setq confirm-kill-emacs 'yes-or-no-p)
+      )
 
 ;; dired D削除 ゴミ箱へ
 ;; http://yak-shaver.blogspot.com/2013/07/dired.html
 (setq delete-by-moving-to-trash t)
 
+;; this is the end line
 
 ;;; init-loader設定
 (require 'init-loader)
@@ -1298,4 +1288,3 @@
 ;; https://emacs-jp.github.io/packages/helm/helm-descbinds
 (require 'helm-descbinds)
 (helm-descbinds-mode 1)
-
