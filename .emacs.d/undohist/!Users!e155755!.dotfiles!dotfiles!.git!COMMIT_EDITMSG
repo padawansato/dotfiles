@@ -1,25 +1,2 @@
 
-((digest . "abb3acc612cb75519e604afe08ec7494") (undo-list nil ("c" . -17) ((marker . 17) . -1) 18 nil (17 . 18) (t 23043 62829 0 0) nil (13 . 17) nil ("t" . -13) ((marker) . -1) ("e" . -14) ((marker) . -1) ("s" . -15) ((marker) . -1) ("t" . -16) ((marker) . -1) (" " . -17) ((marker) . -1) 18 nil (6 . 18) nil (1 . 6) (t 23043 62730 0 0) nil (1 . 2) (t 23043 62730 0 0) (2 . 744) ("
-# Please enter the commit message for your changes. Lines starting
-# with '#' will be ignored, and an empty message aborts the commit.
-# On branch master
-# Your branch is ahead of 'origin/master' by 1 commit.
-#   (use \"git push\" to publish your local commits)
-#
-# Changes to be committed:
-#	modified:   .emacs.d/init.el
-#
-# Changes not staged for commit:
-#	modified:   .emacs.d/ac-comphist.dat
-#	modified:   .emacs.d/backup/2017-11-08/recentf
-#	modified:   .emacs.d/recentf
-#	modified:   .emacs.d/undohist/!Users!e155755!.dotfiles!dotfiles!.emacs.d!init.el
-#	modified:   .emacs.d/undohist/!Users!e155755!.dotfiles!dotfiles!.zshrc
-#	modified:   .zshrc
-#
-# Untracked files:
-#	.emacs.d/backup/2017-11-08/COMMIT_EDITMSG
-#	.emacs.d/backup/2017-11-08/init.el
-#	.emacs.d/backup/2017-11-09/
-#	.emacs.d/undohist/!Users!e155755!.dotfiles!dotfiles!.git!COMMIT_EDITMSG
-#	.emacs.d/" . 2) (t 23043 62089 0 0) nil (1 . 2) (t 23043 62089 0 0)))
+((digest . "2a0147b72f5db9ae886ad7e8225cf9ca") (undo-list nil ("?" . -38) ((marker . 38) . -1) 39 nil (38 . 39) nil ("?" . -38) ((marker . 38) . -1) 39 nil (38 . 39) (t 23843 57430 380096 561000) nil (26 . 32) nil ("d" . -26) ((marker . 38) . -1) ("e" . -27) ((marker . 38) . -1) 28 nil (26 . 28) nil (" " . -32) ((marker . 38) . -1) ("a" . -33) ((marker . 38) . -1) ("v" . -34) ((marker . 38) . -1) ("o" . -35) ((marker . 38) . -1) ("i" . -36) ((marker . 38) . -1) ("d" . -37) ((marker . 38) . -1) 38 nil (32 . 38) nil (29 . 31) nil (28 . 30) nil ("X" . -28) ((marker . 38) . -1) ("C" . -29) ((marker . 38) . -1) 30 nil (28 . 30) nil ("c" . -28) ((marker . 38) . -1) ("-" . -29) ((marker . 38) . -1) (" " . -30) ((marker . 38) . -1) 31 nil (24 . 31) nil ("&" . -24) ((marker . 38) . -1) 25 nil ("\\" . -24) ((marker . 38) . -1) 25 nil (24 . 25) nil (23 . 25) nil (10 . 18) nil ("m" . -10) ((marker . 38) . -1) ("o" . -11) ((marker . 38) . -1) ("d" . -12) ((marker . 38) . -1) ("e" . -13) ((marker . 38) . -1) (" " . -14) ((marker . 38) . -1) 15 nil (5 . 20) nil ("d" . -5) ((marker . 38) . -1) 6 nil (1 . 6) nil ("inits change latex" . 1) ((marker) . -18) nil ("v" . -229) ((marker . 38) . -1) ("v" . -230) ((marker . 38) . -1) ("v" . -231) ((marker . 38) . -1) 232 nil (229 . 232) (t 23843 57305 21991 734000)))

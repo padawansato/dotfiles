@@ -1,1 +1,1 @@
-("~/.dotfiles/dotfiles/" "~/Desktop/NAL研/workspace/" "~/Desktop/NAL研/RNNでセンチメントアナリシス/")
+("~/.dotfiles/dotfiles/" "~/.cask/" "~/Desktop/NAL研/linkpre/Link_prediction_social_network/" "~/Desktop/NAL研/workspace/" "~/Desktop/NAL研/RNNでセンチメントアナリシス/")

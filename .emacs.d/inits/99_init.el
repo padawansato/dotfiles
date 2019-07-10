@@ -21,12 +21,7 @@
 ;; http://qiita.com/kametaro/items/2a0197c74cfd38fddb6b
 (require 'cask "~/.cask/cask.el")
 (cask-initialize)
-;;; init-loader 設定
-;;http://kiririmode.hatenablog.jp/entry/20141228/1419762171
-(require 'init-loader)
 
-(setq init-loader-show-log-after-init "error-only")
-(init-loader-load "~/.emacs.d/inits")
 
 
 (require 'pallet)
@@ -1134,7 +1129,7 @@
 (set-face-foreground 'git-gutter-fr:modified "red")
 (set-face-foreground 'git-gutter-fr:added    "green")
 (set-face-foreground 'git-gutter-fr:deleted  "white")
-(setq git-gutter-fr:side 'right-fringe);;右側
+(setq git-gutter-fr:side 'left-fringe);;右側
 
 
 
@@ -1142,6 +1137,9 @@
 ;;(global-git-gutter-mode t)
 
 ;; magit
+;; 使い方
+;; $file <staging> s upstaged -> staged
+;; <commit> c <exit> C-cC-c 
 (require 'magit)
 ;; http://yamakichi.hatenablog.com/entry/2016/06/29/133246
 (setq-default magit-auto-revert-mode nil)
@@ -1264,29 +1262,78 @@
 ;;  helm-smex
 (require 'helm-smex)
 (global-set-key [remap execute-extended-command] #'helm-smex)
-(global-set-key (kbd "M-X") #'helm-smex-major-mode-commands)
+(global-set-key (kbd "M-s-x") #'helm-smex-major-mode-commands)
 
 
-;; yatex
-;; 拡張子が .tex なら yatex-mode に
-(setq auto-mode-alist
-  (cons (cons "\\.tex$" 'yatex-mode) auto-mode-alist))
 (autoload 'yatex-mode "yatex" "Yet Another LaTeX mode" t)
 
-;; YaTeX が利用する内部コマンドを定義する
-(setq tex-command "platex2pdf") ;; 自作したコマンドを
-(cond
-  ((eq system-type 'gnu/linux) ;; GNU/Linux なら
-    (setq dvi2-command "evince")) ;; evince で PDF を閲覧
-  ((eq system-type 'darwin) ;; Mac なら
-    (setq dvi2-command "open -a Preview"))) ;; プレビューで
-(add-hook 'yatex-mode-hook '(lambda () (setq auto-fill-function nil)))
+(setq auto-mode-alist
+      (append '(("\\.tex$" . yatex-mode)
+                ("\\.ltx$" . yatex-mode)
+                ("\\.cls$" . yatex-mode)
+                ("\\.sty$" . yatex-mode)
+                ("\\.clo$" . yatex-mode)
+                ("\\.bbl$" . yatex-mode)) auto-mode-alist))
+
+(with-eval-after-load 'yatex
+  (setq YaTeX-inhibit-prefix-letter t)
+  (setq YaTeX-kanji-code nil)
+  (setq YaTeX-use-LaTeX2e t)
+  (setq YaTeX-use-AMS-LaTeX t)
+  (setq YaTeX-dvi2-command-ext-alist
+        '(("Preview\\|TeXShop\\|TeXworks\\|Skim\\|mupdf\\|xpdf\\|Firefox\\|Adobe" . ".pdf")))
+  (setq tex-command "/usr/texbin/ptex2pdf -l -ot '-synctex=1'")
+  (setq bibtex-command (cond ((string-match "uplatex\\|-u" tex-command) "/usr/texbin/upbibtex")
+                             ((string-match "platex" tex-command) "/usr/texbin/pbibtex")
+                             ((string-match "lualatex\\|luajitlatex\\|xelatex" tex-command) "/usr/texbin/bibtexu")
+                             ((string-match "pdflatex\\|latex" tex-command) "/usr/texbin/bibtex")
+                             (t "/usr/texbin/pbibtex")))
+  (setq makeindex-command (cond ((string-match "uplatex\\|-u" tex-command) "/usr/texbin/mendex")
+                                ((string-match "platex" tex-command) "/usr/texbin/mendex")
+                                ((string-match "lualatex\\|luajitlatex\\|xelatex" tex-command) "/usr/texbin/texindy")
+                                ((string-match "pdflatex\\|latex" tex-command) "/usr/texbin/makeindex")
+                                (t "/usr/texbin/mendex")))
+  ;; (setq dvi2-command "/usr/bin/open -a Preview")
+  (setq dvi2-command "/usr/bin/open -a Skim")
+  (setq dviprint-command-format "/usr/bin/open -a \"Adobe Reader\" `echo %s | sed -e \"s/\\.[^.]*$/\\.pdf/\"`")
+  (auto-fill-mode -1)
+  (reftex-mode 1))
+
+(defun skim-forward-search ()
+  (interactive)
+  (progn
+    (process-kill-without-query
+     (start-process
+      "displayline"
+      nil
+      "/Applications/Skim.app/Contents/SharedSupport/displayline"
+      (number-to-string (save-restriction
+                          (widen)
+                          (count-lines (point-min) (point))))
+      (expand-file-name
+       (concat (file-name-sans-extension (or YaTeX-parent-file
+                                             (save-excursion
+                                               (YaTeX-visit-main t)
+                                               buffer-file-name)))
+               ".pdf"))
+      buffer-file-name))))
+
+(defun my-yatex-mode-hook ()
+  (define-key YaTeX-mode-map (kbd "C-c s") 'skim-forward-search)
+  (define-key YaTeX-mode-map (kbd "<f8>") 'YaTeX-typeset-menu)
+  (define-key YaTeX-mode-map (kbd "s-R") 'YaTeX-typeset-menu)
+  (define-key reftex-mode-map (concat YaTeX-prefix ">") 'YaTeX-comment-region)
+  (define-key reftex-mode-map (concat YaTeX-prefix "<") 'YaTeX-uncomment-region))
+(add-hook-lambda 'yatex-mode-hook 'my-yatex-mode-hook)
+
+
+
 
 ;; ;; which-key
 ;; ;; key-bindわからなくならないように
-;; (which-key-mode 1)
+(which-key-mode 1)
 ;; ;;; 3つの表示方法どれか1つ選ぶ
-;; ;;(which-key-setup-side-window-bottom)    ;ミニバッファ
+(which-key-setup-side-window-bottom)    ;ミニバッファ
 ;; (which-key-setup-side-window-right)     ;右端
 ;; ;; (which-key-setup-side-window-right-bottom) ;両方使う
 
@@ -1299,3 +1346,14 @@
 (require 'helm-descbinds)
 (helm-descbinds-mode 1)
 
+
+;; shell-popいつでもどこでもサッと
+;; http://emacs.rubikitch.com/shell-pop/
+(setq shell-pop-shell-type '("terminal" "*terminal*" (lambda () (term shell-pop-term-shell))))
+(setq shell-pop-shell-type '("ansi-term" "*ansi-term*" (lambda () (ansi-term shell-pop-term-shell))))
+(global-set-key (kbd "C-c s") 'shell-pop)
+
+;; 同じウィンドウで開く
+;; terminalから
+;;https://stackoverflow.com/questions/18347968/how-to-open-emacs-gui-ide-from-mac-terminal
+(setq ns-pop-up-frames nil)

@@ -1,0 +1,110 @@
+inits change latex
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch master
+# Your branch is up to date with 'origin/master'.
+#
+# Changes to be committed:
+#	new file:   .emacs.d/.cask/26.2/elpa/dash-functional-20180107.1618/dash-functional-autoloads.el
+#	new file:   .emacs.d/.cask/26.2/elpa/dash-functional-20180107.1618/dash-functional-pkg.el
+#	new file:   .emacs.d/.cask/26.2/elpa/dash-functional-20180107.1618/dash-functional.el
+#	new file:   .emacs.d/.cask/26.2/elpa/dash-functional-20180107.1618/dash-functional.elc
+#	new file:   .emacs.d/.cask/26.2/elpa/flymd-20160617.1214/flymd-autoloads.el
+#	new file:   .emacs.d/.cask/26.2/elpa/flymd-20160617.1214/flymd-pkg.el
+#	new file:   .emacs.d/.cask/26.2/elpa/flymd-20160617.1214/flymd.el
+#	new file:   .emacs.d/.cask/26.2/elpa/flymd-20160617.1214/flymd.elc
+#	new file:   .emacs.d/.cask/26.2/elpa/flymd-20160617.1214/flymd.html
+#	new file:   .emacs.d/.cask/26.2/elpa/flymd-readme.txt
+#	new file:   .emacs.d/.cask/26.2/elpa/helm-descbinds-1.13/helm-descbinds-autoloads.el
+#	new file:   .emacs.d/.cask/26.2/elpa/helm-descbinds-1.13/helm-descbinds-pkg.el
+#	new file:   .emacs.d/.cask/26.2/elpa/helm-descbinds-1.13/helm-descbinds.el
+#	new file:   .emacs.d/.cask/26.2/elpa/helm-descbinds-1.13/helm-descbinds.elc
+#	new file:   .emacs.d/.cask/26.2/elpa/helm-eww-readme.txt
+#	new file:   .emacs.d/.cask/26.2/elpa/helm-file-preview-readme.txt
+#	new file:   .emacs.d/.cask/26.2/elpa/org-trello-20190304.900/org-trello-action.el
+#	new file:   .emacs.d/.cask/26.2/elpa/org-trello-20190304.900/org-trello-action.elc
+#	new file:   .emacs.d/.cask/26.2/elpa/org-trello-20190304.900/org-trello-api.el
+#	new file:   .emacs.d/.cask/26.2/elpa/org-trello-20190304.900/org-trello-api.elc
+#	new file:   .emacs.d/.cask/26.2/elpa/org-trello-20190304.900/org-trello-autoloads.el
+#	new file:   .emacs.d/.cask/26.2/elpa/org-trello-20190304.900/org-trello-backend.el
+#	new file:   .emacs.d/.cask/26.2/elpa/org-trello-20190304.900/org-trello-backend.elc
+#	new file:   .emacs.d/.cask/26.2/elpa/org-trello-20190304.900/org-trello-buffer.el
+#	new file:   .emacs.d/.cask/26.2/elpa/org-trello-20190304.900/org-trello-buffer.elc
+#	new file:   .emacs.d/.cask/26.2/elpa/org-trello-20190304.900/org-trello-cbx.el
+#	new file:   .emacs.d/.cask/26.2/elpa/org-trello-20190304.900/org-trello-cbx.elc
+#	new file:   .emacs.d/.cask/26.2/elpa/org-trello-20190304.900/org-trello-controller.el
+#	new file:   .emacs.d/.cask/26.2/elpa/org-trello-20190304.900/org-trello-controller.elc
+#	new file:   .emacs.d/.cask/26.2/elpa/org-trello-20190304.900/org-trello-data.el
+#	new file:   .emacs.d/.cask/26.2/elpa/org-trello-20190304.900/org-trello-data.elc
+#	new file:   .emacs.d/.cask/26.2/elpa/org-trello-20190304.900/org-trello-date.el
+#	new file:   .emacs.d/.cask/26.2/elpa/org-trello-20190304.900/org-trello-date.elc
+#	new file:   .emacs.d/.cask/26.2/elpa/org-trello-20190304.900/org-trello-deferred.el
+#	new file:   .emacs.d/.cask/26.2/elpa/org-trello-20190304.900/org-trello-deferred.elc
+#	new file:   .emacs.d/.cask/26.2/elpa/org-trello-20190304.900/org-trello-entity.el
+#	new file:   .emacs.d/.cask/26.2/elpa/org-trello-20190304.900/org-trello-entity.elc
+#	new file:   .emacs.d/.cask/26.2/elpa/org-trello-20190304.900/org-trello-hash.el
+#	new file:   .emacs.d/.cask/26.2/elpa/org-trello-20190304.900/org-trello-hash.elc
+#	new file:   .emacs.d/.cask/26.2/elpa/org-trello-20190304.900/org-trello-input.el
+#	new file:   .emacs.d/.cask/26.2/elpa/org-trello-20190304.900/org-trello-input.elc
+#	new file:   .emacs.d/.cask/26.2/elpa/org-trello-20190304.900/org-trello-log.el
+#	new file:   .emacs.d/.cask/26.2/elpa/org-trello-20190304.900/org-trello-log.elc
+#	new file:   .emacs.d/.cask/26.2/elpa/org-trello-20190304.900/org-trello-pkg.el
+#	new file:   .emacs.d/.cask/26.2/elpa/org-trello-20190304.900/org-trello-proxy.el
+#	new file:   .emacs.d/.cask/26.2/elpa/org-trello-20190304.900/org-trello-proxy.elc
+#	new file:   .emacs.d/.cask/26.2/elpa/org-trello-20190304.900/org-trello-query.el
+#	new file:   .emacs.d/.cask/26.2/elpa/org-trello-20190304.900/org-trello-query.elc
+#	new file:   .emacs.d/.cask/26.2/elpa/org-trello-20190304.900/org-trello-setup.el
+#	new file:   .emacs.d/.cask/26.2/elpa/org-trello-20190304.900/org-trello-setup.elc
+#	new file:   .emacs.d/.cask/26.2/elpa/org-trello-20190304.900/org-trello-utils.el
+#	new file:   .emacs.d/.cask/26.2/elpa/org-trello-20190304.900/org-trello-utils.elc
+#	new file:   .emacs.d/.cask/26.2/elpa/org-trello-20190304.900/org-trello.el
+#	new file:   .emacs.d/.cask/26.2/elpa/org-trello-20190304.900/org-trello.elc
+#	new file:   .emacs.d/.cask/26.2/elpa/request-deferred-20181129.317/request-deferred-autoloads.el
+#	new file:   .emacs.d/.cask/26.2/elpa/request-deferred-20181129.317/request-deferred-pkg.el
+#	new file:   .emacs.d/.cask/26.2/elpa/request-deferred-20181129.317/request-deferred.el
+#	new file:   .emacs.d/.cask/26.2/elpa/request-deferred-20181129.317/request-deferred.elc
+#	new file:   .emacs.d/.cask/26.2/elpa/win-switch-1.1.4/win-switch-autoloads.el
+#	new file:   .emacs.d/.cask/26.2/elpa/win-switch-1.1.4/win-switch-pkg.el
+#	new file:   .emacs.d/.cask/26.2/elpa/win-switch-1.1.4/win-switch.el
+#	new file:   .emacs.d/.cask/26.2/elpa/win-switch-1.1.4/win-switch.elc
+#	new file:   .emacs.d/.cask/26.2/elpa/ws-butler-0.6/ws-butler-autoloads.el
+#	new file:   .emacs.d/.cask/26.2/elpa/ws-butler-0.6/ws-butler-pkg.el
+#	new file:   .emacs.d/.cask/26.2/elpa/ws-butler-0.6/ws-butler.el
+#	new file:   .emacs.d/.cask/26.2/elpa/ws-butler-0.6/ws-butler.elc
+#	new file:   .emacs.d/backup/2019-07-05/2019-06-27.txt
+#	new file:   .emacs.d/backup/2019-07-05/2019-07-05.txt
+#	new file:   .emacs.d/backup/2019-07-05/99_init.el
+#	new file:   .emacs.d/backup/2019-07-05/recentf
+#	new file:   .emacs.d/backup/2019-07-05/upload.sh
+#	new file:   .emacs.d/backup/2019-07-06/recentf
+#	new file:   ".emacs.d/backup/2019-07-06/\350\253\226\346\226\207\345\256\237\350\243\205rta.md"
+#	new file:   .emacs.d/backup/2019-07-09/99_init.el
+#	new file:   .emacs.d/backup/2019-07-09/recentf
+#	modified:   .emacs.d/init.el
+#	modified:   .emacs.d/inits/99_init.el
+#	new file:   ".emacs.d/undohist/!Users!e155755!Desktop!LTE\345\244\247\344\274\232!\350\253\226\346\226\207\345\256\237\350\243\205rta.md"
+#	new file:   ".emacs.d/undohist/!Users!e155755!Desktop!NAL\347\240\224!\346\227\245\350\252\214!#upload.sh#"
+#	new file:   ".emacs.d/undohist/!Users!e155755!Desktop!NAL\347\240\224!\346\227\245\350\252\214!2019-07-05.txt"
+#	new file:   ".emacs.d/undohist/!Users!e155755!Desktop!NAL\347\240\224!\346\227\245\350\252\214!upload.sh"
+#	new file:   ".emacs.d/undohist/!Users!e155755!Desktop!\343\203\227\343\203\255\343\202\270\343\202\247\343\202\257\343\203\210\343\203\236\343\203\215\343\202\270\343\203\241\343\203\263\343\203\210!2019-07-05.txt"
+#	modified:   .zshrc
+#	new file:   platex2pdf
+#
+# Changes not staged for commit:
+#	modified:   .emacs.d/.cask/26.2/elpa/archives/gnu/archive-contents
+#	modified:   .emacs.d/.cask/26.2/elpa/archives/melpa-stable/archive-contents
+#	modified:   .emacs.d/.cask/26.2/elpa/archives/melpa/archive-contents
+#	modified:   .emacs.d/Cask
+#	modified:   .emacs.d/backup/2019-07-09/recentf
+#	modified:   .emacs.d/recentf
+#	modified:   .emacs.d/undohist/!Users!e155755!.dotfiles!dotfiles!.emacs.d!init.el
+#	modified:   .emacs.d/undohist/!Users!e155755!.dotfiles!dotfiles!.emacs.d!inits!99_init.el
+#	modified:   ".emacs.d/undohist/!Users!e155755!Desktop!NAL\347\240\224!\346\227\245\350\252\214!2019-06-27.txt"
+#	modified:   ".emacs.d/undohist/!Users!e155755!Desktop!NAL\347\240\224!\346\227\245\350\252\214!2019-06-29.txt"
+#	modified:   .emacs.d/url/cookies
+#
+# Untracked files:
+#	.emacs.d/elisp/keyfreq/
+#

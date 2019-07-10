@@ -9,9 +9,8 @@
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
 (package-initialize)
-
-(add-to-list 'load-path "~/.emacs.d/elisp")
-(init-loader-load "~/.emacs.d/inits/")
 (require 'init-loader)
+(add-to-list 'load-path "~/.dotfiles/dotfiles/.emacs.d/elisp")
+(init-loader-load "~/.dotfiles/dotfiles/.emacs.d/inits/")
 (setq init-loader-show-log-after-init 'error-only)
 
