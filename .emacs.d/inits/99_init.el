@@ -627,12 +627,9 @@
 ;; (require 'viewer)
 ;; ;; C-x C-r は view-modeでファイルを開く
 ;; (setq view-read-only t)
-
 ;; view-modeであることが一目で分かるようにする．
-;; https://books.google.co.jp/books?id=TaNQMRcneSQC&pg=PA220&lpg=PA220&dq=emacs+view-mode+color&source=bl&ots=JpHeQwcU9w&sig=vPbf_1gp4R069oXV9cvjnqqthD8&hl=ja&sa=X&ved=0ahUKEwiOypv-yvnSAhWIxLwKHQqADZsQ6AEITzAH#v=onepage&q=emacs%20view-mode%20color&f=false
 (require 'viewer)
-;; 色名を指定する
-;;(viewer-change-modelinge-color-setup)
+
 
 ;; 特定のファイルを view-mode で開くようにする
 (setq view-mode-by-default-regexp "\\.log$")
@@ -1050,6 +1047,13 @@
   )
 (define-key global-map (kbd "C-c g") 'my-markdown-preview)
 
+
+;;.txt,.mdをmarkdown-modeで開く。
+(setq auto-mode-alist
+      (append '(("\\.md$" . markdown-mode)
+                ("\\.txt$" . markdown-mode)) auto-mode-alist))
+
+
 ;; 警告音もフラッシュも全て無効(警告音が完全に鳴らなくなるので注意)
 (setq ring-bell-function 'ignore)
 
@@ -1073,9 +1077,9 @@
 
 ;; ipython ein
 ;; https://tkf.github.io/emacs-ipython-notebook/
-;; (require 'ein)
-;; (setq ein:use-auto-complete t)
-;; (setq ein:use-smartrep t)
+(require 'ein)
+(setq ein:use-auto-complete t)
+(setq ein:use-smartrep t)
 
 ;; http://millejoh.github.io/emacs-ipython-notebook/
 ;; (require 'ein-loaddefs)
@@ -1207,7 +1211,8 @@
   (setq web-mode-java-indent-offset   4)
   (setq web-mode-asp-indent-offset    4)
 ;;  (setq indent-tabs-mode t);;ハードタブ
-;;  (setq tab-width 2))
+;;  (setq tab-width 2)
+)
 (add-hook 'web-mode-hook 'web-mode-hook)
 
 ;; https://qiita.com/hayamiz/items/130727c09230fab0c097
@@ -1236,7 +1241,7 @@
 
     ;; 終了時にyes/noの問い合わせ
     (setq confirm-kill-emacs 'yes-or-no-p)
-    )
+    ))
 
 ;; dired D削除 ゴミ箱へ
 ;; http://yak-shaver.blogspot.com/2013/07/dired.html
@@ -1245,8 +1250,8 @@
 
 ;;; init-loader設定
 (require 'init-loader)
-(setq init-loader-show-log-after-init 'error-only)(i
-						   nit-loader-load "~/.dotfiles/dotfiles/.emacs.d/inits")
+(setq init-loader-show-log-after-init 'error-only)
+(init-loader-load "~/.dotfiles/dotfiles/.emacs.d/inits")
 
 
 (setq migemo-dictionary "/usr/local/share/migemo/utf-8/migemo-dict")
@@ -1331,29 +1336,27 @@
 
 ;; ;; which-key
 ;; ;; key-bindわからなくならないように
-(which-key-mode 1)
-;; ;;; 3つの表示方法どれか1つ選ぶ
-(which-key-setup-side-window-bottom)    ;ミニバッファ
-;; (which-key-setup-side-window-right)     ;右端
-;; ;; (which-key-setup-side-window-right-bottom) ;両方使う
-
-
-
+(require 'which-key)
+(which-key-mode)
 
 ;; helm-descbinds
 ;; key-bindをわからなくならないように
 ;; https://emacs-jp.github.io/packages/helm/helm-descbinds
 (require 'helm-descbinds)
-(helm-descbinds-mode 1)
+(helm-descbinds-mode)
+(which-key-setup-side-window-bottom)
+
+
 
 
 ;; shell-popいつでもどこでもサッと
 ;; http://emacs.rubikitch.com/shell-pop/
 (setq shell-pop-shell-type '("terminal" "*terminal*" (lambda () (term shell-pop-term-shell))))
 (setq shell-pop-shell-type '("ansi-term" "*ansi-term*" (lambda () (ansi-term shell-pop-term-shell))))
-(global-set-key (kbd "C-c s") 'shell-pop)
+(global-set-key (kbd "C-c C-s") 'shell-pop)
 
 ;; 同じウィンドウで開く
 ;; terminalから
 ;;https://stackoverflow.com/questions/18347968/how-to-open-emacs-gui-ide-from-mac-terminal
 (setq ns-pop-up-frames nil)
+

@@ -175,8 +175,8 @@ alias dirs="dirs -v"
 #GUIの場合
 alias ekill="emacsclient -e '(kill-emacs)'"
 alias Emacs='open -a /Applications/Emacs.app $1' #これでemacsサーバーをGUIと共有できる
-alias emacs='emacsclient -nw -a ""'#-nw は端末上でemacsを開くためのオプション
-
+#alias emacs='emacsclient -nw -a ""'#-nw は端末上でemacsを開くためのオプション
+alias emacs='emacsclient -nw -a '#-nw は端末上でemacsを開くためのオプション
 
 #他のエディタ
 #export ALTERNATE_EDITOR=""
@@ -350,6 +350,7 @@ export BROWSER=open
 # fi
 
 #
+export PATH=$PATH:/usr/local/bin #危険そう2019/10/23
 export PATH="/usr/local/bin:$PATH"
 
 export PATH="/usr/local/opt/libxml2/bin:$PATH"
