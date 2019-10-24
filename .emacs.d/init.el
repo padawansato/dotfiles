@@ -11,6 +11,6 @@
 (package-initialize)
 (require 'init-loader)
 (add-to-list 'load-path "~/.dotfiles/dotfiles/.emacs.d/elisp")
-(init-loader-load "~/.dotfiles/dotfiles/.emacs.d/inits/")
-(setq init-loader-show-log-after-init 'error-only)
+(init-loader-load "/Users/e155755/.dotfiles/dotfiles/.emacs.d/inits/99_init.el")
+
 

@@ -1,6 +1,8 @@
 ;;; package --- Summary
 ;;; -*- Coding: utf-8 -*-
 ;;; Commentary:
+(package-initialize)
+(add-to-list 'load-path "/Users/e155755/.dotfiles/dotfiles/.emacs.d/elisp")
 
 ;; メニューバーを非表示
 (menu-bar-mode 0)
@@ -1143,7 +1145,9 @@
 ;; magit
 ;; 使い方
 ;; $file <staging> s upstaged -> staged
-;; <commit> c <exit> C-cC-c 
+;; <commit> c 
+;; <push> P
+;; <exit> C-cC-c 
 (require 'magit)
 ;; http://yamakichi.hatenablog.com/entry/2016/06/29/133246
 (setq-default magit-auto-revert-mode nil)
