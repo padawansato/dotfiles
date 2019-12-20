@@ -1,0 +1,28 @@
+
+((digest . "e6ffbd6a423301a40350710aa7c0b2ed") (undo-list nil (" " . -32) ((marker . 32) . -1) 33 nil (32 . 33) (t 23863 55312 828634 560000) nil (65 . 66) nil (24 . 25) nil (nil rear-nonsticky nil 66 . 67) (nil fontified nil 10 . 67) (10 . 67) nil ("どんなもの？
+先行研究と比べてどこがすごい？
+技術や手法のキモはどこ？
+どうやって有効だと検証した？
+議論はある？
+次に読むべき論文は？
+質的終了条件,文献調査によって明らかにしたいことを疑問文の形で列挙し解決すれば終了.
+量的終了条件,時間,論文数,調査に使うデータベースで制限する." . 10) ((marker . 32) . -143) ((marker . 69) . -1) 153 nil (nil rear-nonsticky nil 152 . 153) (nil fontified nil 10 . 153) (10 . 153) nil (8 . 10) nil (7 . 8) nil (1 . 7) (t 23862 49445 763505 882000) nil ("顧客行動の多様性変数を利用した購買行動の予測
+  * どんなもの？
+
+  * 先行研究と比べてどこがすごい？
+
+  * 技術や手法のキモはどこ？
+
+
+  * どうやって有効だと検証した？
+
+  * 議論はある？
+
+  * 次に読むべき論文は？
+
+  * 質的終了条件,文献調査によって明らかにしたいことを疑問文の形で列挙し解決すれば終了.
+
+  * 量的終了条件,時間,論文数,調査に使うデータベースで制限する." . 1) ((marker . 69) . -206) ((marker . 69) . -206) ((marker . 69) . -206) ((marker . 66) . -121) ((marker . 67) . -122) ((marker . 65) . -107) ((marker . 66) . -108) ((marker . 64) . -206) ((marker . 65) . -206) ((marker . 10) . -22) ((marker . 11) . -23) ((marker . 8) . -27) ((marker . 9) . -28) ((marker) . -206) nil (nil rear-nonsticky nil 22 . 23) (nil fontified nil 1 . 23) (1 . 23) nil (1 . 2) nil (nil markdown-list-item nil 183 . 184) (nil markdown-list-item nil 153 . 183) (nil markdown-list-item nil 151 . 153) (nil markdown-list-item nil 149 . 151) (148 . 153) nil (nil markdown-list-item nil 178 . 179) (nil markdown-list-item nil 148 . 178) (nil markdown-list-item nil 105 . 148) (nil markdown-list-item nil 103 . 105) (nil markdown-list-item nil 101 . 103) (100 . 105) nil ("n" . -89) ((marker . 32) . -1) 90 nil (89 . 90) nil (nil markdown-list-item nil 173 . 174) (nil markdown-list-item nil 100 . 173) (nil markdown-list-item nil 89 . 100) (nil markdown-list-item nil 87 . 89) (nil markdown-list-item nil 85 . 87) (84 . 89) nil (nil markdown-list-item nil 168 . 169) (nil markdown-list-item nil 84 . 168) (nil markdown-list-item nil 77 . 84) (nil markdown-list-item nil 75 . 77) (nil markdown-list-item nil 73 . 75) (72 . 77) nil (nil markdown-list-item nil 163 . 164) (nil markdown-list-item nil 72 . 163) (nil markdown-list-item nil 57 . 72) (nil markdown-list-item nil 53 . 57) (52 . 57) nil ("  * " . 51) nil (nil markdown-list-item ((47 159 2 4 "* " nil (47 51 47 49 49 50 50 51))) 54 . 55) (nil markdown-list-item ((47 159 2 4 "* " nil (47 51 47 49 49 50 50 51))) 53 . 54) (nil markdown-list-item ((47 159 2 4 "* " nil (47 51 47 49 49 50 50 51))) 51 . 53) (nil markdown-list-item nil 50 . 51) (nil markdown-list-item nil 38 . 50) (nil markdown-list-item nil 36 . 38) (nil markdown-list-item nil 34 . 36) (33 . 38) nil (nil markdown-list-item nil 157 . 158) (nil markdown-list-item nil 51 . 157) (nil markdown-list-item nil 50 . 51) (nil markdown-list-item nil 48 . 50) (nil markdown-list-item nil 46 . 48) (45 . 50) nil (nil markdown-list-item nil 152 . 153) (nil markdown-list-item nil 33 . 152) (nil markdown-list-item nil 17 . 33) (nil markdown-list-item nil 15 . 17) (nil markdown-list-item nil 13 . 15) (12 . 17) nil (nil rear-nonsticky nil 147 . 148) (nil fontified nil 5 . 148) (5 . 148) nil (nil markdown-list-item nil 1 . 5) (1 . 5) nil (";; This buffer is for text that is not saved, and for Lisp evaluation.
+;; To create a file, visit it with C-x C-f and enter text in its buffer.
+
+" . 1) ((marker . 63) . -145) ((marker . 32) . -145) ((marker . 1) . -145) ((marker . 69) . -145) ((marker . 69) . -145) ((marker . 69) . -145) ((marker . 65) . -145) ((marker . 66) . -145) ((marker) . -145) (t 23862 32269 733934 61000) nil (1 . 146) (t . 0)))

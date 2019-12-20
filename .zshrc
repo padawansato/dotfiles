@@ -444,3 +444,6 @@ export PATH="/usr/local/sbin:$PATH"
 
 # tex
 export PATH=$PATH:~/.dotfiles/dotfiles/platex2pdf
+
+#python openpose
+export PYTHONPATH=/Users/e155755/Documents/jphacks/ON_1905/python/openpose/build/python:$PYTHONPATH

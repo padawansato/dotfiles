@@ -36,6 +36,7 @@
 (depends-on "htmlize")
 (depends-on "idle-highlight-in-visible-buffers-mode")
 (depends-on "idle-highlight-mode")
+(depends-on "init-loader")
 (depends-on "init-open-recentf")
 (depends-on "jedi")
 (depends-on "key-chord")

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>アドを表示する太郎</title>
+    <meta charset="utf-8">
+    <script>
+        var req = new XMLHttpRequest();
+        req.onreadystatechange = function() {
+            var ad = document.getElementById('adcontent');
+            if (req.readyState == 4) {
+                if (req.status == 200) {
+                    ad.innerHTML = req.response.creative;
+                }
+            }
+        }
+        var pubid = '123';
+        var endpoint = 'http://localhost:80/ad?pub=' + pubid;
+        req.open('GET', endpoint, true);
+        req.responseType = 'json';
+        req.send(null);
+    </script>
+</head>
+<body>
+<h1>あさせのほ〜むぺ〜ぢ</h1>
+
+<div id="adcontent" />
+</body>
+</html>

@@ -1,0 +1,15 @@
+hours 4
+
+Coretime : 
+*16:00-19:01
+Done :
+* 計算論
+Doing :
+* 
+To Do :
+*
+Other :
+*
+
+
+

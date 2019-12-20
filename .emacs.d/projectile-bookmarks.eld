@@ -1,1 +1,1 @@
-("~/.dotfiles/dotfiles/" "~/.cask/" "~/Desktop/NAL研/linkpre/Link_prediction_social_network/" "~/Desktop/NAL研/workspace/" "~/Desktop/NAL研/RNNでセンチメントアナリシス/")
+("~/Documents/Flask/ゼロからFlask/サンプル/flask_tutorial/" "~/.dotfiles/dotfiles/" "~/Desktop/コンピュータシステム論/workspace/" "~/Documents/jphacks/ON_1905/" "~/Documents/Golang/VoyageGroup/asase201910/" "~/Documents/compe競プロ/paiza/" "~/Documents/compe競プロ/Atcoder/" "~/Documents/compe競プロ/Atcoder/" "~/.cask/")
