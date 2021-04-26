@@ -1,0 +1,16 @@
+hours 2
+
+Coretime : 
+  * 22:00-24:00
+Done :
+  * 自己紹介メール
+  * 
+Doing :
+* 
+To Do :
+*
+Other :
+*
+
+
+

@@ -1,0 +1,20 @@
+hours 5
+Coretime : 
+*
+Done :
+* atcoder分類してみたをlist型まで解いた。
+  * githubのssh直した
+* 実践rustの3章まで飛ばし飛ばし読んだ
+* アマゾンに返品
+* 学会へメール
+* ルートへおめでとういった。
+
+Doing :
+* 
+To Do :
+*
+Other :
+*
+
+
+

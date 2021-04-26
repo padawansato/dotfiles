@@ -1,0 +1,14 @@
+hours 4
+Coretime : 
+*
+Done :
+* macosをcatalinaにした
+Doing :
+* 
+To Do :
+*
+Other :
+*
+
+
+

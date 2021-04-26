@@ -1,1 +1,1 @@
-("~/Documents/Flask/ゼロからFlask/サンプル/flask_tutorial/" "~/.dotfiles/dotfiles/" "~/Desktop/コンピュータシステム論/workspace/" "~/Documents/jphacks/ON_1905/" "~/Documents/Golang/VoyageGroup/asase201910/" "~/Documents/compe競プロ/paiza/" "~/Documents/compe競プロ/Atcoder/" "~/Documents/compe競プロ/Atcoder/" "~/.cask/")
+("~/Desktop/job_画像処理/" "~/Documents/Flask/ゼロからFlask/サンプル/flask_tutorial/" "~/.dotfiles/dotfiles/" "~/Documents/jphacks/ON_1905/" "~/Documents/Golang/VoyageGroup/asase201910/" "~/Documents/compe競プロ/paiza/" "~/Documents/compe競プロ/Atcoder/" "~/Documents/compe競プロ/Atcoder/" "~/.cask/")
