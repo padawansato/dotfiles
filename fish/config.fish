@@ -1,10 +1,3 @@
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-eval /Users/e155755/.pyenv/versions/anaconda3-5.3.0/bin/conda "shell.fish" "hook" $argv | source
-# <<< conda initialize <<<
-
-
-
 # 相対行番号
 set relativenumber
 # peco
@@ -36,5 +29,3 @@ source (conda info --root)/etc/fish/conf.d/conda.fish
 # alias ls='exa -al -s date'
 alias ｃｄ='cd'
 # =======================================================================
-# alias end
-
