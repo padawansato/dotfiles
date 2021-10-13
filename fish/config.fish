@@ -1,3 +1,3 @@
 export LSCOLORS=gxfxcxdxbxegedabagacad
-alias ls='ｌｓ'
+alias ｌｓ='ls'
 
