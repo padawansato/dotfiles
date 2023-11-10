@@ -1,31 +1,27 @@
-# 相対行番号
-set relativenumber
-# peco
-set fish_plugins theme peco
+# PATH
+set PATH /usr/local/bin /usr/sbin $PATH
 
-function fish_user_key_bindings
-  bind \ct peco_select_history # Bind for prco history to Ctrl+r
-end
-
-# fzf
-# set -U FZF_LEGACY_KEYBINDINGS 0
-# set -U FZF_REVERSE_ISEARCH_OPTS "--reverse --height=100%"
-# export FZF_DEFAULT_OPTS='--height 100% --reverse --border'
-
-# ディレクトリカラー
-export LSCOLORS=gxfxcxdxbxegedabagacad
-
-# manual 更新
-# 遅いのでコメントアウト
-# fish_update_completions
-
-# プロンプトの日付非表示
-set -U theme_display_date no 
-# conda activate
-source (conda info --root)/etc/fish/conf.d/conda.fish
-
-# =======================================================================
 # alias
-# alias ls='exa -al -s date'
-alias ｃｄ='cd'
-# =======================================================================
+alias ｌｓ='ls'
+alias g='git'
+alias gs='git status'
+alias ｇｓ='git status'
+alias p='prevd'
+alias n='nextd'
+
+## docker
+alias d='docker'
+alias dps='docker ps -a'
+alias dls='docker container ls'
+alias dc='docker compose'
+alias dcu='docker compose up -d'
+alias dcd='docker compose down'
+
+# pyenv
+set -x PYENV_ROOT $HOME/.pyenv
+set -x PATH $PYENV_ROOT/shims $PATH
+pyenv init - | source
+
+# git
+export TAG="date +DEPLOYED-%F/%H:%M"
+
