@@ -1,11 +1,21 @@
 # PATH
 set PATH /usr/local/bin /usr/sbin $PATH
 
-export LSCOLORS=gxfxcxdxbxegedabagacad
+# alias
 alias ｌｓ='ls'
 alias g='git'
 alias gs='git status'
 alias ｇｓ='git status'
+alias p='prevd'
+alias n='nextd'
+
+## docker
+alias d='docker'
+alias dps='docker ps -a'
+alias dls='docker container ls'
+alias dc='docker compose'
+alias dcu='docker compose up -d'
+alias dcd='docker compose down'
 
 # pyenv
 set -x PYENV_ROOT $HOME/.pyenv
@@ -15,7 +25,3 @@ pyenv init - | source
 # git
 export TAG="date +DEPLOYED-%F/%H:%M"
 
-test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
-
-# docker
-alias dls='docker container ls'
