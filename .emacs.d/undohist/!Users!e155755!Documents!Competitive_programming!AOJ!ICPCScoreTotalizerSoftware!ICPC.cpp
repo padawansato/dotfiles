@@ -1,2 +1,0 @@
-
-((digest . "9d00680d7188bf9dc65f1cffec21560d") (undo-list nil (64 . 90) ("  while (cin >> N && N>0){" . 64) ((marker) . -16) ((marker) . -17) ((marker) . -21) ((marker) . -22) (139 . 154) ("      cin >> S;" . 139) ((marker) . -13) ((marker) . -14) (203 . 229) ("  while (cint >> N && N>0){" . 203) ((marker) . -9) ((marker) . -13) ((marker) . -17) ((marker) . -18) ((marker) . -22) ((marker) . -23) (279 . 294) ("      cin >> S;" . 279) ((marker) . -13) ((marker) . -14) ((marker* . 293) . 15) ((marker* . 293) . 9) (t 22727 38900 0 0)))

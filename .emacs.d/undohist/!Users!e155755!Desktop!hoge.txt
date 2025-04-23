@@ -1,2 +1,0 @@
-
-((digest . "f21ac4d6fd01c59523107e30bc8dce24") (undo-list (23 . 24) nil (4 . 23) nil (1 . 4) (t . 0)))

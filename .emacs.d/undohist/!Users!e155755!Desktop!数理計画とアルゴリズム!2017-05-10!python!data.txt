@@ -1,2 +1,0 @@
-
-((digest . "63ea21258b16a550afb3ac4198379ea3") (undo-list nil (1 . 42) (t . 0)))

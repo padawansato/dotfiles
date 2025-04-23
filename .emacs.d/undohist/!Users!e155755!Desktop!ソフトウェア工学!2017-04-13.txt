@@ -1,2 +1,0 @@
-
-((digest . "d41d8cd98f00b204e9800998ecf8427e") (undo-list ("n" . -1) ((marker . 1) . -1) ("o" . -2) ((marker . 1) . -1) ("t" . -3) ((marker . 1) . -1) ("e" . -4) ((marker . 1) . -1) ("." . -5) ((marker . 1) . -1) 6 nil (1 . 6) (t . 0)))

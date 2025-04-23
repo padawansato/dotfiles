@@ -1,7 +1,0 @@
-
-((digest . "0d22e307bc229b427bb81bceaeac9044") (undo-list nil ("
-" . 13) ((marker* . 13) . 1) ((marker) . -1) nil ("	\"\\347\\262\\276\\351\\201\\270\\351\\201\\216\\345\\216\\273\\345\\225\\21710\\345\\225\\217/abc087/\"" . 13) ((marker* . 13) . 85) ((marker) . -85) nil ("
-" . 13) ((marker* . 13) . 1) ((marker) . -1) ((marker) . -1) ((marker . 13) . -1) ((marker) . -1) nil ("	.idea/workspace.xml" . 13) ((marker* . 13) . 20) ((marker . 13) . -7) ((marker) . -20) nil ("
-" . 13) ((marker* . 13) . 1) ((marker) . -1) ((marker) . -1) ((marker . 13) . -1) ((marker) . -1) nil ("	.idea/modules.xml" . 13) ((marker* . 13) . 18) ((marker . 13) . -7) ((marker . 13) . -7) ((marker) . -18) nil ("
-" . 13) ((marker* . 13) . 1) ((marker . 13) . -1) ((marker) . -1) ((marker) . -1) ((marker) . -1) nil ("	.idea/misc.xml" . 13) ((marker* . 13) . 15) ((marker . 13) . -7) ((marker . 13) . -7) ((marker) . -15) nil ("
-" . 13) ((marker* . 13) . 1) ((marker) . -1) ((marker) . -1) ((marker . 13) . -1) ((marker) . -1) nil ("	.idea/Atcoder." . 13) ((marker* . 13) . 15) ((marker . 13) . -7) ((marker . 13) . -7) ((marker) . -15) nil (8 . 9) nil (7 . 8) nil (nil rear-nonsticky nil 9 . 10) (nil fontified nil 7 . 10) (7 . 10) nil (6 . 7) nil ("iml" . 22) ((marker) . -3) nil undo-tree-canary))

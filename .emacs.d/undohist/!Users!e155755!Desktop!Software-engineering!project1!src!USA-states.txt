@@ -1,2 +1,0 @@
-
-((digest . "1836ffb6f0b04190ae94a46ae14c85a0") (undo-list (1393 . 1394) nil (1 . 1393) (t . 0)))

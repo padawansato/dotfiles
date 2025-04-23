@@ -1,6 +1,0 @@
-# 参考
-### ボタン生成
-http://alphasis.info/2013/07/javascript-dom-documentobject-createelement/
-https://oshiete.goo.ne.jp/qa/2230965.html
-http://yume.hacca.jp/koiki/form/button-link.htm
-

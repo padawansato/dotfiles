@@ -1,2 +1,0 @@
-
-((digest . "3cf5b94fbadd51dbd52ac92e99a47e0a") (undo-list (2171 . 2172) 1069 nil undo-tree-canary))

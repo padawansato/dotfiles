@@ -1,2 +1,0 @@
-
-((digest . "338d9c9b4acc17c8b6b230d5554a9fe0") (undo-list nil (1 . 108) (t . 0)))

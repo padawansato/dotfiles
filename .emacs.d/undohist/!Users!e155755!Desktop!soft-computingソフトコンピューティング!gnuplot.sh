@@ -1,2 +1,0 @@
-
-((digest . "7f7d8c3aebba8bf1002fe62954952a3f") (undo-list nil ("お" . -2622) ((marker) . -1) (2622 . 2623) nil (2927 . 2928) nil ("1" . -2927) ((marker) . -1) 2928 nil (2622 . 2952) nil (2621 . 2622) nil (nil rear-nonsticky nil 2571 . 2572) (2558 . 2572) nil (2557 . 2558) nil ("title 'Weight'" . 2547) ((marker) . -14) ((marker) . -14) ((marker . 2952) . -1) 2561 nil (2496 . 2497) nil (nil rear-nonsticky nil 2495 . 2496) (2482 . 2496) nil (2481 . 2482) nil (" title 'Value'" . 2471) ((marker . 2951) . -14) ((marker) . -14) ((marker . 2951) . -14) nil undo-tree-canary))

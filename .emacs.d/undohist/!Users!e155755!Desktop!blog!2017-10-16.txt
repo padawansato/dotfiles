@@ -1,4 +1,0 @@
-
-((digest . "5532833a2f04e6dbc79368c273a2a2cc") (undo-list nil ("
-" . 55) (2 . 55) ("https://japanjapanese.net/religion/confucianism.html
-" . 1) (54 . 55) (54 . 55) 1 (t 23012 9885 0 0) nil (53 . 54) nil (1 . 53) (t . 0)))

@@ -1,2 +1,0 @@
-
-((digest . "7f8b5144a40560fabd59900aac0a8514") (undo-list (129 . 130) nil (59 . 101) nil (58 . 59) nil (59 . 86) nil (" " . 58) ((marker . 101) . -1) (59 . 60) nil (56 . 59) nil (55 . 56) nil (2 . 4) nil (1 . 2) nil (1 . 52) (t . 0)))

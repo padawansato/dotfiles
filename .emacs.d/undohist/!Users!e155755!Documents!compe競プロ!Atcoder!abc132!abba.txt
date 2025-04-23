@@ -1,2 +1,0 @@
-
-((digest . "b4f601ca17492d25f5bf9459573eed40") (undo-list nil (1 . 5) nil ("aaaa" . 1) (t 23831 38054 179399 435000) nil (5 . 6) nil (2 . 5) nil ("bbc" . 2) nil (1 . 5) (t . 0)))

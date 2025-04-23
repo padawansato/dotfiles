@@ -1,2 +1,0 @@
-
-((digest . "3e753b97188050eee4f5c0e6d54266da") (undo-list nil (nil rear-nonsticky nil 606 . 607) (1 . 607) (t . 0)))

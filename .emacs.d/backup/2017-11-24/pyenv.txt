@@ -1,4 +1,0 @@
-opencv 3
-conda
-$ conda install -c https://conda.anaconda.org/menpo opencv3
-https://qiita.com/hephaistos/items/893505d60f419632f6c0

@@ -1,2 +1,0 @@
-
-((digest . "213f0dad756f8543d3bbcdf39d733976") (undo-list nil (153 . 154) nil (151 . 153) nil (125 . 127) nil (94 . 95) nil (78 . 79) nil (55 . 56) nil (1 . 146) (t . 0)))

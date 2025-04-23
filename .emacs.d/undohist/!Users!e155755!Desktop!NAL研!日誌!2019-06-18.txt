@@ -1,2 +1,0 @@
-
-((digest . "e5995bb59ab334bc41b141ddb59068cd") (undo-list nil (nil rear-nonsticky nil 60 . 61) (nil fontified nil 4 . 61) (4 . 61) nil (2 . 4) nil (1 . 2) nil ("2" . -1) ((marker) . -1) 2 nil (1 . 2) nil ("2" . -1) ((marker) . -1) 2 nil (1 . 2) (t . 0)))

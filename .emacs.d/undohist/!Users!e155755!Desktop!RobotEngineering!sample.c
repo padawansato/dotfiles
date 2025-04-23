@@ -1,2 +1,0 @@
-
-((digest . "3bd2f8c92b69720b0a0055a165d4e208") (undo-list nil (140 . 142) nil ("2" . -140) ((marker . 140) . -1) ((marker . 142) . -1) ((marker . 140) . -1) ((marker . 140) . -1) ((marker . 141) . -1) ("0" . -141) ((marker . 142) . -1) ((marker . 140) . -1) ((marker . 140) . -1) 142 (t 23125 37364 0 0) nil (140 . 141) nil ("3" . -140) ((marker . 142) . -1) ((marker . 140) . -1) ((marker . 140) . -1) 141 (t 23125 37325 0 0) nil (140 . 142) nil ("5" . -140) ((marker . 142) . -1) 141 (t 23125 37101 0 0) nil undo-tree-canary))
