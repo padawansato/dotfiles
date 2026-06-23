@@ -1,0 +1,203 @@
+{
+    "editor.multiCursorModifier": "alt",
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000,
+    "editor.minimap.showSlider": "always",
+    "editor.autoClosingQuotes": "always",
+    "[rust]": {
+        "editor.defaultFormatter": "statiolake.vscode-rustfmt"
+    },
+    "C_Cpp.updateChannel": "Insiders",
+    "[python]": {
+        "editor.tabSize": 4,
+        "editor.formatOnPaste": true,
+        "editor.formatOnSave": false,
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnType": true
+    },
+    "python.linting.pylintEnabled": false,
+    "python.linting.pycodestyleEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Args": [
+        "--ignore=W293, W504",
+        "--max-line-length=150",
+        "--max-complexity=20"
+    ],
+    "python.formatting.autopep8Args": [
+        "--aggressive",
+    ],
+    "python.linting.mypyEnabled": true,
+    "python.pythonPath": "/Users/sato/.pyenv/versions/3.7.5/bin/python3.7",
+    "python.jediEnabled": false,
+    "editor.fontLigatures": null,
+    "python.languageServer": "Pylance",
+    "git.confirmSync": false,
+    "workbench.editorAssociations": {
+        "*.pdf": "default",
+        "*.ipynb": "jupyter-notebook",
+        "*.png": "hediet.vscode-drawio"
+    },
+    "latex-workshop.view.pdf.viewer": "tab",
+    "jupyter.jupyterServerType": "remote",
+    "jupyter.alwaysTrustNotebooks": true,
+    "python.analysis.typeCheckingMode": "basic",
+    "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
+    "scm.inputFontFamily": "Hack Nerd Font Mono",
+    "git.ignoreLegacyWarning": true,
+    "terminal.integrated.tabs.enabled": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "python.defaultInterpreterPath": "/Users/padawan_e15/.pyenv/versions/3.9.6/bin/python3.9",
+    "files.associations": {
+        "**/*.html": "html",
+        "**/templates/**/*.html": "django-html",
+        "**/templates/**/*": "django-txt",
+        "**/requirements{/**,*}.{txt,in}": "pip-requirements"
+    },
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    // gitlab workflow
+    "gitlab.instanceUrl": "http://gitlab.sockets.tv",
+    // 無視する拡張機能
+    "settingsSync.ignoredExtensions": [
+        "spadin.remote-x11",
+        "spadin.remote-x11-ssh",
+        "janisdd.vscode-edit-csv",
+        "dunstontc.vscode-rust-syntax",
+        "batisteo.vscode-django",
+        "polypus74.trusty-rusty-snippets",
+        "gitlab.gitlab-workflow",
+        "hediet.vscode-drawio"
+    ],
+    "terminal.integrated.profiles.osx": {
+        "bash": {
+            "path": "bash",
+            "args": [
+                "-l"
+            ],
+            "icon": "terminal-bash"
+        },
+        "zsh": {
+            "path": "zsh",
+            "args": [
+                "-l"
+            ]
+        },
+        "fish": {
+            "path": "/opt/homebrew/bin/fish",
+            "args": [
+                "-l"
+            ]
+        },
+        "tmux": {
+            "path": "tmux",
+            "icon": "terminal-tmux"
+        },
+        "pwsh": {
+            "path": "pwsh",
+            "icon": "terminal-powershell"
+        },
+        "/usr/local/bin/fish (migrated)": {
+            "path": "/usr/local/bin/fish",
+            "args": [
+                "-l"
+            ]
+        }
+    },
+    "terminal.integrated.defaultProfile.osx": "/usr/local/bin/fish (migrated)",
+    "terminal.integrated.automationShell.osx": "fish",
+    "terminal.integrated.profiles.linux": {
+        "bash": {
+            "path": "bash"
+        },
+        "zsh": {
+            "path": "zsh"
+        },
+        "fish": {
+            "path": "/opt/homebrew/bin/fish"
+        },
+        "tmux": {
+            "path": "tmux",
+            "icon": "terminal-tmux"
+        },
+        "pwsh": {
+            "path": "pwsh",
+            "icon": "terminal-powershell"
+        }
+    },
+    "terminal.integrated.fontWeightBold": "bold",
+    "git.enableSmartCommit": true,
+    "[dart]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.rulers": [
+            80
+        ],
+        "editor.selectionHighlight": false,
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        "editor.suggestSelection": "first",
+        "editor.tabCompletion": "onlySnippets",
+        "editor.wordBasedSuggestions": "off"
+    },
+    "explorer.confirmDelete": false,
+    "python.analysis.diagnosticSeverityOverrides": {},
+    "editor.formatOnSaveMode": "modifications",
+    "trailing-spaces.includeEmptyLines": false,
+    "docker.images.label": "CreatedTime",
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "editor.renderWhitespace": "boundary",
+    "settingsSync.ignoredSettings": [
+        "python.formatting.autopep8Path"
+    ],
+    "html.customData": [
+        "django-html"
+    ],
+    "beautify.language": {
+        "html": [
+            "htm",
+            "html",
+            "django-html"
+        ]
+    },
+    "[django-html]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "bracketPairColorizer.depreciation-notice": false,
+    "git.autofetch": true,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "terminal.integrated.scrollback": 20000,
+    "editor.quickSuggestions": {
+        "inline": "on",
+        "other": "on",
+        "comments": "off",
+        "strings": "off"
+    },
+    "editor.guides.indentation": true,
+    "explorer.confirmDragAndDrop": false,
+    "notebook.lineNumbers": "on",
+    "editor.stickyScroll.enabled": true,
+    "dart.openDevTools": "flutter",
+    "autoDocstring.docstringFormat": "sphinx",
+    "redhat.telemetry.enabled": false,
+    "python.formatting.provider": "none",
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "[shellscript]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
+    },
+    "window.zoomLevel": 1,
+    "git.openRepositoryInParentFolders": "never",
+    "jupyter.askForKernelRestart": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "security.promptForLocalFileProtocolHandling": false,
+    "[markdown]": {
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    }
+}
