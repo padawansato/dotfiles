@@ -1,0 +1,9 @@
+# ~/.config/herdr/config.toml に追記する断片。
+# codex ペインの行に残量トークン($codex_limit)を追加する。
+# トークンは codex-limit-battery.py が report-metadata で送る。
+#
+# 使えるトークン: $codex_limit(5h+週次) / $codex_5h / $codex_week
+# 反映するには `herdr server reload-config`。
+
+[ui.sidebar.agents.rows_by_agent]
+codex = [["state_icon", "workspace", "tab"], ["agent", "$codex_limit"]]

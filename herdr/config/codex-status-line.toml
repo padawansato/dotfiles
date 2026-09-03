@@ -1,0 +1,14 @@
+# ~/.codex/config.toml に追記する断片。
+# Codex 内蔵ステータスラインに 5時間/週次の残量を出す。
+# 項目は Codex 内で /statusline を実行しても編集できる。
+# 未対応の項目名を書いても無視されるだけで起動は壊れない。
+
+[tui]
+status_line = [
+  "model-with-reasoning",
+  "context-used",
+  "five-hour-limit",
+  "weekly-limit",
+  "git-branch",
+]
+status_line_use_colors = true
