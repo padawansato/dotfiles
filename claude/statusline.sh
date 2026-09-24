@@ -2,11 +2,12 @@
 # Claude Code statusline: model | dir | branch | [icon]ctx% | [icon]5h%(reset) | [icon]7d%(reset)
 #
 # アイコンは HackGen Nerd Font (Material Design Icons由来) のグリフを
-# 直接埋め込んでいる。「残り容量」= 100 - used_percentage を段階的に
-# アイコンへ変換する:
-#   - 5h/7d(レート制限)はバッテリー形: battery_10〜90 / battery(満) / battery_alert(枯渇)
-#   - ctx(コンテキストウィンドウ)は円グラフ形: circle_slice_1〜8 / 空円(枯渇)
-#     ※ battery と混同しないよう意図的に形を変えている
+# 直接埋め込んでいる。段階的にアイコンへ変換する:
+#   - 5h/7d(レート制限)はバッテリー形。「残り容量」= 100 - used_percentage で、
+#     使うほど電池が減っていく: battery_10〜90 / battery(満) / battery_alert(枯渇)
+#   - ctx(コンテキストウィンドウ)は円グラフ形。used_percentage そのもので、
+#     使うほど塗りつぶし面積が増えていく: circle_slice_1〜8 / 空円(0%)
+#     ※ battery と挙動が逆なので、混同しないよう意図的に形を変えている
 #
 # stdin で渡される JSON のスキーマ(抜粋、Claude Code 本体に埋め込まれた
 # ドキュメントコメントより確認済み):
@@ -87,15 +88,15 @@ battery_icon() {
   esac
 }
 
-# 残り容量(100 - used_percentage)を8分割の円グラフアイコンに変換する
+# 使用率(used_percentage)を8分割の円グラフアイコンに変換する
+# (batteryとは逆に、使うほど塗りつぶし面積が増えていく)
 circle_icon() {
   local value="$1"
   local slice
   slice=$(awk -v v="$value" 'BEGIN {
-    r = 100 - v;
-    if (r < 0) r = 0;
-    if (r > 100) r = 100;
-    s = int(r / 100 * 8 + 0.5);
+    if (v < 0) v = 0;
+    if (v > 100) v = 100;
+    s = int(v / 100 * 8 + 0.5);
     if (s > 8) s = 8;
     print s;
   }')
