@@ -3,11 +3,15 @@
 #
 # アイコンは HackGen Nerd Font (Material Design Icons由来) のグリフを
 # 直接埋め込んでいる。段階的にアイコンへ変換する:
-#   - 5h/7d(レート制限)はバッテリー形。「残り容量」= 100 - used_percentage で、
-#     使うほど電池が減っていく: battery_10〜90 / battery(満) / battery_alert(枯渇)
-#   - ctx(コンテキストウィンドウ)は円グラフ形。used_percentage そのもので、
-#     使うほど塗りつぶし面積が増えていく: circle_slice_1〜8 / 空円(0%)
-#     ※ battery と挙動が逆なので、混同しないよう意図的に形を変えている
+#   - 5h/7d(レート制限)はバッテリー形。表示する%も「残り容量」
+#     = 100 - used_percentage のカウントダウン。使うほど数字も電池も減っていく:
+#     battery_10〜90 / battery(満) / battery_alert(枯渇)
+#   - ctx(コンテキストウィンドウ)は円グラフ形。表示する%は used_percentage
+#     そのもののカウントアップ。使うほど数字も塗りつぶし面積も増えていく:
+#     circle_slice_1〜8 / 空円(0%)
+#     ※ ctx と 5h/7d で意図的に向き(カウントアップ/ダウン)と形を変えている
+# 色(緑/黄/赤)は常に used_percentage(危険度)基準で、表示される数字の
+# 向きとは独立している。
 #
 # stdin で渡される JSON のスキーマ(抜粋、Claude Code 本体に埋め込まれた
 # ドキュメントコメントより確認済み):
@@ -114,27 +118,32 @@ circle_icon() {
 }
 
 fmt_pct() {
-  local label="$1" value="$2" resets_at="${3:-}" icon_kind="${4:-battery}"
+  local label="$1" value="$2" resets_at="${3:-}" icon_kind="${4:-battery}" display_mode="${5:-used}"
   [ -z "$value" ] && return
-  local color remaining icon
+  local color remaining icon shown
   color=$(color_for_pct "$value")
   if [ "$icon_kind" = "circle" ]; then
     icon=$(circle_icon "$value")
   else
     icon=$(battery_icon "$value")
   fi
+  if [ "$display_mode" = "remaining" ]; then
+    shown=$(awk -v v="$value" 'BEGIN { r = 100 - v; if (r < 0) r = 0; if (r > 100) r = 100; print r }')
+  else
+    shown="$value"
+  fi
   remaining=$(fmt_remaining "$resets_at")
   if [ -n "$remaining" ]; then
-    printf '%s%s %s %.0f%%(%s)%s' "$color" "$icon" "$label" "$value" "$remaining" "$RESET"
+    printf '%s%s %s %.0f%%(%s)%s' "$color" "$icon" "$label" "$shown" "$remaining" "$RESET"
   else
-    printf '%s%s %s %.0f%%%s' "$color" "$icon" "$label" "$value" "$RESET"
+    printf '%s%s %s %.0f%%%s' "$color" "$icon" "$label" "$shown" "$RESET"
   fi
 }
 
 segments=("$model" "$dir")
 [ -n "$branch" ] && segments+=("$branch")
 
-for seg in "$(fmt_pct ctx "$ctx" "" circle)" "$(fmt_pct 5h "$h5" "$h5_reset")" "$(fmt_pct 7d "$d7" "$d7_reset")"; do
+for seg in "$(fmt_pct ctx "$ctx" "" circle used)" "$(fmt_pct 5h "$h5" "$h5_reset" battery remaining)" "$(fmt_pct 7d "$d7" "$d7_reset" battery remaining)"; do
   [ -n "$seg" ] && segments+=("$seg")
 done
 
