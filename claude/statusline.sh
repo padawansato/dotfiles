@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
-# Claude Code statusline: model | dir | branch | ctx% | 5h%(reset) | 7d%(reset)
+# Claude Code statusline: model | dir | branch | [icon]ctx% | [icon]5h%(reset) | [icon]7d%(reset)
+#
+# バッテリーアイコンは HackGen Nerd Font (Material Design Icons由来) の
+# グリフを直接埋め込んでいる。「残り容量」= 100 - used_percentage を
+# 10%刻みで battery_10〜battery_90 / battery(満充電) / battery_alert(枯渇)
+# に丸めて表示する。
 #
 # stdin で渡される JSON のスキーマ(抜粋、Claude Code 本体に埋め込まれた
 # ドキュメントコメントより確認済み):
@@ -55,16 +60,42 @@ fmt_remaining() {
   fi
 }
 
+# 残り容量(100 - used_percentage)を10%刻みでバッテリーアイコンに変換する
+battery_icon() {
+  local value="$1"
+  local tier
+  tier=$(awk -v v="$value" 'BEGIN {
+    r = 100 - v;
+    if (r < 0) r = 0;
+    if (r > 100) r = 100;
+    print int(r / 10) * 10;
+  }')
+  case "$tier" in
+    100) printf '󰁹' ;;
+    90)  printf '󰂂' ;;
+    80)  printf '󰂁' ;;
+    70)  printf '󰂀' ;;
+    60)  printf '󰁿' ;;
+    50)  printf '󰁾' ;;
+    40)  printf '󰁽' ;;
+    30)  printf '󰁼' ;;
+    20)  printf '󰁻' ;;
+    10)  printf '󰁺' ;;
+    *)   printf '󰂃' ;;
+  esac
+}
+
 fmt_pct() {
   local label="$1" value="$2" resets_at="${3:-}"
   [ -z "$value" ] && return
-  local color remaining
+  local color remaining icon
   color=$(color_for_pct "$value")
+  icon=$(battery_icon "$value")
   remaining=$(fmt_remaining "$resets_at")
   if [ -n "$remaining" ]; then
-    printf '%s%s %.0f%%(reset %s)%s' "$color" "$label" "$value" "$remaining" "$RESET"
+    printf '%s%s %s %.0f%%(reset %s)%s' "$color" "$icon" "$label" "$value" "$remaining" "$RESET"
   else
-    printf '%s%s %.0f%%%s' "$color" "$label" "$value" "$RESET"
+    printf '%s%s %s %.0f%%%s' "$color" "$icon" "$label" "$value" "$RESET"
   fi
 }
 
