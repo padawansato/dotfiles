@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 # Claude Code statusline: model | dir | branch | [icon]ctx% | [icon]5h%(reset) | [icon]7d%(reset)
 #
-# バッテリーアイコンは HackGen Nerd Font (Material Design Icons由来) の
-# グリフを直接埋め込んでいる。「残り容量」= 100 - used_percentage を
-# 10%刻みで battery_10〜battery_90 / battery(満充電) / battery_alert(枯渇)
-# に丸めて表示する。
+# アイコンは HackGen Nerd Font (Material Design Icons由来) のグリフを
+# 直接埋め込んでいる。「残り容量」= 100 - used_percentage を段階的に
+# アイコンへ変換する:
+#   - 5h/7d(レート制限)はバッテリー形: battery_10〜90 / battery(満) / battery_alert(枯渇)
+#   - ctx(コンテキストウィンドウ)は円グラフ形: circle_slice_1〜8 / 空円(枯渇)
+#     ※ battery と混同しないよう意図的に形を変えている
 #
 # stdin で渡される JSON のスキーマ(抜粋、Claude Code 本体に埋め込まれた
 # ドキュメントコメントより確認済み):
@@ -85,12 +87,41 @@ battery_icon() {
   esac
 }
 
+# 残り容量(100 - used_percentage)を8分割の円グラフアイコンに変換する
+circle_icon() {
+  local value="$1"
+  local slice
+  slice=$(awk -v v="$value" 'BEGIN {
+    r = 100 - v;
+    if (r < 0) r = 0;
+    if (r > 100) r = 100;
+    s = int(r / 100 * 8 + 0.5);
+    if (s > 8) s = 8;
+    print s;
+  }')
+  case "$slice" in
+    8) printf '󰪥' ;;
+    7) printf '󰪤' ;;
+    6) printf '󰪣' ;;
+    5) printf '󰪢' ;;
+    4) printf '󰪡' ;;
+    3) printf '󰪠' ;;
+    2) printf '󰪟' ;;
+    1) printf '󰪞' ;;
+    *) printf '󰄰' ;;
+  esac
+}
+
 fmt_pct() {
-  local label="$1" value="$2" resets_at="${3:-}"
+  local label="$1" value="$2" resets_at="${3:-}" icon_kind="${4:-battery}"
   [ -z "$value" ] && return
   local color remaining icon
   color=$(color_for_pct "$value")
-  icon=$(battery_icon "$value")
+  if [ "$icon_kind" = "circle" ]; then
+    icon=$(circle_icon "$value")
+  else
+    icon=$(battery_icon "$value")
+  fi
   remaining=$(fmt_remaining "$resets_at")
   if [ -n "$remaining" ]; then
     printf '%s%s %s %.0f%%(%s)%s' "$color" "$icon" "$label" "$value" "$remaining" "$RESET"
@@ -102,7 +133,7 @@ fmt_pct() {
 segments=("$model" "$dir")
 [ -n "$branch" ] && segments+=("$branch")
 
-for seg in "$(fmt_pct ctx "$ctx")" "$(fmt_pct 5h "$h5" "$h5_reset")" "$(fmt_pct 7d "$d7" "$d7_reset")"; do
+for seg in "$(fmt_pct ctx "$ctx" "" circle)" "$(fmt_pct 5h "$h5" "$h5_reset")" "$(fmt_pct 7d "$d7" "$d7_reset")"; do
   [ -n "$seg" ] && segments+=("$seg")
 done
 
