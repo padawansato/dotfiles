@@ -93,7 +93,7 @@ fmt_pct() {
   icon=$(battery_icon "$value")
   remaining=$(fmt_remaining "$resets_at")
   if [ -n "$remaining" ]; then
-    printf '%s%s %s %.0f%%(reset %s)%s' "$color" "$icon" "$label" "$value" "$remaining" "$RESET"
+    printf '%s%s %s %.0f%%(%s)%s' "$color" "$icon" "$label" "$value" "$remaining" "$RESET"
   else
     printf '%s%s %s %.0f%%%s' "$color" "$icon" "$label" "$value" "$RESET"
   fi
