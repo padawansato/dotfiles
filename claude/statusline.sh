@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
-# Claude Code statusline: model | dir | branch | ctx% | 5h% | 7d%
+# Claude Code statusline: model | dir | branch | ctx% | 5h%(reset) | 7d%(reset)
 #
 # stdin で渡される JSON のスキーマ(抜粋、Claude Code 本体に埋め込まれた
 # ドキュメントコメントより確認済み):
-#   .context_window.used_percentage      コンテキスト使用率 (0-100)
+#   .context_window.used_percentage          コンテキスト使用率 (0-100)
 #   .rate_limits.five_hour.used_percentage   5時間ローリング制限の使用率
+#   .rate_limits.five_hour.resets_at         5時間制限のリセット時刻 (Unix epoch秒)
 #   .rate_limits.seven_day.used_percentage   週次(7日)制限の使用率
+#   .rate_limits.seven_day.resets_at         週次制限のリセット時刻 (Unix epoch秒)
 # rate_limits はサブスク/ゲートウェイ利用時のみ、かつセッション最初の
 # API 応答後にしか出現しないため、値が無ければ該当セグメントを省略する。
 set -euo pipefail
@@ -19,7 +21,9 @@ branch=$(git -C "$cwd" -c core.fileMode=false symbolic-ref --short HEAD 2>/dev/n
 
 ctx=$(jq -r '.context_window.used_percentage // empty' <<<"$input")
 h5=$(jq -r '.rate_limits.five_hour.used_percentage // empty' <<<"$input")
+h5_reset=$(jq -r '.rate_limits.five_hour.resets_at // empty' <<<"$input")
 d7=$(jq -r '.rate_limits.seven_day.used_percentage // empty' <<<"$input")
+d7_reset=$(jq -r '.rate_limits.seven_day.resets_at // empty' <<<"$input")
 
 RESET=$'\033[0m'
 color_for_pct() {
@@ -31,18 +35,43 @@ color_for_pct() {
   }'
 }
 
+# 残り秒数を "Xd Yh" / "Xh Ym" / "Xm" 形式に整形する
+fmt_remaining() {
+  local resets_at="$1"
+  [ -z "$resets_at" ] && return
+  local now diff
+  now=$(date +%s)
+  diff=$(( ${resets_at%.*} - now ))
+  [ "$diff" -lt 0 ] && diff=0
+  local days=$(( diff / 86400 ))
+  local hours=$(( (diff % 86400) / 3600 ))
+  local mins=$(( (diff % 3600) / 60 ))
+  if [ "$days" -gt 0 ]; then
+    printf '%dd%dh' "$days" "$hours"
+  elif [ "$hours" -gt 0 ]; then
+    printf '%dh%dm' "$hours" "$mins"
+  else
+    printf '%dm' "$mins"
+  fi
+}
+
 fmt_pct() {
-  local label="$1" value="$2"
+  local label="$1" value="$2" resets_at="${3:-}"
   [ -z "$value" ] && return
-  local color
+  local color remaining
   color=$(color_for_pct "$value")
-  printf '%s%s %.0f%%%s' "$color" "$label" "$value" "$RESET"
+  remaining=$(fmt_remaining "$resets_at")
+  if [ -n "$remaining" ]; then
+    printf '%s%s %.0f%%(reset %s)%s' "$color" "$label" "$value" "$remaining" "$RESET"
+  else
+    printf '%s%s %.0f%%%s' "$color" "$label" "$value" "$RESET"
+  fi
 }
 
 segments=("$model" "$dir")
 [ -n "$branch" ] && segments+=("$branch")
 
-for seg in "$(fmt_pct ctx "$ctx")" "$(fmt_pct 5h "$h5")" "$(fmt_pct 7d "$d7")"; do
+for seg in "$(fmt_pct ctx "$ctx")" "$(fmt_pct 5h "$h5" "$h5_reset")" "$(fmt_pct 7d "$d7" "$d7_reset")"; do
   [ -n "$seg" ] && segments+=("$seg")
 done
 
