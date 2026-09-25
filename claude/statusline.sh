@@ -24,6 +24,9 @@
 # rate_limits はサブスク/ゲートウェイ利用時のみ、かつセッション最初の
 # API 応答後にしか出現しないため、値が無ければ該当セグメントを省略する。
 # cost も同様に値が無ければ(サブスク利用時などで$0.00扱いされない限り)省略する。
+#
+# git の未コミット変更件数(dirty_count)は上記JSONスキームに含まれないため、
+# `git status --porcelain` を都度自前で実行して取得している。
 set -euo pipefail
 
 input=$(cat)
@@ -32,6 +35,11 @@ model=$(jq -r '.model.display_name' <<<"$input")
 cwd=$(jq -r '.workspace.current_dir' <<<"$input")
 dir=$(basename "$cwd")
 branch=$(git -C "$cwd" -c core.fileMode=false symbolic-ref --short HEAD 2>/dev/null || echo '')
+# 未コミット変更(staged/unstaged/untracked 合算)の件数。JSONには含まれないため自前で取得する。
+dirty_count=0
+if [ -n "$branch" ]; then
+  dirty_count=$(git -C "$cwd" -c core.fileMode=false status --porcelain=v1 --untracked-files=normal 2>/dev/null | wc -l | tr -d ' ')
+fi
 
 ctx=$(jq -r '.context_window.used_percentage // empty' <<<"$input")
 h5=$(jq -r '.rate_limits.five_hour.used_percentage // empty' <<<"$input")
@@ -151,7 +159,13 @@ fmt_cost() {
 }
 
 segments=("$model" "$dir")
-[ -n "$branch" ] && segments+=("$branch")
+if [ -n "$branch" ]; then
+  if [ "$dirty_count" -gt 0 ]; then
+    segments+=("${branch} *${dirty_count}")
+  else
+    segments+=("$branch")
+  fi
+fi
 
 for seg in "$(fmt_pct ctx "$ctx" "" circle used)" "$(fmt_pct 5h "$h5" "$h5_reset" battery remaining)" "$(fmt_pct 7d "$d7" "$d7_reset" battery remaining)" "$(fmt_cost "$cost")"; do
   [ -n "$seg" ] && segments+=("$seg")
