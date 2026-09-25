@@ -20,8 +20,10 @@
 #   .rate_limits.five_hour.resets_at         5時間制限のリセット時刻 (Unix epoch秒)
 #   .rate_limits.seven_day.used_percentage   週次(7日)制限の使用率
 #   .rate_limits.seven_day.resets_at         週次制限のリセット時刻 (Unix epoch秒)
+#   .cost.total_cost_usd                     セッション累計コスト(USD)
 # rate_limits はサブスク/ゲートウェイ利用時のみ、かつセッション最初の
 # API 応答後にしか出現しないため、値が無ければ該当セグメントを省略する。
+# cost も同様に値が無ければ(サブスク利用時などで$0.00扱いされない限り)省略する。
 set -euo pipefail
 
 input=$(cat)
@@ -36,6 +38,7 @@ h5=$(jq -r '.rate_limits.five_hour.used_percentage // empty' <<<"$input")
 h5_reset=$(jq -r '.rate_limits.five_hour.resets_at // empty' <<<"$input")
 d7=$(jq -r '.rate_limits.seven_day.used_percentage // empty' <<<"$input")
 d7_reset=$(jq -r '.rate_limits.seven_day.resets_at // empty' <<<"$input")
+cost=$(jq -r '.cost.total_cost_usd // empty' <<<"$input")
 
 RESET=$'\033[0m'
 color_for_pct() {
@@ -140,10 +143,17 @@ fmt_pct() {
   fi
 }
 
+# 累計コスト(USD)をそのまま表示する。閾値による色分けは意味を持たないため無色。
+fmt_cost() {
+  local value="$1"
+  [ -z "$value" ] && return
+  printf '$%.2f' "$value"
+}
+
 segments=("$model" "$dir")
 [ -n "$branch" ] && segments+=("$branch")
 
-for seg in "$(fmt_pct ctx "$ctx" "" circle used)" "$(fmt_pct 5h "$h5" "$h5_reset" battery remaining)" "$(fmt_pct 7d "$d7" "$d7_reset" battery remaining)"; do
+for seg in "$(fmt_pct ctx "$ctx" "" circle used)" "$(fmt_pct 5h "$h5" "$h5_reset" battery remaining)" "$(fmt_pct 7d "$d7" "$d7_reset" battery remaining)" "$(fmt_cost "$cost")"; do
   [ -n "$seg" ] && segments+=("$seg")
 done
 
